@@ -205,3 +205,37 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project-specific
+
+# VS Code
+.vscode/
+
+# Local model / training / cache outputs
+outputs/
+checkpoints/
+logs/
+cache/
+hf_cache/
+
+# Hugging Face / training artifacts
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Experiment tracking
+wandb/
+mlruns/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: ignore raw datasets if they are large
+# data/raw/
+
+# Optional: ignore processed/generated data
+# data/interim/
+# data/processed/
+# data/gold_test/
