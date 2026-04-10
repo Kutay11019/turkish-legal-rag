@@ -232,6 +232,14 @@ mlruns/
 .DS_Store
 Thumbs.db
 
+# Large data files
+data/raw/
+data/processed/
+
+# Model artifacts
+*.npy
+*.index
+
 # Optional: ignore raw datasets if they are large
 # data/raw/
 
