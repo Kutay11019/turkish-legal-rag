@@ -247,3 +247,22 @@ data/processed/
 # data/interim/
 # data/processed/
 # data/gold_test/
+
+# Colab / notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment
+.venv/
+
+# Project data and generated outputs
+data/
+outputs/
+experiments/
+
+# Large generated files
+*.csv
+*.npy
+*.index
+*.faiss
+*.pkl
+*.parquet
