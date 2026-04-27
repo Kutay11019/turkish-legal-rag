@@ -5,3 +5,8 @@ datasets
 sentence-transformers
 faiss-cpu
 rank-bm25
+transformers
+accelerate
+bitsandbytes
+rouge-score
+huggingface_hub
