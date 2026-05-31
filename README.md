@@ -4,6 +4,30 @@ This repository contains a Turkish legal question answering system based on an o
 
 The project includes retrieval improvements, reranking experiments, LLM fine-tuning with QLoRA, controlled evaluation, ablation studies, and a final runnable custom RAG benchmark system.
 
+## Running the RAG Benchmark
+
+Full LLM generation with Mistral-7B requires significant GPU memory. You can run the benchmarks using either a local environment or Google Colab.
+
+### 1. Google Colab (Recommended)
+If you do not have sufficient local GPU resources, you can run the benchmark directly in Google Colab. The notebook will automatically clone the repository, install dependencies, and load the fine-tuned adapter.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Kutay11019/turkish-legal-rag/blob/main/notebooks/27_final_system_colab_runner.ipynb)
+
+**Important:** Before running, ensure your Colab runtime is set to **L4 GPU** (via `Runtime > Change runtime type > L4 GPU`).
+
+### 2. Local Environment
+If you have a local machine with sufficient VRAM, you can run the benchmark using the following commands:
+
+```bash
+# Run base model evaluation
+python run_custom_rag_benchmark.py --mode base
+
+# Run fine-tuned model evaluation
+python run_custom_rag_benchmark.py --mode finetuned
+
+# Run both evaluations
+python run_custom_rag_benchmark.py --mode both
+
 ## Project Overview
 
 The goal of this project is to build and evaluate a Turkish legal RAG system that can answer legal questions by retrieving relevant legal contexts and generating source-grounded answers.
@@ -79,31 +103,6 @@ This checks whether:
 
 This mode can run on a normal CPU environment.
 
-## Full LLM Generation
-
-Full answer generation with Mistral-7B requires sufficient GPU memory.
-
-For this reason, running the following modes is recommended on a CUDA-enabled GPU environment such as Google Colab L4/A100 or a local machine with enough VRAM:
-
-```bash
-python run_custom_rag_benchmark.py --mode base
-python run_custom_rag_benchmark.py --mode finetuned
-python run_custom_rag_benchmark.py --mode both
-```
-
-If local GPU resources are not available, the Colab runner can be used:
-
-```text
-notebooks/27_final_system_colab_runner.ipynb
-```
-
-Recommended Colab runtime:
-
-```text
-Runtime > Change runtime type > L4 GPU
-```
-
-The Colab runner clones the repository, installs the final system dependencies, downloads the fine-tuned adapter, updates the adapter path, and runs the final RAG system.
 
 ## Fine-Tuned Adapter
 
