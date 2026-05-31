@@ -105,6 +105,29 @@ Then run:
 python run_custom_rag_benchmark.py --mode both
 ```
 
+## Google Colab Runner
+
+If a local machine does not have enough GPU memory to run Mistral-7B generation, the provided Colab runner can be used instead:
+
+```text
+notebooks/27_final_system_colab_runner.ipynb
+```
+
+Recommended Colab runtime:
+
+```text
+Runtime > Change runtime type > L4 GPU
+```
+
+The Colab notebook clones the GitHub repository, installs the final system requirements, downloads the fine-tuned adapter, updates the adapter path, and runs the final RAG runner.
+
+Use this notebook for GPU-based testing of:
+
+- retrieval-only mode,
+- base RAG mode,
+- fine-tuned RAG mode,
+- base vs fine-tuned comparison mode.
+
 ## Outputs
 
 Results are saved under:
