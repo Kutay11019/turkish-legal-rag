@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+tqdm
+pyyaml
+sentence-transformers
+rank-bm25
+transformers
+accelerate
+peft
+torch
+pymupdf
+python-docx
