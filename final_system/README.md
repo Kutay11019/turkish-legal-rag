@@ -26,17 +26,17 @@ question,expected_answer
 
 The document loader supports:
 
-* `.txt`
-* `.pdf`
-* `.docx`
+- `.txt`
+- `.pdf`
+- `.docx`
 
 ## Modes
 
 The runner supports three modes:
 
-* `base`: runs the RAG system with the base Mistral model.
-* `finetuned`: runs the RAG system with the same base Mistral model plus a fine-tuned QLoRA adapter.
-* `both`: runs both systems on the same benchmark and saves comparison outputs.
+- `base`: runs the RAG system with the base Mistral model.
+- `finetuned`: runs the RAG system with the same base Mistral model plus a fine-tuned QLoRA adapter.
+- `both`: runs both systems on the same benchmark and saves comparison outputs.
 
 ## Install
 
@@ -132,6 +132,30 @@ python run_custom_rag_benchmark.py --mode base --retrieval_only
 However, full answer generation with Mistral-7B requires sufficient GPU memory. For this reason, running `--mode base`, `--mode finetuned`, or `--mode both` is recommended on a CUDA-enabled GPU environment such as Google Colab L4/A100 or a local machine with enough VRAM.
 
 If the system is executed on a CPU-only machine, the retrieval pipeline can still be tested with `--retrieval_only`, but full LLM generation may be very slow or may fail due to memory limitations.
+
+## Important Note About Sample Benchmark Scores
+
+The included `sample_legal_document.txt` and `sample_benchmark.csv` files are only provided as a small smoke test.
+
+Their purpose is to verify that:
+
+- custom documents can be loaded,
+- benchmark questions can be read,
+- retrieval works,
+- base and fine-tuned modes can run,
+- output CSV files are generated.
+
+The scores produced on this two-question sample benchmark are not the final project performance scores.
+
+The final reported experimental results are provided in:
+
+```text
+reports/final_experiment_summary.md
+```
+
+In the project experiments, the Starlar fine-tuned Mistral QLoRA model improved controlled gold-context manual accuracy from `0.400` to `0.925`.
+
+The sample benchmark is intentionally minimal and should not be interpreted as a representative evaluation.
 
 ## Notes
 
