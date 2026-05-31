@@ -60,28 +60,67 @@ The instructor can place custom legal documents under:
 final_system/data/custom_documents/
 ```
 
-and a custom benchmark CSV under:
+Supported document formats are:
+
+```text
+.txt
+.pdf
+.docx
+```
+
+The instructor can place a custom benchmark file under:
 
 ```text
 final_system/data/custom_benchmark/
 ```
 
-The benchmark CSV must include at least:
+The benchmark file can be provided in one of the following formats:
 
-```csv
-question,expected_answer
+```text
+.csv
+.json
+.jsonl
+```
+
+Each benchmark sample must contain at least the following fields:
+
+```text
+question
+expected_answer
+```
+
+By default, the runner reads the benchmark folder defined in `final_system/config.yaml`:
+
+```yaml
+benchmark_path: "data/custom_benchmark"
+```
+
+If only the included `sample_benchmark.csv` file exists, it is used as a small smoke test. If a custom benchmark file is added to the same folder, the runner automatically prefers the custom benchmark file over the sample file.
+
+If multiple custom benchmark files are placed in the folder, the exact file path can be provided manually:
+
+```bash
+python run_custom_rag_benchmark.py --mode base --retrieval_only --benchmark_path data/custom_benchmark/my_benchmark.json
 ```
 
 The runner supports three modes:
 
-* `base`: runs the RAG system with the base Mistral model.
-* `finetuned`: runs the RAG system with the same base Mistral model plus the fine-tuned QLoRA adapter.
-* `both`: runs both systems on the same benchmark and saves comparison outputs.
+- `base`: runs the RAG system with the base Mistral model.
+- `finetuned`: runs the RAG system with the same base Mistral model plus the fine-tuned QLoRA adapter.
+- `both`: runs both systems on the same benchmark and saves comparison outputs.
+
+A retrieval-only smoke test can be run without loading the LLM:
+
+```bash
+cd final_system
+python run_custom_rag_benchmark.py --mode base --retrieval_only
+```
 
 For detailed usage instructions, see:
 
 ```text
 final_system/README.md
+```
 ```
 
 ## Quick Smoke Test
