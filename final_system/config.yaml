@@ -23,5 +23,5 @@ generation:
 
 paths:
   documents_dir: "data/custom_documents"
-  benchmark_path: "data/custom_benchmark/sample_benchmark.csv"
+  benchmark_path: "data/custom_benchmark"
   outputs_dir: "data/outputs"

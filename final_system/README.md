@@ -10,33 +10,82 @@ The instructor can place custom legal documents under:
 final_system/data/custom_documents/
 ```
 
-and a custom benchmark CSV under:
+and a custom benchmark file under:
 
 ```text
 final_system/data/custom_benchmark/
 ```
 
-The benchmark CSV must include at least the following columns:
+The benchmark file can be provided as one of the following formats:
 
-```csv
-question,expected_answer
+* `.csv`
+* `.json`
+* `.jsonl`
+
+Each benchmark sample must contain at least:
+
+```text
+question
+expected_answer
+```
+
+By default, the runner reads the benchmark folder defined in `config.yaml`:
+
+```yaml
+benchmark_path: "data/custom_benchmark"
+```
+
+If only the included `sample_benchmark.csv` file exists, it is used as a small smoke test. If a custom benchmark file is added to the same folder, the runner automatically prefers the custom benchmark file over the sample file.
+
+If multiple custom benchmark files are placed in the folder, either remove the extra files or pass the exact file path manually with `--benchmark_path`.
+
+Example:
+
+```bash
+python run_custom_rag_benchmark.py --mode base --retrieval_only --benchmark_path data/custom_benchmark/my_benchmark.json
 ```
 
 ## Supported Document Formats
 
 The document loader supports:
 
-- `.txt`
-- `.pdf`
-- `.docx`
+* `.txt`
+* `.pdf`
+* `.docx`
+
+## Benchmark Format Examples
+
+### CSV Example
+
+```csv
+question,expected_answer
+"Anayasa 10. madde neyi düzenler?","Anayasa 10. madde, herkesin kanun önünde eşit olduğunu düzenler."
+```
+
+### JSON Example
+
+```json
+[
+  {
+    "question": "Anayasa 10. madde neyi düzenler?",
+    "expected_answer": "Anayasa 10. madde, herkesin kanun önünde eşit olduğunu düzenler."
+  }
+]
+```
+
+### JSONL Example
+
+```jsonl
+{"question": "Anayasa 10. madde neyi düzenler?", "expected_answer": "Anayasa 10. madde, herkesin kanun önünde eşit olduğunu düzenler."}
+```
 
 ## Modes
 
 The runner supports three modes:
 
-- `base`: runs the RAG system with the base Mistral model.
-- `finetuned`: runs the RAG system with the same base Mistral model plus a fine-tuned QLoRA adapter.
-- `both`: runs both systems on the same benchmark and saves comparison outputs.
+* `base`: runs the RAG system with the base Mistral model.
+* `finetuned`: runs the RAG system with the same base Mistral model plus a fine-tuned QLoRA adapter.
+* `both`: runs both systems on the same benchmark and saves comparison outputs.
 
 ## Install
 
@@ -113,20 +162,48 @@ If a local machine does not have enough GPU memory to run Mistral-7B generation,
 notebooks/27_final_system_colab_runner.ipynb
 ```
 
+Open directly in Colab:
+
+```text
+https://colab.research.google.com/github/Kutay11019/turkish-legal-rag/blob/main/notebooks/27_final_system_colab_runner.ipynb
+```
+
 Recommended Colab runtime:
 
 ```text
-Runtime > Change runtime type > L4 GPU
+Runtime > Change runtime type > Hardware accelerator: GPU > GPU type: L4
 ```
 
 The Colab notebook clones the GitHub repository, installs the final system requirements, downloads the fine-tuned adapter, updates the adapter path, and runs the final RAG runner.
 
 Use this notebook for GPU-based testing of:
 
-- retrieval-only mode,
-- base RAG mode,
-- fine-tuned RAG mode,
-- base vs fine-tuned comparison mode.
+* retrieval-only mode,
+* base RAG mode,
+* fine-tuned RAG mode,
+* base vs fine-tuned comparison mode.
+
+## Using Custom Documents and Benchmarks
+
+To use custom legal documents, place them under:
+
+```text
+final_system/data/custom_documents/
+```
+
+To use a custom benchmark, place a `.csv`, `.json`, or `.jsonl` file under:
+
+```text
+final_system/data/custom_benchmark/
+```
+
+The runner automatically selects the benchmark file as follows:
+
+1. If a custom benchmark file exists, it is preferred over `sample_benchmark.csv`.
+2. If only `sample_benchmark.csv` exists, it is used for smoke testing.
+3. If multiple custom benchmark files exist, the runner asks the user to provide the exact file path using `--benchmark_path`.
+
+After adding or replacing benchmark/document files, the notebook does not need to be restarted from the beginning. Continue from the next cell after the file upload or replacement step.
 
 ## Outputs
 
@@ -162,11 +239,11 @@ The included `sample_legal_document.txt` and `sample_benchmark.csv` files are on
 
 Their purpose is to verify that:
 
-- custom documents can be loaded,
-- benchmark questions can be read,
-- retrieval works,
-- base and fine-tuned modes can run,
-- output CSV files are generated.
+* custom documents can be loaded,
+* benchmark questions can be read,
+* retrieval works,
+* base and fine-tuned modes can run,
+* output CSV files are generated.
 
 The scores produced on this two-question sample benchmark are not the final project performance scores.
 

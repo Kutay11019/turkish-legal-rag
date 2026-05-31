@@ -69,19 +69,104 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def load_benchmark(path: Path) -> pd.DataFrame:
-    if not path.exists():
-        raise FileNotFoundError(f"Benchmark file not found: {path}")
+def resolve_benchmark_file(path: Path) -> Path:
+    supported_extensions = {".csv", ".json", ".jsonl"}
 
-    df = pd.read_csv(path)
+    if path.is_file():
+        if path.suffix.lower() not in supported_extensions:
+            raise ValueError(
+                f"Unsupported benchmark file type: {path.suffix}. "
+                "Supported formats are: .csv, .json, .jsonl"
+            )
+        return path
+
+    if not path.exists():
+        raise FileNotFoundError(f"Benchmark path not found: {path}")
+
+    if not path.is_dir():
+        raise ValueError(f"Benchmark path must be a file or directory: {path}")
+
+    benchmark_files = [
+        file
+        for file in sorted(path.iterdir())
+        if file.is_file()
+        and not file.name.startswith(".")
+        and file.suffix.lower() in supported_extensions
+    ]
+
+    if not benchmark_files:
+        raise FileNotFoundError(
+            f"No benchmark file found in {path}. "
+            "Please add a .csv, .json, or .jsonl benchmark file."
+        )
+
+    # Prefer instructor/custom files over the included sample file.
+    custom_files = [
+        file
+        for file in benchmark_files
+        if not file.name.startswith("sample_benchmark")
+    ]
+
+    if len(custom_files) == 1:
+        selected_file = custom_files[0]
+    elif len(custom_files) > 1:
+        raise ValueError(
+            f"Multiple custom benchmark files found in {path}: "
+            f"{[file.name for file in custom_files]}. "
+            "Please keep only one custom benchmark file in the folder or pass "
+            "the exact file path with --benchmark_path."
+        )
+    else:
+        # No custom file found, use the sample benchmark for smoke testing.
+        sample_files = [
+            file
+            for file in benchmark_files
+            if file.name.startswith("sample_benchmark")
+        ]
+
+        if len(sample_files) == 1:
+            selected_file = sample_files[0]
+        elif len(sample_files) > 1:
+            raise ValueError(
+                f"Multiple sample benchmark files found in {path}: "
+                f"{[file.name for file in sample_files]}. "
+                "Please keep only one sample benchmark file."
+            )
+        else:
+            selected_file = benchmark_files[0]
+
+    print(f"Selected benchmark file: {selected_file}")
+    return selected_file
+
+
+def load_benchmark(path: Path) -> pd.DataFrame:
+    benchmark_file = resolve_benchmark_file(path)
+    suffix = benchmark_file.suffix.lower()
+
+    if suffix == ".csv":
+        df = pd.read_csv(benchmark_file)
+
+    elif suffix == ".json":
+        df = pd.read_json(benchmark_file)
+
+    elif suffix == ".jsonl":
+        df = pd.read_json(benchmark_file, lines=True)
+
+    else:
+        raise ValueError(
+            f"Unsupported benchmark file type: {benchmark_file.suffix}. "
+            "Supported formats are: .csv, .json, .jsonl"
+        )
 
     required_columns = ["question", "expected_answer"]
     missing = [col for col in required_columns if col not in df.columns]
 
     if missing:
         raise ValueError(
-            f"Benchmark file must include columns {required_columns}. "
-            f"Missing: {missing}"
+            f"Benchmark file must include columns/fields {required_columns}. "
+            f"Missing: {missing}. "
+            "For JSON/JSONL files, each record must contain 'question' and "
+            "'expected_answer' fields."
         )
 
     df = df.dropna(subset=["question", "expected_answer"]).copy()
