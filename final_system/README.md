@@ -72,7 +72,7 @@ The adapter is not committed to GitHub because it contains large model weight fi
 Download the clean fine-tuned adapter zip from:
 
 ```text
-https://drive.google.com/drive/folders/1yVp0kwU0ImgiG3dnE6z-QHI3ZcIaHovQ?usp=sharing
+https://drive.google.com/file/d/1VyKe4-oydf8LUs_rmnu02079tFCZkIGO/view?usp=sharing
 ```
 
 After downloading the zip file, create this folder if it does not already exist:
