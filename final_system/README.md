@@ -26,17 +26,17 @@ question,expected_answer
 
 The document loader supports:
 
-- `.txt`
-- `.pdf`
-- `.docx`
+* `.txt`
+* `.pdf`
+* `.docx`
 
 ## Modes
 
 The runner supports three modes:
 
-- `base`: runs the RAG system with the base Mistral model.
-- `finetuned`: runs the RAG system with the same base Mistral model plus a fine-tuned QLoRA adapter.
-- `both`: runs both systems on the same benchmark and saves comparison outputs.
+* `base`: runs the RAG system with the base Mistral model.
+* `finetuned`: runs the RAG system with the same base Mistral model plus a fine-tuned QLoRA adapter.
+* `both`: runs both systems on the same benchmark and saves comparison outputs.
 
 ## Install
 
@@ -54,6 +54,8 @@ This checks document loading, chunking, retrieval, and output writing without lo
 ```bash
 python run_custom_rag_benchmark.py --mode base --retrieval_only
 ```
+
+This mode can run on a normal CPU environment and is useful for testing custom document loading and retrieval.
 
 ## Run Base RAG
 
@@ -81,23 +83,6 @@ final_system/models/mistral_legal_qlora_starlar_v2_800steps/
 
 Then extract the contents of the zip file into that folder.
 
-The folder should contain files such as:
-
-```text
-adapter_config.json
-adapter_model.safetensors
-tokenizer_config.json
-tokenizer.json
-chat_template.jinja
-```
-
-After downloading the adapter, place it under:
-
-```text
-final_system/models/mistral_legal_qlora_starlar_v2_800steps/
-```
-
-Then extract the contents of the zip file into that folder.
 The folder should contain files such as:
 
 ```text
@@ -136,6 +121,25 @@ finetuned_rag_results.csv
 base_vs_finetuned_summary.csv
 ```
 
+## Hardware Requirement
+
+The retrieval-only mode can run on a normal CPU environment:
+
+```bash
+python run_custom_rag_benchmark.py --mode base --retrieval_only
+```
+
+However, full answer generation with Mistral-7B requires sufficient GPU memory. For this reason, running `--mode base`, `--mode finetuned`, or `--mode both` is recommended on a CUDA-enabled GPU environment such as Google Colab L4/A100 or a local machine with enough VRAM.
+
+If the system is executed on a CPU-only machine, the retrieval pipeline can still be tested with `--retrieval_only`, but full LLM generation may be very slow or may fail due to memory limitations.
+
 ## Notes
 
-Running Mistral-based generation requires sufficient GPU memory. The `--retrieval_only` option can be used to test the custom document and benchmark pipeline without loading the LLM.
+The `--retrieval_only` option can be used to verify that the custom document and benchmark pipeline works without loading the LLM.
+
+Full base/fine-tuned RAG comparison requires:
+
+1. Sufficient GPU memory.
+2. Access to the base Mistral model.
+3. The fine-tuned QLoRA adapter placed under `final_system/models/`.
+4. `local_finetuned_adapter` configured correctly in `config.yaml`.
