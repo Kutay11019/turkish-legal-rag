@@ -1,0 +1,9 @@
+﻿section,paragraph
+rag_result,"The best completed end-to-end RAG pipeline used source-aware retrieval, article-aware retrieval, a Turkish BGE reranker, and an improved legal prompt. 
+On the original 20-question manually evaluated test set, this configuration achieved a manual accuracy of 0.4211. 
+After excluding known coverage/problematic samples, the coverage-clean accuracy increased to 0.4688."
+fine_tuning_result,"The Starlar LLM SFT v2 fine-tuning experiment showed a clear improvement in controlled source-grounded generation. 
+In the controlled Starlar gold-context evaluation, the base Mistral model achieved a manual accuracy of 0.400, while the Starlar fine-tuned Mistral QLoRA model achieved 0.925. 
+Automatic metrics showed the same trend: mean token F1 increased from 0.1848 to 0.9657, mean text similarity increased from 0.1554 to 0.9695, and source citation rate increased from 0.25 to 0.85."
+final_interpretation,"These results indicate that retrieval-side improvements were important for the end-to-end RAG pipeline, while LLM fine-tuning substantially improved the model's ability to produce source-grounded Turkish legal answers when the correct context was provided. 
+Therefore, the final project reports both the best RAG pipeline performance and the controlled LLM fine-tuning improvement."

@@ -1,0 +1,5 @@
+﻿metric,base_mistral,starlar_finetuned_mistral,absolute_improvement
+Manual accuracy,0.4,0.925,0.525
+Mean token F1,0.1848154358865532,0.9657362346725018,0.7809207987859486
+Mean text similarity,0.1554365264886714,0.9694547809887196,0.8140182545000483
+Source citation rate,0.25,0.85,0.6

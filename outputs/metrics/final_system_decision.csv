@@ -1,0 +1,6 @@
+﻿component,selected_method,reason
+Retrieval,Source-aware + article-aware retrieval,Improved legal source selection and article-number matching.
+Reranking,Turkish BGE reranker,Improved ranking quality over baseline retrieval.
+Prompting,Improved legal prompt,Reduced unsupported generation and encouraged concise legal answers.
+End-to-end RAG generator,Base Mistral for original 20-question RAG benchmark,Best completed end-to-end RAG pipeline result was measured with this setup.
+Fine-tuned generator experiment,Starlar fine-tuned Mistral QLoRA,Clearly improved controlled source-grounded answer generation compared to base Mistral.

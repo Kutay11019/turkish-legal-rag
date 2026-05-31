@@ -1,0 +1,5 @@
+﻿category,experiment,setup,main_metric,base_or_previous,final_or_finetuned,coverage_clean,interpretation
+End-to-end RAG,Best RAG pipeline,Source-aware + article-aware retrieval + Turkish BGE reranker + improved prompt + Base Mistral,Manual accuracy,,0.42105263157894735,0.46875,Best completed RAG pipeline on the original 20-question evaluation set.
+LLM fine-tuning,Controlled Starlar gold-context evaluation,Base Mistral vs Starlar fine-tuned Mistral QLoRA,Manual accuracy,0.4,0.925,,Fine-tuning substantially improved source-grounded answer generation when the correct context was provided.
+LLM fine-tuning,Controlled Starlar gold-context evaluation,Base Mistral vs Starlar fine-tuned Mistral QLoRA,Mean token F1,0.1848154358865532,0.9657362346725018,,Automatic token-level overlap strongly improved after fine-tuning.
+LLM fine-tuning,Controlled Starlar gold-context evaluation,Base Mistral vs Starlar fine-tuned Mistral QLoRA,Source citation rate,0.25,0.85,,Fine-tuned model learned the expected source/citation answer format better.

@@ -1,0 +1,2 @@
+﻿source_file,original_rows,clean_rows,selected_rows,train_rows,val_rows,test_rows,max_user_len,max_assistant_len,train_path,val_path,test_path
+/content/drive/MyDrive/turkish_legal_rag/data/raw/external_datasets/extracted/CENG493_Starlar/llm.jsonl,13758,12108,4000,3200,400,400,3500,1200,/content/drive/MyDrive/turkish_legal_rag/data/processed/starlar_llm_sft_v2_train.jsonl,/content/drive/MyDrive/turkish_legal_rag/data/processed/starlar_llm_sft_v2_val.jsonl,/content/drive/MyDrive/turkish_legal_rag/data/processed/starlar_llm_sft_v2_test.jsonl

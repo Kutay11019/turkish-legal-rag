@@ -1,0 +1,4 @@
+﻿method,existing_manual_accuracy,mean_token_f1,mean_text_similarity,source_citation_rate,valid_sample_count
+Old Best Base Generator,0.42105263157894735,0.2861283385094402,0.388491272333309,0.0,19
+Starlar Fine-tuned - Starlar-style prompt,,0.14443805956886865,0.22472210952162294,0.47368421052631576,19
+Starlar Fine-tuned - Direct-answer prompt,,0.15615749202021384,0.22036027430803298,0.5789473684210527,19

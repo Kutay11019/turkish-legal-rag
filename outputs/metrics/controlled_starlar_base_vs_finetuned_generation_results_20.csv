@@ -1,0 +1,769 @@
+﻿id,text,system_content,user_content,assistant_content,metadata_source,metadata_variant_type,metadata_source_id,prompt,base_generated_answer,finetuned_generated_answer,base_token_f1,finetuned_token_f1,base_similarity,finetuned_similarity,base_has_source,finetuned_has_source
+sft_exp_006056,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000088
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088
+Metin: Vasiyetnamenin geçerli olabilmesi için en temel şart, vasiyet edenin ayırt etme gücüne sahip olmasıdır.
+
+Soru: Bu kaynak parçasını kısa ve kaynaklı şekilde özetle. [/INST] Özet: Vasiyetnamenin geçerli olabilmesi için en temel şart, vasiyet edenin ayırt etme gücüne sahip olmasıdır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000088
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088
+Metin: Vasiyetnamenin geçerli olabilmesi için en temel şart, vasiyet edenin ayırt etme gücüne sahip olmasıdır.
+
+Soru: Bu kaynak parçasını kısa ve kaynaklı şekilde özetle.","Özet: Vasiyetnamenin geçerli olabilmesi için en temel şart, vasiyet edenin ayırt etme gücüne sahip olmasıdır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088",ORICON,short_summary_with_citation,oricon_medeni_000088,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000088
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088
+Metin: Vasiyetnamenin geçerli olabilmesi için en temel şart, vasiyet edenin ayırt etme gücüne sahip olmasıdır.
+
+Soru: Bu kaynak parçasını kısa ve kaynaklı şekilde özetle. [/INST]",The validity of a will requires the most fundamental condition that the person making the will (testator) has the capacity to distinguish between their heirs. (ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088),"Özet: Vasiyetnamenin geçerli olabilmesi için en temel şart, vasiyet edenin ayırt etme gücüne sahip olmasıdır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000088",0.32786885245901637,1.0,0.46733668341708545,1.0,0,1
+sft_exp_004303,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001341
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001341
+Metin: Dijital sınavların güvenliğini sağlamak için, ilgili soruların güvenli bir şekilde saklanan bir soru bankasından seçilmesi ve her bir adaya farklı zamanlarda farklı sorular sorulmasına izin verilmesi gerektiği belirtilmiştir.
+
+Soru: Dijital sınavların güvenliğini sağlamak hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Dijital sınavların güvenliğini sağlamak için, ilgili soruların güvenli bir şekilde saklanan bir soru bankasından seçilmesi ve her bir adaya farklı zamanlarda farklı sorular sorulmasına izin verilmesi gerektiği belirtilmiştir.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001341</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001341
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001341
+Metin: Dijital sınavların güvenliğini sağlamak için, ilgili soruların güvenli bir şekilde saklanan bir soru bankasından seçilmesi ve her bir adaya farklı zamanlarda farklı sorular sorulmasına izin verilmesi gerektiği belirtilmiştir.
+
+Soru: Dijital sınavların güvenliğini sağlamak hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Dijital sınavların güvenliğini sağlamak için, ilgili soruların güvenli bir şekilde saklanan bir soru bankasından seçilmesi ve her bir adaya farklı zamanlarda farklı sorular sorulmasına izin verilmesi gerektiği belirtilmiştir.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001341",ORICON,direct_grounded_answer,oricon_genel_001341,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001341
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001341
+Metin: Dijital sınavların güvenliğini sağlamak için, ilgili soruların güvenli bir şekilde saklanan bir soru bankasından seçilmesi ve her bir adaya farklı zamanlarda farklı sorular sorulmasına izin verilmesi gerektiği belirtilmiştir.
+
+Soru: Dijital sınavların güvenliğini sağlamak hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from ORICON, ensuring the security of digital exams involves allowing different questions to be selected from a secure question bank for each test taker at different time intervals.
+
+Source:
+ORICON - General law / classification is pending - oricon_genel_001341
+Chunk ID: oricon_genel_001341
+Citation: ORICON (2023). General law / classification is pending. Retrieved from ORICON_clean_legal_source_for_chunking.txt.","Kaynağa göre: Dijital sınavların güvenliğini sağlamak için, ilgili soruların güvenli bir şekilde saklanan bir soru bankasından seçilmesi ve her bir adaya farklı zamanlarda farklı sorular sorulmasına izin verilmesi gerektiği belirtilmiştir.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001341",0.09615384615384616,1.0,0.06557377049180328,1.0,1,1
+sft_exp_010876,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_medeni_000046
+Citation: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000046
+Metin: Acele kamulaştırma kararından sonra idarenin ilk adımı, mal sahibi ile anlaşma yaparak taşınmazı satın almayı denemektir. Uzlaşma sağlanırsa, idare uzlaşılan bedeli malike ödeyerek kamulaştırma işlemini sonlandırır. Acele kamulaştırma kararından itibaren idareye tanınan makul süre 6 aydır. Bu süre içinde dava açılmazsa, idarenin ilgili taşınmaza kamulaştırmasız el attığı kabul edilir.
+
+Soru: uzlaşma hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Acele kamulaştırma kararından sonra idarenin ilk adımı, mal sahibi ile anlaşma yaparak taşınmazı satın almayı denemektir. Uzlaşma sağlanırsa, idare uzlaşılan bedeli malike ödeyerek kamulaştırma işlemini sonlandırır. Acele kamulaştırma kararından itibaren idareye tanınan makul süre 6 aydır. Bu süre içinde dava açılmazsa, idarenin ilgili taşınmaza kamulaştırmasız el attığı kabul edilir.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000046</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_medeni_000046
+Citation: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000046
+Metin: Acele kamulaştırma kararından sonra idarenin ilk adımı, mal sahibi ile anlaşma yaparak taşınmazı satın almayı denemektir. Uzlaşma sağlanırsa, idare uzlaşılan bedeli malike ödeyerek kamulaştırma işlemini sonlandırır. Acele kamulaştırma kararından itibaren idareye tanınan makul süre 6 aydır. Bu süre içinde dava açılmazsa, idarenin ilgili taşınmaza kamulaştırmasız el attığı kabul edilir.
+
+Soru: uzlaşma hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Acele kamulaştırma kararından sonra idarenin ilk adımı, mal sahibi ile anlaşma yaparak taşınmazı satın almayı denemektir. Uzlaşma sağlanırsa, idare uzlaşılan bedeli malike ödeyerek kamulaştırma işlemini sonlandırır. Acele kamulaştırma kararından itibaren idareye tanınan makul süre 6 aydır. Bu süre içinde dava açılmazsa, idarenin ilgili taşınmaza kamulaştırmasız el attığı kabul edilir.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000046",ORICON,direct_grounded_answer,oricon_idare_medeni_000046,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_medeni_000046
+Citation: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000046
+Metin: Acele kamulaştırma kararından sonra idarenin ilk adımı, mal sahibi ile anlaşma yaparak taşınmazı satın almayı denemektir. Uzlaşma sağlanırsa, idare uzlaşılan bedeli malike ödeyerek kamulaştırma işlemini sonlandırır. Acele kamulaştırma kararından itibaren idareye tanınan makul süre 6 aydır. Bu süre içinde dava açılmazsa, idarenin ilgili taşınmaza kamulaştırmasız el attığı kabul edilir.
+
+Soru: uzlaşma hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from ORICON, the first step for an administrator after an accelerated enforcement order is issued is to try to reach an agreement with the property owner by purchasing the property without moving it. If a reconciliation is achieved, the administrator pays the reconciliation amount to the owner and thus ends the accelerated enforcement procedure. The period for reconciliation is six months from the date of the accelerated enforcement order. If no lawsuit is filed within this period, the administrator's taking possession of the property without an accelerated enforcement order is accepted.","Kaynağa göre: Acele kamulaştırma kararından sonra idarenin ilk adımı, mal sahibi ile anlaşma yaparak taşınmazı satın almayı denemektir. Uzlaşma sağlanırsa, idare uzlaşılan bedeli malike ödeyerek kamulaştırma işlemini sonlandırır. Acele kamulaştırma kararından itibaren idareye tanınan makul süre 6 aydır. Bu süre içinde dava açılmazsa, idarenin ilgili taşınmaza kamulaştırmasız el attığı kabul edilir.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_0000",0.011976047904191616,0.9857142857142858,0.024955436720142603,0.998015873015873,0,1
+sft_exp_009682,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İcra ve İflas Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_icra_iflas_000095
+Citation: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095
+Metin: İşvereninden alacaklarını alamayan işçiler, mahkemeye konuya ilişkin bir dilekçe sunarak konkordato sürecinin başlamasını talep edebilirler.
+
+Soru: işçi hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: İşvereninden alacaklarını alamayan işçiler, mahkemeye konuya ilişkin bir dilekçe sunarak konkordato sürecinin başlamasını talep edebilirler.
+
+Kaynak: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: İcra ve İflas Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_icra_iflas_000095
+Citation: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095
+Metin: İşvereninden alacaklarını alamayan işçiler, mahkemeye konuya ilişkin bir dilekçe sunarak konkordato sürecinin başlamasını talep edebilirler.
+
+Soru: işçi hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: İşvereninden alacaklarını alamayan işçiler, mahkemeye konuya ilişkin bir dilekçe sunarak konkordato sürecinin başlamasını talep edebilirler.
+
+Kaynak: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095",ORICON,direct_grounded_answer,oricon_icra_iflas_000095,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İcra ve İflas Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_icra_iflas_000095
+Citation: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095
+Metin: İşvereninden alacaklarını alamayan işçiler, mahkemeye konuya ilişkin bir dilekçe sunarak konkordato sürecinin başlamasını talep edebilirler.
+
+Soru: işçi hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from ORICON under the title ""İcra ve İflas Hukuku"" and chunk ID ""oricon_icra_iflas_000095"", it is stated that workers who are not able to receive their wages from their employer can request the initiation of a conciliation process by filing a complaint with the court.
+
+Source: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095","Kaynağa göre: İşvereninden alacaklarını alamayan işçiler, mahkemeye konuya ilişkin bir dilekçe sunarak konkordato sürecinin başlamasını talep edebilirler.
+
+Kaynak: ORICON - İcra ve İflas Hukuku - oricon_icra_iflas_000095",0.25000000000000006,1.0,0.10877192982456141,1.0,0,1
+sft_exp_004845,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001597
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001597
+Metin: Hak düşürücü sürelerin yeniden canlanması, çoktan dolmuş olan hak düşürücü sürenin sıfırlanarak baştan başlaması anlamına gelmektedir.
+
+Soru: Bu metinden hareketle 'Hak düşürücü sürelerin yeniden canlanması' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Genel hukuk / sınıflandırma bekliyor. Kaynak metindeki esas içerik şudur: Hak düşürücü sürelerin yeniden canlanması, çoktan dolmuş olan hak düşürücü sürenin sıfırlanarak baştan başlaması anlamına gelmektedir.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001597</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001597
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001597
+Metin: Hak düşürücü sürelerin yeniden canlanması, çoktan dolmuş olan hak düşürücü sürenin sıfırlanarak baştan başlaması anlamına gelmektedir.
+
+Soru: Bu metinden hareketle 'Hak düşürücü sürelerin yeniden canlanması' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Genel hukuk / sınıflandırma bekliyor. Kaynak metindeki esas içerik şudur: Hak düşürücü sürelerin yeniden canlanması, çoktan dolmuş olan hak düşürücü sürenin sıfırlanarak baştan başlaması anlamına gelmektedir.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001597",ORICON,source_limited_explanation,oricon_genel_001597,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001597
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001597
+Metin: Hak düşürücü sürelerin yeniden canlanması, çoktan dolmuş olan hak düşürücü sürenin sıfırlanarak baştan başlaması anlamına gelmektedir.
+
+Soru: Bu metinden hareketle 'Hak düşürücü sürelerin yeniden canlanması' konusunu açıklarken nelere dayanmalıyım? [/INST]","The term ""Hak düşürücü sürelerin yeniden canlanması"" refers to the renewal or revival of the periods of validity of intellectual property rights. This concept is based on the idea that intellectual property rights, such as patents, trademarks, and copyrights, have a limited duration. Once these rights expire, the protected material enters the public domain and can be used freely by anyone. However, in some cases, the rights holders may have the opportunity to renew or extend the protection of their intellectual property rights before they expire. This allows them to continue to enjoy the exclusive rights and benefits associated with intellectual property protection.
+
+Source:
+ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_00","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Genel hukuk / sınıflandırma bekliyor. Kaynak metindeki esas içerik şudur: Hak düşürücü sürelerin yeniden canlanması, çoktan dolmuş olan hak düşürücü sürenin sıfırlanarak baştan başlaması anlamına gelmektedir.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001597",0.1568627450980392,1.0,0.19489120151371808,1.0,0,1
+sft_exp_010345,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_000148
+Citation: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148
+Metin: Danıştay Kanunun 24. maddesi gereğince, ilk derece mahkemesi sıfatıyla Danıştay'ın bakmakla görevli olduğu davalar doğrudan Danıştay'da açılmaktadır.
+
+Soru: 24. maddesi hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Danıştay Kanunun 24. maddesi gereğince, ilk derece mahkemesi sıfatıyla Danıştay'ın bakmakla görevli olduğu davalar doğrudan Danıştay'da açılmaktadır.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_000148
+Citation: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148
+Metin: Danıştay Kanunun 24. maddesi gereğince, ilk derece mahkemesi sıfatıyla Danıştay'ın bakmakla görevli olduğu davalar doğrudan Danıştay'da açılmaktadır.
+
+Soru: 24. maddesi hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Danıştay Kanunun 24. maddesi gereğince, ilk derece mahkemesi sıfatıyla Danıştay'ın bakmakla görevli olduğu davalar doğrudan Danıştay'da açılmaktadır.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148",ORICON,direct_grounded_answer,oricon_idare_000148,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_000148
+Citation: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148
+Metin: Danıştay Kanunun 24. maddesi gereğince, ilk derece mahkemesi sıfatıyla Danıştay'ın bakmakla görevli olduğu davalar doğrudan Danıştay'da açılmaktadır.
+
+Soru: 24. maddesi hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source, cases with the first-degree jurisdiction, which are subject to review by the Council of State in accordance with Article 24 of the Constitution, can be directly filed with the Council of State.
+
+Source: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148","Kaynağa göre: Danıştay Kanunun 24. maddesi gereğince, ilk derece mahkemesi sıfatıyla Danıştay'ın bakmakla görevli olduğu davalar doğrudan Danıştay'da açılmaktadır.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku - oricon_idare_000148",0.2891566265060241,1.0,0.26796116504854367,1.0,0,1
+sft_exp_016869,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku
+Kaynak: TURKISH_LAWCHATBOT_LOW_RISK_ONLY
+Dosya: LAWCHATBOT_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768
+Citation: TURKISH_LAWCHATBOT_LOW_RISK_ONLY - Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku - lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768
+Kanun No: 6098
+Metin: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. bu itiraz, icra mahkemesine başvurularak yapılır ve genellikle borçlunun takibin hukuka uygun olmadığını belirttiği durumlarda geçerlidir. Hâkim, borçlulara ödemeyi diğer eşe yapmalarını emredebilir. Hâkim, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir. Mahkeme, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir.
+
+Soru: Bu metinden hareketle 'anayasa' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. Kaynak metindeki esas içerik şudur: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. bu itiraz, icra mahkemesine başvurularak yapılır ve genellikle borçlunun takibin hukuka uygun olmadığını belirttiği durumlarda geçerlidir. Hâkim, borçlulara ödemeyi diğer eşe yapmalarını emredebilir. Hâkim, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir. Mahkeme, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir.
+
+Kaynak: TURKISH_LAWCHATBOT_LOW_RISK_ONLY - Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku - lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku
+Kaynak: TURKISH_LAWCHATBOT_LOW_RISK_ONLY
+Dosya: LAWCHATBOT_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768
+Citation: TURKISH_LAWCHATBOT_LOW_RISK_ONLY - Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku - lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768
+Kanun No: 6098
+Metin: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. bu itiraz, icra mahkemesine başvurularak yapılır ve genellikle borçlunun takibin hukuka uygun olmadığını belirttiği durumlarda geçerlidir. Hâkim, borçlulara ödemeyi diğer eşe yapmalarını emredebilir. Hâkim, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir. Mahkeme, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir.
+
+Soru: Bu metinden hareketle 'anayasa' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. Kaynak metindeki esas içerik şudur: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. bu itiraz, icra mahkemesine başvurularak yapılır ve genellikle borçlunun takibin hukuka uygun olmadığını belirttiği durumlarda geçerlidir. Hâkim, borçlulara ödemeyi diğer eşe yapmalarını emredebilir. Hâkim, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir. Mahkeme, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir.
+
+Kaynak: TURKISH_LAWCHATBOT_LOW_RISK_ONLY - Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku - lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768",TURKISH_LAWCHATBOT_LOW_RISK_ONLY,source_limited_explanation,lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku
+Kaynak: TURKISH_LAWCHATBOT_LOW_RISK_ONLY
+Dosya: LAWCHATBOT_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768
+Citation: TURKISH_LAWCHATBOT_LOW_RISK_ONLY - Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku - lawchatbot_turk_borclar_kanunu_borclar_hukuku_hukuk_muhakemeleri_0006_183768
+Kanun No: 6098
+Metin: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. bu itiraz, icra mahkemesine başvurularak yapılır ve genellikle borçlunun takibin hukuka uygun olmadığını belirttiği durumlarda geçerlidir. Hâkim, borçlulara ödemeyi diğer eşe yapmalarını emredebilir. Hâkim, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir. Mahkeme, borçlulara ödemeyi tamamen veya kısmen diğer eşe yapmalarını emredebilir.
+
+Soru: Bu metinden hareketle 'anayasa' konusunu açıklarken nelere dayanmalıyım? [/INST]","The given text is from the Turkish Code of Obligations (Türk Borçlar Kanunu) and the Code of Civil Procedure (Hukuk Muhakemeleri Kanunu) in Turkey. It discusses the objection, which can be filed with the enforcement courts and is generally used when the execution is not in accordance with the law. The judge can order the debtor to pay in full or in part to other creditors. The court can also order the debtor to pay in full or in part to other creditors.
+
+To answer your question, the term 'anayasa' (constitution) is not explicitly mentioned in the provided text. The text only discusses the procedures related to the objection and the powers of the judge in enforcement proceedings. Therefore, there is no need to refer to the constitution in this context","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. Kaynak metindeki esas içerik şudur: Türk Borçlar Kanunu / Borçlar Hukuku + Hukuk Muhakemeleri Kanunu / Medenî Usul + İcra ve İflas Hukuku. bu itiraz, icra mahkemesine başvurularak yapılır ve genellikle borçlunun takibin hukuka uygun olmadığını belirttiği durumlarda geçerlidir. Hâkim, borçlulara ödemeyi diğer eşe yapmalarını emredebilir. Hâkim, borçlulara ö",0.0634920634920635,0.7357512953367876,0.04639498432601881,0.7390983000739099,0,0
+sft_exp_002778,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_000612
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000612
+Metin: Hüküm verildikten sonra feragat veya kabul yapılması halinde, taraflarca kanun yoluna başvurulmuş olsa dahi, kanun yoluna gönderilmeyeceği hüküm altına alınmıştır.
+
+Soru: Bu metinden hareketle 'hüküm' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Genel hukuk / sınıflandırma bekliyor. Kaynak metindeki esas içerik şudur: Hüküm verildikten sonra feragat veya kabul yapılması halinde, taraflarca kanun yoluna başvurulmuş olsa dahi, kanun yoluna gönderilmeyeceği hüküm altına alınmıştır.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000612</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_000612
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000612
+Metin: Hüküm verildikten sonra feragat veya kabul yapılması halinde, taraflarca kanun yoluna başvurulmuş olsa dahi, kanun yoluna gönderilmeyeceği hüküm altına alınmıştır.
+
+Soru: Bu metinden hareketle 'hüküm' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Genel hukuk / sınıflandırma bekliyor. Kaynak metindeki esas içerik şudur: Hüküm verildikten sonra feragat veya kabul yapılması halinde, taraflarca kanun yoluna başvurulmuş olsa dahi, kanun yoluna gönderilmeyeceği hüküm altına alınmıştır.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000612",ORICON,source_limited_explanation,oricon_genel_000612,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_000612
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000612
+Metin: Hüküm verildikten sonra feragat veya kabul yapılması halinde, taraflarca kanun yoluna başvurulmuş olsa dahi, kanun yoluna gönderilmeyeceği hüküm altına alınmıştır.
+
+Soru: Bu metinden hareketle 'hüküm' konusunu açıklarken nelere dayanmalıyım? [/INST]","Bu metin, Türk Hukukı'nda hüküm hakkında söylenen bir yasası veya karar nameyesi olmayan bir ifadeleme veya yorumunun içeriğidir. Bu metin, hüküm hakkında sadece yönetici tarafından verilen bilgi sağlar ve bu, hukukta kabul edilmiş ve kesin hüküm gibi değildir. Bu metin, hükükün sınıflandırılması beklenen bir süre sonra hüküm verilmiş olduğu ve taraflar","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Genel hukuk / sınıflandırma bekliyor. Kaynak metindeki esas içerik şudur: Hüküm verildikten sonra feragat veya kabul yapılması halinde, taraflarca kanun yoluna başvurulmuş olsa dahi, kanun yoluna gönderilmeyeceği hüküm altına alınmıştır.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000612",0.12371134020618557,1.0,0.022566995768688293,1.0,0,1
+sft_exp_006111,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000111
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111
+Metin: Vasiyetnamenin açılabilmesi için öncelikle vasiyetnamenin sulh hukuk hâkimine teslim edilmesi gerekmektedir.
+
+Soru: Bu metinden hareketle 'Vasiyetnamenin açılabilmesi' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk - Miras/Aile/Eşya/Kişiler. Kaynak metindeki esas içerik şudur: Vasiyetnamenin açılabilmesi için öncelikle vasiyetnamenin sulh hukuk hâkimine teslim edilmesi gerekmektedir.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000111
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111
+Metin: Vasiyetnamenin açılabilmesi için öncelikle vasiyetnamenin sulh hukuk hâkimine teslim edilmesi gerekmektedir.
+
+Soru: Bu metinden hareketle 'Vasiyetnamenin açılabilmesi' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk - Miras/Aile/Eşya/Kişiler. Kaynak metindeki esas içerik şudur: Vasiyetnamenin açılabilmesi için öncelikle vasiyetnamenin sulh hukuk hâkimine teslim edilmesi gerekmektedir.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111",ORICON,source_limited_explanation,oricon_medeni_000111,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000111
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111
+Metin: Vasiyetnamenin açılabilmesi için öncelikle vasiyetnamenin sulh hukuk hâkimine teslim edilmesi gerekmektedir.
+
+Soru: Bu metinden hareketle 'Vasiyetnamenin açılabilmesi' konusunu açıklarken nelere dayanmalıyım? [/INST]","according to the given text, the opening of a will (vasiyetname) requires its delivery to the sulh law judge before it can be implemented.
+
+Reference: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk - Miras/Aile/Eşya/Kişiler. Kaynak metindeki esas içerik şudur: Vasiyetnamenin açılabilmesi için öncelikle vasiyetnamenin sulh hukuk hâkimine teslim edilmesi gerekmektedir.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000111",0.2894736842105263,1.0,0.2571976967370441,1.0,0,1
+sft_exp_010801,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_medeni_000011
+Citation: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000011
+Metin: Malikler arasında anlaşmazlık durumunda, taşınmazlar için Bakanlık, TOKİ veya İdare acele kamulaştırma yoluna gidebilir.
+
+Soru: Malikler arasında anlaşmazlık hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Malikler arasında anlaşmazlık durumunda, taşınmazlar için Bakanlık, TOKİ veya İdare acele kamulaştırma yoluna gidebilir.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000011</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_medeni_000011
+Citation: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000011
+Metin: Malikler arasında anlaşmazlık durumunda, taşınmazlar için Bakanlık, TOKİ veya İdare acele kamulaştırma yoluna gidebilir.
+
+Soru: Malikler arasında anlaşmazlık hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Malikler arasında anlaşmazlık durumunda, taşınmazlar için Bakanlık, TOKİ veya İdare acele kamulaştırma yoluna gidebilir.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000011",ORICON,direct_grounded_answer,oricon_idare_medeni_000011,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_idare_medeni_000011
+Citation: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000011
+Metin: Malikler arasında anlaşmazlık durumunda, taşınmazlar için Bakanlık, TOKİ veya İdare acele kamulaştırma yoluna gidebilir.
+
+Soru: Malikler arasında anlaşmazlık hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from ORICON, when there is a dispute between owners, they can go to the Bakanlık, TOKİ, or the Administration for a quick resolution.","Kaynağa göre: Malikler arasında anlaşmazlık durumunda, taşınmazlar için Bakanlık, TOKİ veya İdare acele kamulaştırma yoluna gidebilir.
+
+Kaynak: ORICON - İdare ve İdari Yargılama Hukuku; Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_idare_medeni_000011",0.09375,1.0,0.0399002493765586,1.0,0,1
+sft_exp_014022,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m908
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.908 - turkish_law_eski_4721_turk_medeni_kanunu_m908
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 908
+Metin: Madde 908- İrat senediyle yüklü taşınmazın bölünmesi hâlinde, parsellerin malikleri irat. senedinin borçlusu olurlar. İrat senedi borcunun parsellere dağıtılmasında, ipotekle yüklü taşınmazın bölünmesine. ilişkin hükümler uygulanır. Alacaklı, borcun parsellere dağıtımının kesinleşmesinden başlayarak bir ay içinde. yapacağı bildirimle bir yıl içinde irat senedinin satın alınmasını isteyebilir. C. Ortak hükümler I. Kurulması
+
+Soru: Bu metinden hareketle 'VI. Bölünme' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk; Kanun: Türk Medenî Kanunu; Madde: 908. Kaynak metindeki esas içerik şudur: Madde 908- İrat senediyle yüklü taşınmazın bölünmesi hâlinde, parsellerin malikleri irat. senedinin borçlusu olurlar. İrat senedi borcunun parsellere dağıtılmasında, ipotekle yüklü taşınmazın bölünmesine. ilişkin hükümler uygulanır. Alacaklı, borcun parsellere dağıtımının kesinleşmesinden başlayarak bir ay içinde. yapacağı bildirimle bir yıl içinde irat senedinin satın alınmasını isteyebilir. C. Ortak hükümler I. Kurulması
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.908 - turkish_law_eski_4721_turk_medeni_kanunu_m908</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m908
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.908 - turkish_law_eski_4721_turk_medeni_kanunu_m908
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 908
+Metin: Madde 908- İrat senediyle yüklü taşınmazın bölünmesi hâlinde, parsellerin malikleri irat. senedinin borçlusu olurlar. İrat senedi borcunun parsellere dağıtılmasında, ipotekle yüklü taşınmazın bölünmesine. ilişkin hükümler uygulanır. Alacaklı, borcun parsellere dağıtımının kesinleşmesinden başlayarak bir ay içinde. yapacağı bildirimle bir yıl içinde irat senedinin satın alınmasını isteyebilir. C. Ortak hükümler I. Kurulması
+
+Soru: Bu metinden hareketle 'VI. Bölünme' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk; Kanun: Türk Medenî Kanunu; Madde: 908. Kaynak metindeki esas içerik şudur: Madde 908- İrat senediyle yüklü taşınmazın bölünmesi hâlinde, parsellerin malikleri irat. senedinin borçlusu olurlar. İrat senedi borcunun parsellere dağıtılmasında, ipotekle yüklü taşınmazın bölünmesine. ilişkin hükümler uygulanır. Alacaklı, borcun parsellere dağıtımının kesinleşmesinden başlayarak bir ay içinde. yapacağı bildirimle bir yıl içinde irat senedinin satın alınmasını isteyebilir. C. Ortak hükümler I. Kurulması
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.908 - turkish_law_eski_4721_turk_medeni_kanunu_m908",TURKISH_LAW_ESKI_LOW_RISK_ONLY,source_limited_explanation,turkish_law_eski_4721_turk_medeni_kanunu_m908,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m908
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.908 - turkish_law_eski_4721_turk_medeni_kanunu_m908
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 908
+Metin: Madde 908- İrat senediyle yüklü taşınmazın bölünmesi hâlinde, parsellerin malikleri irat. senedinin borçlusu olurlar. İrat senedi borcunun parsellere dağıtılmasında, ipotekle yüklü taşınmazın bölünmesine. ilişkin hükümler uygulanır. Alacaklı, borcun parsellere dağıtımının kesinleşmesinden başlayarak bir ay içinde. yapacağı bildirimle bir yıl içinde irat senedinin satın alınmasını isteyebilir. C. Ortak hükümler I. Kurulması
+
+Soru: Bu metinden hareketle 'VI. Bölünme' konusunu açıklarken nelere dayanmalıyım? [/INST]","The given text is from the Turkish Civil Code (Türk Medenî Kanunu). The quoted text is from Article 908 of Law No. 4721. According to this article, when an immovable property is being divided according to an inheritance deed, the heirs are the owners of the shares described in the deed. The creditor of the inheritance deed can claim from the heirs. When distributing the debt of the inheritance deed, the rules regarding the sale of immovable property with a mortgage apply. The heir who will buy the property has the right to demand the inheritance deed to be sold within a year, starting from the announcement of the distribution of shares and the payment of the debt.
+
+To explain the 'VI. Division' concept in relation to this text, you should","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk; Kanun: Türk Medenî Kanunu; Madde: 908. Kaynak metindeki esas içerik şudur: Madde 908- İrat senediyle yüklü taşınmazın bölünmesi hâlinde, parsellerin malikleri irat. senedinin borçlusu olurlar. İrat senedi borcunun parsellere dağıtılmasında, ipotekle yüklü taşınmazın bölünmesine. ilişkin hükümler uygulanır. Alacaklı, borcun parsellere dağıtımının kesinleşmesinden başlayarak bir ay içinde. yapacağı bildirimle bir yıl içinde irat sened",0.0625,0.8101265822784811,0.025787965616045846,0.8539518900343642,0,0
+sft_exp_002311,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_000393
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393
+Metin: Hastanın edim yükümlülükleri arasında; hastanede sunulan hizmetlere karşılık gelen bedeli ödeme borcu, tıbbi rahatsızlıkla ilgili belirti, hastalığı seyri ve geçmiş dönem tecrübeleri hakkında bilgilendirme borcu, varsa ilgili dokümanları tıbbi girişim esnasında temin etme borcu bulunmaktadır.
+
+Soru: Hastanın edim yükümlülükleri arasında hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Hastanın edim yükümlülükleri arasında; hastanede sunulan hizmetlere karşılık gelen bedeli ödeme borcu, tıbbi rahatsızlıkla ilgili belirti, hastalığı seyri ve geçmiş dönem tecrübeleri hakkında bilgilendirme borcu, varsa ilgili dokümanları tıbbi girişim esnasında temin etme borcu bulunmaktadır.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_000393
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393
+Metin: Hastanın edim yükümlülükleri arasında; hastanede sunulan hizmetlere karşılık gelen bedeli ödeme borcu, tıbbi rahatsızlıkla ilgili belirti, hastalığı seyri ve geçmiş dönem tecrübeleri hakkında bilgilendirme borcu, varsa ilgili dokümanları tıbbi girişim esnasında temin etme borcu bulunmaktadır.
+
+Soru: Hastanın edim yükümlülükleri arasında hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Hastanın edim yükümlülükleri arasında; hastanede sunulan hizmetlere karşılık gelen bedeli ödeme borcu, tıbbi rahatsızlıkla ilgili belirti, hastalığı seyri ve geçmiş dönem tecrübeleri hakkında bilgilendirme borcu, varsa ilgili dokümanları tıbbi girişim esnasında temin etme borcu bulunmaktadır.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393",ORICON,direct_grounded_answer,oricon_genel_000393,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_000393
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393
+Metin: Hastanın edim yükümlülükleri arasında; hastanede sunulan hizmetlere karşılık gelen bedeli ödeme borcu, tıbbi rahatsızlıkla ilgili belirti, hastalığı seyri ve geçmiş dönem tecrübeleri hakkında bilgilendirme borcu, varsa ilgili dokümanları tıbbi girişim esnasında temin etme borcu bulunmaktadır.
+
+Soru: Hastanın edim yükümlülükleri arasında hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from ORICON, a hospital's obligations towards a patient include payment obligations for services rendered, informational obligations regarding medical conditions and past experiences, and the provision of necessary documents during medical treatment if applicable.
+
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393","Kaynağa göre: Hastanın edim yükümlülükleri arasında; hastanede sunulan hizmetlere karşılık gelen bedeli ödeme borcu, tıbbi rahatsızlıkla ilgili belirti, hastalığı seyri ve geçmiş dönem tecrübeleri hakkında bilgilendirme borcu, varsa ilgili dokümanları tıbbi girişim esnasında temin etme borcu bulunmaktadır.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_000393",0.1702127659574468,1.0,0.17783857729138167,1.0,1,1
+sft_exp_001459,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Ceza Muhakemesi Hukuku; Vergi Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_ceza_muhakemesi_vergi_000003
+Citation: ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_000003
+Metin: Avukat, sorgu sırasında şüpheliye bazı sorulara cevap vermemesini tavsiye edebilir, ifadenin usule uygun olarak alınıp alınmadığını denetleyebilir, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelinin haklarını hatırlatabilir.
+
+Soru: Avukat hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Avukat, sorgu sırasında şüpheliye bazı sorulara cevap vermemesini tavsiye edebilir, ifadenin usule uygun olarak alınıp alınmadığını denetleyebilir, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelinin haklarını hatırlatabilir.
+
+Kaynak: ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_000003</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Ceza Muhakemesi Hukuku; Vergi Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_ceza_muhakemesi_vergi_000003
+Citation: ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_000003
+Metin: Avukat, sorgu sırasında şüpheliye bazı sorulara cevap vermemesini tavsiye edebilir, ifadenin usule uygun olarak alınıp alınmadığını denetleyebilir, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelinin haklarını hatırlatabilir.
+
+Soru: Avukat hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Avukat, sorgu sırasında şüpheliye bazı sorulara cevap vermemesini tavsiye edebilir, ifadenin usule uygun olarak alınıp alınmadığını denetleyebilir, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelinin haklarını hatırlatabilir.
+
+Kaynak: ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_000003",ORICON,direct_grounded_answer,oricon_ceza_muhakemesi_vergi_000003,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Ceza Muhakemesi Hukuku; Vergi Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_ceza_muhakemesi_vergi_000003
+Citation: ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_000003
+Metin: Avukat, sorgu sırasında şüpheliye bazı sorulara cevap vermemesini tavsiye edebilir, ifadenin usule uygun olarak alınıp alınmadığını denetleyebilir, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelinin haklarını hatırlatabilir.
+
+Soru: Avukat hakkında verilen kaynağa göre ne söylenebilir? [/INST]","Avukat, sorgu sırasında şüpheli sorulara cevap vermemesini öğrenmiş ve yapabilen bir rol olan bir kişidir. Bu rolü, ifadenin usule uygun olarak alınıp alınmadığını, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelin haklarını hatırlatabilir. (ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_00000","Kaynağa göre: Avukat, sorgu sırasında şüpheliye bazı sorulara cevap vermemesini tavsiye edebilir, ifadenin usule uygun olarak alınıp alınmadığını denetleyebilir, şüpheli ile görüşebilir, ifade alma yöntemlerine itiraz edebilir ve şüphelinin haklarını hatırlatabilir.
+
+Kaynak: ORICON - Ceza Muhakemesi Hukuku; Vergi Hukuku - oricon_ceza_muhakemesi_vergi_000003",0.7415730337078652,1.0,0.5401459854014599,1.0,0,1
+sft_exp_006451,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000294
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294
+Metin: Yargıtay kararlarına göre, uzlaşma görüşmelerinde belirlenen fiyatların taraflar açısından bağlayıcılığı yoktur; bu bedeller mahkemece taşınmazın değerinin belirlenmesinde bir ölçüt olarak kabul edilemez. Taşınmaz maliklerinin taşınmazın değerini kapsamlı bir şekilde araştırmaları, uzlaşma sürecinde oldukça yararlı olacaktır.
+
+Soru: uzlaşma hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Yargıtay kararlarına göre, uzlaşma görüşmelerinde belirlenen fiyatların taraflar açısından bağlayıcılığı yoktur; bu bedeller mahkemece taşınmazın değerinin belirlenmesinde bir ölçüt olarak kabul edilemez. Taşınmaz maliklerinin taşınmazın değerini kapsamlı bir şekilde araştırmaları, uzlaşma sürecinde oldukça yararlı olacaktır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000294
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294
+Metin: Yargıtay kararlarına göre, uzlaşma görüşmelerinde belirlenen fiyatların taraflar açısından bağlayıcılığı yoktur; bu bedeller mahkemece taşınmazın değerinin belirlenmesinde bir ölçüt olarak kabul edilemez. Taşınmaz maliklerinin taşınmazın değerini kapsamlı bir şekilde araştırmaları, uzlaşma sürecinde oldukça yararlı olacaktır.
+
+Soru: uzlaşma hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Yargıtay kararlarına göre, uzlaşma görüşmelerinde belirlenen fiyatların taraflar açısından bağlayıcılığı yoktur; bu bedeller mahkemece taşınmazın değerinin belirlenmesinde bir ölçüt olarak kabul edilemez. Taşınmaz maliklerinin taşınmazın değerini kapsamlı bir şekilde araştırmaları, uzlaşma sürecinde oldukça yararlı olacaktır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294",ORICON,direct_grounded_answer,oricon_medeni_000294,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000294
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294
+Metin: Yargıtay kararlarına göre, uzlaşma görüşmelerinde belirlenen fiyatların taraflar açısından bağlayıcılığı yoktur; bu bedeller mahkemece taşınmazın değerinin belirlenmesinde bir ölçüt olarak kabul edilemez. Taşınmaz maliklerinin taşınmazın değerini kapsamlı bir şekilde araştırmaları, uzlaşma sürecinde oldukça yararlı olacaktır.
+
+Soru: uzlaşma hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the case law of the Turkish Court of Cassation as stated in the given source, the prices determined during settlement negotiations do not have a binding effect for the parties involved. These amounts cannot be used as a benchmark in determining the value of immovable property in a court of law. Thorough research on the value of immovable property, particularly during the settlement process, can be quite beneficial.
+
+Source: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294","Kaynağa göre: Yargıtay kararlarına göre, uzlaşma görüşmelerinde belirlenen fiyatların taraflar açısından bağlayıcılığı yoktur; bu bedeller mahkemece taşınmazın değerinin belirlenmesinde bir ölçüt olarak kabul edilemez. Taşınmaz maliklerinin taşınmazın değerini kapsamlı bir şekilde araştırmaları, uzlaşma sürecinde oldukça yararlı olacaktır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000294",0.15503875968992248,1.0,0.15486725663716813,1.0,0,1
+sft_exp_014112,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m938
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.938 - turkish_law_eski_4721_turk_medeni_kanunu_m938
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 938
+Metin: Madde 938- Rehinli taşınmazlar yerine elde edilen paralar, ilk kur'a çekiminde belli. olacak senetlerin ödenmesinde kullanılır.
+
+Soru: Bu metinden hareketle 'c. Geri ödemelerin özgülenmesi' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk; Kanun: Türk Medenî Kanunu; Madde: 938. Kaynak metindeki esas içerik şudur: Madde 938- Rehinli taşınmazlar yerine elde edilen paralar, ilk kur'a çekiminde belli. olacak senetlerin ödenmesinde kullanılır.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.938 - turkish_law_eski_4721_turk_medeni_kanunu_m938</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m938
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.938 - turkish_law_eski_4721_turk_medeni_kanunu_m938
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 938
+Metin: Madde 938- Rehinli taşınmazlar yerine elde edilen paralar, ilk kur'a çekiminde belli. olacak senetlerin ödenmesinde kullanılır.
+
+Soru: Bu metinden hareketle 'c. Geri ödemelerin özgülenmesi' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk; Kanun: Türk Medenî Kanunu; Madde: 938. Kaynak metindeki esas içerik şudur: Madde 938- Rehinli taşınmazlar yerine elde edilen paralar, ilk kur'a çekiminde belli. olacak senetlerin ödenmesinde kullanılır.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.938 - turkish_law_eski_4721_turk_medeni_kanunu_m938",TURKISH_LAW_ESKI_LOW_RISK_ONLY,source_limited_explanation,turkish_law_eski_4721_turk_medeni_kanunu_m938,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m938
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.938 - turkish_law_eski_4721_turk_medeni_kanunu_m938
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 938
+Metin: Madde 938- Rehinli taşınmazlar yerine elde edilen paralar, ilk kur'a çekiminde belli. olacak senetlerin ödenmesinde kullanılır.
+
+Soru: Bu metinden hareketle 'c. Geri ödemelerin özgülenmesi' konusunu açıklarken nelere dayanmalıyım? [/INST]","The given text is from the Turkish Civil Code (Türk Medenî Kanunu) with the number 4721 and article 938. The text states that ""Money obtained from stolen items is used in the first delivery of receipts for repayment.""
+
+To explain the concept of ""repayments for reclaimed stolen goods"" (geri ödemelerin özgülenmesi) based on this text, you would need to refer to additional legal sources or explanations that provide context and further detail on this specific topic. The text itself does not directly address this concept.
+
+Therefore, to provide a comprehensive answer, you would need to consult other legal sources or explanations that discuss the concept of repayments for reclaimed stolen goods in the context of Turkish law.
+
+Citation:
+T","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk; Kanun: Türk Medenî Kanunu; Madde: 938. Kaynak metindeki esas içerik şudur: Madde 938- Rehinli taşınmazlar yerine elde edilen paralar, ilk kur'a çekiminde belli. olacak senetlerin ödenmesinde kullanılır.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.938 - turkish_law_eski_4721_turk_medeni_kanunu_m938",0.10227272727272725,1.0,0.04021937842778794,1.0,1,1
+sft_exp_012637,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Borçlar Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_6098_turk_borclar_kanunu_m213
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Borçlar Kanunu m.213 - turkish_law_eski_6098_turk_borclar_kanunu_m213
+Kanun: Türk Borçlar Kanunu
+Kanun No: 6098
+Madde: 213
+Metin: MADDE 213- Borcunu ifa etmeyen satıcı, alıcının bu yüzden uğradığı zararı gidermekle. yükümlüdür. Satıcı borcunu ifa etmezse alıcı, satış bedeli ile kendisine devredilmeyen satılanın. yerine, bir başkasını satın almak için dürüstlük kurallarına uygun olarak ödediği bedel. arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. Satılan, borsada kayıtlı veya piyasa fiyatı bulunan mallardan ise alıcı, onun yerine bir. başkasını satın alma zorunda olmaksızın, satış bedeli ile belirlenmiş ifa günündeki piyasa. fiyatı arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. II. Zapttan sorumluluk
+
+Soru: b. Giderim borcu ve kapsamı hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: MADDE 213- Borcunu ifa etmeyen satıcı, alıcının bu yüzden uğradığı zararı gidermekle. yükümlüdür. Satıcı borcunu ifa etmezse alıcı, satış bedeli ile kendisine devredilmeyen satılanın. yerine, bir başkasını satın almak için dürüstlük kurallarına uygun olarak ödediği bedel. arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. Satılan, borsada kayıtlı veya piyasa fiyatı bulunan mallardan ise alıcı, onun yerine bir. başkasını satın alma zorunda olmaksızın, satış bedeli ile belirlenmiş ifa günündeki piyasa. fiyatı arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. II. Zapttan sorumluluk
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Borçlar Kanunu m.213 - turkish_law_eski_6098_turk_borclar_kanunu_m213</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Türk Borçlar Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_6098_turk_borclar_kanunu_m213
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Borçlar Kanunu m.213 - turkish_law_eski_6098_turk_borclar_kanunu_m213
+Kanun: Türk Borçlar Kanunu
+Kanun No: 6098
+Madde: 213
+Metin: MADDE 213- Borcunu ifa etmeyen satıcı, alıcının bu yüzden uğradığı zararı gidermekle. yükümlüdür. Satıcı borcunu ifa etmezse alıcı, satış bedeli ile kendisine devredilmeyen satılanın. yerine, bir başkasını satın almak için dürüstlük kurallarına uygun olarak ödediği bedel. arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. Satılan, borsada kayıtlı veya piyasa fiyatı bulunan mallardan ise alıcı, onun yerine bir. başkasını satın alma zorunda olmaksızın, satış bedeli ile belirlenmiş ifa günündeki piyasa. fiyatı arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. II. Zapttan sorumluluk
+
+Soru: b. Giderim borcu ve kapsamı hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: MADDE 213- Borcunu ifa etmeyen satıcı, alıcının bu yüzden uğradığı zararı gidermekle. yükümlüdür. Satıcı borcunu ifa etmezse alıcı, satış bedeli ile kendisine devredilmeyen satılanın. yerine, bir başkasını satın almak için dürüstlük kurallarına uygun olarak ödediği bedel. arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. Satılan, borsada kayıtlı veya piyasa fiyatı bulunan mallardan ise alıcı, onun yerine bir. başkasını satın alma zorunda olmaksızın, satış bedeli ile belirlenmiş ifa günündeki piyasa. fiyatı arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. II. Zapttan sorumluluk
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Borçlar Kanunu m.213 - turkish_law_eski_6098_turk_borclar_kanunu_m213",TURKISH_LAW_ESKI_LOW_RISK_ONLY,direct_grounded_answer,turkish_law_eski_6098_turk_borclar_kanunu_m213,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Borçlar Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_6098_turk_borclar_kanunu_m213
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Borçlar Kanunu m.213 - turkish_law_eski_6098_turk_borclar_kanunu_m213
+Kanun: Türk Borçlar Kanunu
+Kanun No: 6098
+Madde: 213
+Metin: MADDE 213- Borcunu ifa etmeyen satıcı, alıcının bu yüzden uğradığı zararı gidermekle. yükümlüdür. Satıcı borcunu ifa etmezse alıcı, satış bedeli ile kendisine devredilmeyen satılanın. yerine, bir başkasını satın almak için dürüstlük kurallarına uygun olarak ödediği bedel. arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. Satılan, borsada kayıtlı veya piyasa fiyatı bulunan mallardan ise alıcı, onun yerine bir. başkasını satın alma zorunda olmaksızın, satış bedeli ile belirlenmiş ifa günündeki piyasa. fiyatı arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. II. Zapttan sorumluluk
+
+Soru: b. Giderim borcu ve kapsamı hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source, which is a part of the Turkish Debt Law (Türk Borçlar Kanunu) with the number 6098 and the article number 213, if a seller fails to pay off a debt, the buyer has the right to recover the damages incurred due to the seller's non-payment. The buyer can deduct this damage amount from the sales price if the seller does not pay off the debt. If the goods are registered in the debt registry or their market price is known, the buyer can demand the difference between the sales price and the market price as compensation. However, if the seller sells goods that are not registered in the debt registry or do not have a known market price, the buyer can only demand the sales price as compensation. (II. Zapttan sorumluluk)","Kaynağa göre: MADDE 213- Borcunu ifa etmeyen satıcı, alıcının bu yüzden uğradığı zararı gidermekle. yükümlüdür. Satıcı borcunu ifa etmezse alıcı, satış bedeli ile kendisine devredilmeyen satılanın. yerine, bir başkasını satın almak için dürüstlük kurallarına uygun olarak ödediği bedel. arasındaki farka göre hesaplanacak zararın giderilmesini isteyebilir. Satılan, borsada kayıtlı veya piyasa fiyatı bulunan mallardan ise alıcı, onun yerine bir. başkasını satın alma zorunda olmaksızın, satış bedeli",0.09205020920502091,0.7831325301204819,0.03274215552523874,0.7980295566502463,0,0
+sft_exp_014242,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m982
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 982
+Metin: Madde 982- Başkasının zilyet bulunduğu bir şeyi gasbeden kimse, o şey üzerinde üstün. bir hakka sahip olduğunu iddia etse bile onu geri vermekle yükümlüdür. Davalı, o şeyi davacıdan geri almasını gerektirecek üstün bir hakka sahip olduğunu derhâl. ispat ederse onu geri vermekten kaçınabilir. Dava, şeyin geri verilmesine ve zararın giderilmesine yönelik olur.
+
+Soru: 2. Zilyetliğin gasbında dava hakkı hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Madde 982- Başkasının zilyet bulunduğu bir şeyi gasbeden kimse, o şey üzerinde üstün. bir hakka sahip olduğunu iddia etse bile onu geri vermekle yükümlüdür. Davalı, o şeyi davacıdan geri almasını gerektirecek üstün bir hakka sahip olduğunu derhâl. ispat ederse onu geri vermekten kaçınabilir. Dava, şeyin geri verilmesine ve zararın giderilmesine yönelik olur.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m982
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 982
+Metin: Madde 982- Başkasının zilyet bulunduğu bir şeyi gasbeden kimse, o şey üzerinde üstün. bir hakka sahip olduğunu iddia etse bile onu geri vermekle yükümlüdür. Davalı, o şeyi davacıdan geri almasını gerektirecek üstün bir hakka sahip olduğunu derhâl. ispat ederse onu geri vermekten kaçınabilir. Dava, şeyin geri verilmesine ve zararın giderilmesine yönelik olur.
+
+Soru: 2. Zilyetliğin gasbında dava hakkı hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Madde 982- Başkasının zilyet bulunduğu bir şeyi gasbeden kimse, o şey üzerinde üstün. bir hakka sahip olduğunu iddia etse bile onu geri vermekle yükümlüdür. Davalı, o şeyi davacıdan geri almasını gerektirecek üstün bir hakka sahip olduğunu derhâl. ispat ederse onu geri vermekten kaçınabilir. Dava, şeyin geri verilmesine ve zararın giderilmesine yönelik olur.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982",TURKISH_LAW_ESKI_LOW_RISK_ONLY,direct_grounded_answer,turkish_law_eski_4721_turk_medeni_kanunu_m982,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Türk Medenî Kanunu
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY
+Dosya: TURKISH_LAW_ESKI_clean_source_for_chunking_LOW_RISK_ONLY.txt
+Chunk ID: turkish_law_eski_4721_turk_medeni_kanunu_m982
+Citation: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982
+Kanun: Türk Medenî Kanunu
+Kanun No: 4721
+Madde: 982
+Metin: Madde 982- Başkasının zilyet bulunduğu bir şeyi gasbeden kimse, o şey üzerinde üstün. bir hakka sahip olduğunu iddia etse bile onu geri vermekle yükümlüdür. Davalı, o şeyi davacıdan geri almasını gerektirecek üstün bir hakka sahip olduğunu derhâl. ispat ederse onu geri vermekten kaçınabilir. Dava, şeyin geri verilmesine ve zararın giderilmesine yönelik olur.
+
+Soru: 2. Zilyetliğin gasbında dava hakkı hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from the Turkish Civil Code (Türk Medenî Kanunu), which is identified by the citation TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982, the person in possession of someone else's property (zilyetli) is obligated to return the item to its rightful owner if the owner asserts that they have a right to it, even if the owner cannot prove it in court. The court proceedings are aimed at returning the item and compensating for any damages incurred.","Kaynağa göre: Madde 982- Başkasının zilyet bulunduğu bir şeyi gasbeden kimse, o şey üzerinde üstün. bir hakka sahip olduğunu iddia etse bile onu geri vermekle yükümlüdür. Davalı, o şeyi davacıdan geri almasını gerektirecek üstün bir hakka sahip olduğunu derhâl. ispat ederse onu geri vermekten kaçınabilir. Dava, şeyin geri verilmesine ve zararın giderilmesine yönelik olur.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.982 - turkish_law_eski_4721_turk_medeni_kanunu_m982",0.22619047619047622,1.0,0.21052631578947367,1.0,0,1
+sft_exp_009231,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Vergi Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_vergi_000005
+Citation: ORICON - Vergi Hukuku - oricon_vergi_000005
+Metin: Avukat, müvekkilini davanın her aşamasında bilgilendirmeli ve düzenli güncellemeler sağlamalıdır; bu, müvekkilin süreç hakkında bilinçli kararlar almasını kolaylaştırır.
+
+Soru: Bu metinden hareketle 'Avukat' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Vergi Hukuku. Kaynak metindeki esas içerik şudur: Avukat, müvekkilini davanın her aşamasında bilgilendirmeli ve düzenli güncellemeler sağlamalıdır; bu, müvekkilin süreç hakkında bilinçli kararlar almasını kolaylaştırır.
+
+Kaynak: ORICON - Vergi Hukuku - oricon_vergi_000005</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Vergi Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_vergi_000005
+Citation: ORICON - Vergi Hukuku - oricon_vergi_000005
+Metin: Avukat, müvekkilini davanın her aşamasında bilgilendirmeli ve düzenli güncellemeler sağlamalıdır; bu, müvekkilin süreç hakkında bilinçli kararlar almasını kolaylaştırır.
+
+Soru: Bu metinden hareketle 'Avukat' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Vergi Hukuku. Kaynak metindeki esas içerik şudur: Avukat, müvekkilini davanın her aşamasında bilgilendirmeli ve düzenli güncellemeler sağlamalıdır; bu, müvekkilin süreç hakkında bilinçli kararlar almasını kolaylaştırır.
+
+Kaynak: ORICON - Vergi Hukuku - oricon_vergi_000005",ORICON,source_limited_explanation,oricon_vergi_000005,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Vergi Hukuku
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_vergi_000005
+Citation: ORICON - Vergi Hukuku - oricon_vergi_000005
+Metin: Avukat, müvekkilini davanın her aşamasında bilgilendirmeli ve düzenli güncellemeler sağlamalıdır; bu, müvekkilin süreç hakkında bilinçli kararlar almasını kolaylaştırır.
+
+Soru: Bu metinden hareketle 'Avukat' konusunu açıklarken nelere dayanmalıyım? [/INST]","The given text from the source ""ORICON - Vergi Hukuku (Tax Law) - oricon_vergi_000005"" states that an attorney is required to keep their client informed and provide regular updates in every stage of a legal proceeding. This helps the client make informed decisions and facilitates the making of clear and well-considered judgments.
+
+Therefore, when explaining the role of an attorney in the given context, you should refer to their obligation to keep their client informed and updated throughout the legal process.
+
+Citation: ORICON - Vergi Hukuku (Tax Law) - oricon_vergi_000005.","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Vergi Hukuku. Kaynak metindeki esas içerik şudur: Avukat, müvekkilini davanın her aşamasında bilgilendirmeli ve düzenli güncellemeler sağlamalıdır; bu, müvekkilin süreç hakkında bilinçli kararlar almasını kolaylaştırır.
+
+Kaynak: ORICON - Vergi Hukuku - oricon_vergi_000005",0.12307692307692308,1.0,0.05239179954441914,1.0,1,1
+sft_exp_005650,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001989
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989
+Metin: Eşlerin paylı malik olduğu durumlar, mevzuat uyarınca bir mala kimin sahip olduğu belirlenemediğinde ortaya çıkar. Paylaşmalı mal ayrılığı rejiminin temel prensibi, eşlerin ayrı malvarlığı değerlerine sahip olmasıdır. Bu rejimde eşler, kendi malvarlıkları üzerinde ayrı haklara sahiptirler.
+
+Soru: Eşlerin paylı malik durumlar hakkında verilen kaynağa göre ne söylenebilir? [/INST] Kaynağa göre: Eşlerin paylı malik olduğu durumlar, mevzuat uyarınca bir mala kimin sahip olduğu belirlenemediğinde ortaya çıkar. Paylaşmalı mal ayrılığı rejiminin temel prensibi, eşlerin ayrı malvarlığı değerlerine sahip olmasıdır. Bu rejimde eşler, kendi malvarlıkları üzerinde ayrı haklara sahiptirler.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001989
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989
+Metin: Eşlerin paylı malik olduğu durumlar, mevzuat uyarınca bir mala kimin sahip olduğu belirlenemediğinde ortaya çıkar. Paylaşmalı mal ayrılığı rejiminin temel prensibi, eşlerin ayrı malvarlığı değerlerine sahip olmasıdır. Bu rejimde eşler, kendi malvarlıkları üzerinde ayrı haklara sahiptirler.
+
+Soru: Eşlerin paylı malik durumlar hakkında verilen kaynağa göre ne söylenebilir?","Kaynağa göre: Eşlerin paylı malik olduğu durumlar, mevzuat uyarınca bir mala kimin sahip olduğu belirlenemediğinde ortaya çıkar. Paylaşmalı mal ayrılığı rejiminin temel prensibi, eşlerin ayrı malvarlığı değerlerine sahip olmasıdır. Bu rejimde eşler, kendi malvarlıkları üzerinde ayrı haklara sahiptirler.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989",ORICON,direct_grounded_answer,oricon_genel_001989,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Genel hukuk / sınıflandırma bekliyor
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_genel_001989
+Citation: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989
+Metin: Eşlerin paylı malik olduğu durumlar, mevzuat uyarınca bir mala kimin sahip olduğu belirlenemediğinde ortaya çıkar. Paylaşmalı mal ayrılığı rejiminin temel prensibi, eşlerin ayrı malvarlığı değerlerine sahip olmasıdır. Bu rejimde eşler, kendi malvarlıkları üzerinde ayrı haklara sahiptirler.
+
+Soru: Eşlerin paylı malik durumlar hakkında verilen kaynağa göre ne söylenebilir? [/INST]","According to the given source from ORICON, in situations where it is not clear who owns the property in question due to the law, the principle of separate property regimes comes into play. In this regime, each spouse is considered to have separate property rights over their own property. Under this regime, spouses have individual rights over their own property. (ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989)","Kaynağa göre: Eşlerin paylı malik olduğu durumlar, mevzuat uyarınca bir mala kimin sahip olduğu belirlenemediğinde ortaya çıkar. Paylaşmalı mal ayrılığı rejiminin temel prensibi, eşlerin ayrı malvarlığı değerlerine sahip olmasıdır. Bu rejimde eşler, kendi malvarlıkları üzerinde ayrı haklara sahiptirler.
+
+Kaynak: ORICON - Genel hukuk / sınıflandırma bekliyor - oricon_genel_001989",0.1391304347826087,1.0,0.17346938775510204,1.0,0,1
+sft_exp_006867,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000515
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515
+Metin: Mülkiyet hakkı, sahibine yasal sınırlar içerisinde o şeyden dilediğince yararlanma hak ve yetkisi tanımaktadır.
+
+Soru: Bu metinden hareketle 'Mülkiyet hakkı' konusunu açıklarken nelere dayanmalıyım? [/INST] Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk - Miras/Aile/Eşya/Kişiler. Kaynak metindeki esas içerik şudur: Mülkiyet hakkı, sahibine yasal sınırlar içerisinde o şeyden dilediğince yararlanma hak ve yetkisi tanımaktadır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515</s>",Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.,"[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000515
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515
+Metin: Mülkiyet hakkı, sahibine yasal sınırlar içerisinde o şeyden dilediğince yararlanma hak ve yetkisi tanımaktadır.
+
+Soru: Bu metinden hareketle 'Mülkiyet hakkı' konusunu açıklarken nelere dayanmalıyım?","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk - Miras/Aile/Eşya/Kişiler. Kaynak metindeki esas içerik şudur: Mülkiyet hakkı, sahibine yasal sınırlar içerisinde o şeyden dilediğince yararlanma hak ve yetkisi tanımaktadır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515",ORICON,source_limited_explanation,oricon_medeni_000515,"<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Medeni Hukuk - Miras/Aile/Eşya/Kişiler
+Kaynak: ORICON
+Dosya: ORICON_clean_legal_source_for_chunking.txt
+Chunk ID: oricon_medeni_000515
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515
+Metin: Mülkiyet hakkı, sahibine yasal sınırlar içerisinde o şeyden dilediğince yararlanma hak ve yetkisi tanımaktadır.
+
+Soru: Bu metinden hareketle 'Mülkiyet hakkı' konusunu açıklarken nelere dayanmalıyım? [/INST]","The term ""Mülkiyet hakkı"" in the given text refers to the right of ownership. According to the text, the right of ownership allows the owner to use the owned thing at his or her discretion within the bounds of the law. Therefore, to explain the concept of ""Mülkiyet hakkı"" as presented in the text, you should refer to the right of an individual to use and manage his or her property or possessions in accordance with legal limits.
+
+Citation: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Medeni Hukuk - Miras/Aile/Eşya/Kişiler. Kaynak metindeki esas içerik şudur: Mülkiyet hakkı, sahibine yasal sınırlar içerisinde o şeyden dilediğince yararlanma hak ve yetkisi tanımaktadır.
+
+Kaynak: ORICON - Medeni Hukuk - Miras/Aile/Eşya/Kişiler - oricon_medeni_000515",0.18181818181818182,1.0,0.20519159456118666,1.0,1,1

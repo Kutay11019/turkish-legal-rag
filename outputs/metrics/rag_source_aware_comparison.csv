@@ -1,0 +1,8 @@
+﻿method,retrieval_setup,prompt,manual_accuracy
+Base RAG,"Hybrid retrieval top-5, context top-3",Base prompt,0.263158
+Strict Prompt RAG,"Hybrid retrieval top-5, context top-3",Strict prompt,0.263158
+FlashRank Fusion Reranker RAG,Hybrid top-10 + FlashRank reranker + rank fusion top-3,Strict prompt,0.184211
+Turkish BGE Reranker Fusion RAG,Hybrid top-10 + Turkish BGE reranker + rank fusion top-3,Strict prompt,0.315789
+Improved Prompt + Turkish BGE Reranker Fusion RAG,Hybrid top-10 + Turkish BGE reranker + rank fusion top-3,Improved legal prompt,0.394737
+Article-Aware Retrieval + Turkish BGE Reranker Fusion RAG,Hybrid top-10 + article bonus + Turkish BGE reranker + rank fusion top-3,Improved legal prompt,0.394737
+Source-Aware + Article-Aware Retrieval + Turkish BGE Reranker Fusion RAG,Hybrid top-10 + source routing + article bonus + Turkish BGE reranker + rank fusion top-3,Improved legal prompt,0.42105263157894735

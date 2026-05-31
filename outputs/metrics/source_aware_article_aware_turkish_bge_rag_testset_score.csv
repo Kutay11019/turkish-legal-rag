@@ -1,0 +1,2 @@
+﻿method,manual_accuracy,valid_sample_count,total_sample_count,candidate_k,final_context_k,alpha,hybrid_weight,rerank_weight,article_bonus_weight
+Source-Aware + Article-Aware Retrieval + Turkish BGE Reranker Fusion + Improved Prompt,0.42105263157894735,19,20,10,3,0.5,0.7,0.3,0.25

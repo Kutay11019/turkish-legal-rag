@@ -1,0 +1,4 @@
+﻿method,candidate_k,final_k,eval_sample_size,hit_at_1,hit_at_5
+Hybrid Retrieval,20,5,1000,0.753,0.87
+Hybrid + Base Turkish BGE Reranker,20,5,1000,0.813,0.912
+Hybrid + Fine-tuned Turkish BGE Reranker,20,5,1000,0.803,0.914

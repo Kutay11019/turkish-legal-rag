@@ -1,0 +1,910 @@
+﻿question,expected_answer,generated_answer,clean_generated_answer,top1_chunk_id,top1_source,top1_source_filter,top1_context,top1_article_bonus,top1_original_rank,top1_rerank_rank,top1_rerank_score,top1_fusion_score,retrieved_contexts,is_valid_sample,manual_score,parsed_contexts,starlar_rag_prompt,starlar_finetuned_rag_answer,direct_answer_rag_prompt,starlar_finetuned_direct_answer,starlar_direct_token_f1,starlar_direct_similarity,starlar_direct_has_source,old_base_token_f1,old_base_similarity,old_base_has_source,starlar_ft_token_f1,starlar_ft_similarity,starlar_ft_has_source
+Anayasanın 101. Maddesiyle İlgili Tartışmalar Nelerdir?,Cumhurbaşkanının seçilme şartlarının sınırları ve uygulanması üzerine tartışmalar olabilir.,"Anayasanın 101. Maddesiyle ilgili tartışmalar, önceki seçimde gerekli çoğunluğun sağlanamaması halinde ikinci seçim yapılması ve seçimlerin geriye bırakılması","Anayasanın 101. Maddesiyle ilgili tartışmalar, önceki seçimde gerekli çoğunluğun sağlanamaması halinde ikinci seçim yapılması ve seçimlerin geriye bırakılması",chunk_000537,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34],1.0,1,1,0.0235229488462209,1.0,"Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34]
+
+Madde 158 – Uyuşmazlık Mahkemesi adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir. [101]
+
+Madde 176 – Anayasanın dayandığı temel görüş ve ilkeleri belirten başlangıç kısmı, Anayasa metnine dahildir.",True,0.0,"[""Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34]\n\nMadde 158 – Uyuşmazlık Mahkemesi adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir. [101]\n\nMadde 176 – Anayasanın dayandığı temel görüş ve ilkeleri belirten başlangıç kısmı, Anayasa metnine dahildir.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000537
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000537
+Metin:
+[Bağlam 1]
+Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34]
+
+Madde 158 – Uyuşmazlık Mahkemesi adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir. [101]
+
+Madde 176 – Anayasanın dayandığı temel görüş ve ilkeleri belirten başlangıç kısmı, Anayasa metnine dahildir.
+
+Soru: Anayasanın 101. Maddesiyle İlgili Tartışmalar Nelerdir? [/INST]","Tartışmalar:
+
+* Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34]
+
+Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000537","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34]
+
+Madde 158 – Uyuşmazlık Mahkemesi adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir. [101]
+
+Madde 176 – Anayasanın dayandığı temel görüş ve ilkeleri belirten başlangıç kısmı, Anayasa metnine dahildir.
+
+Soru:
+Anayasanın 101. Maddesiyle İlgili Tartışmalar Nelerdir?
+
+Nihai cevap: [/INST]","Tartışmalar: Cumhurbaşkanlığı seçiminde birinci oylamada gerekli çoğunluğun sağlanamaması halinde 101 inci maddedeki usule göre ikinci oylama yapılır. D. Seçimlerin geriye bırakılması ve ara seçimler [34]
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.158 - turkish_law_eski_4721_turk_medeni_kanunu_m158_p001",0.07272727272727274,0.08955223880597014,1,0.14814814814814814,0.23577235772357724,0,0.09999999999999999,0.10619469026548672,1
+"Bir grup vatandaş, belirli bir etnik grubun diğerlerinden daha fazla hakka sahip olması için imza kampanyası başlatmıştır. Bu durum Anayasanın 10. Maddesi ile nasıl çelişir?","Anayasanın 10. Maddesi, herkesin kanun önünde eşit olduğunu belirtir. Bu tür bir imza kampanyası Anayasa'ya aykırıdır.","Anayasanın 10. Maddesi, herkesin dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünd","Anayasanın 10. Maddesi, herkesin dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünd",chunk_000274,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 10 – Herkes, dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünde eşittir.",1.0,1,1,0.0279606394469738,1.0,"Madde 10 – Herkes, dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünde eşittir.
+
+Madde 150 – Kanunların, Cumhurbaşkanlığı kararnamelerinin, Türkiye Büyük Millet Meclisi İçtüzüğünün veya bunların belirli madde ve hükümlerinin şekil ve esas bakımından Anayasaya aykırılığı iddiasıyla Anayasa Mahkemesinde doğrudan doğruya iptal davası açabilme hakkı, Cumhurbaşkanına, Türkiye Büyük Millet Meclisinde en fazla üyeye sahip iki siyasi parti grubuna ve üye tamsayısının en az beşte biri tutarındaki üyelere aittir. (Mülga son cümle: 21/1/2017-6771/16 md.) [91] 6. Dava açma süresi
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.",True,0.5,"[""Madde 10 – Herkes, dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünde eşittir.\n\nMadde 150 – Kanunların, Cumhurbaşkanlığı kararnamelerinin, Türkiye Büyük Millet Meclisi İçtüzüğünün veya bunların belirli madde ve hükümlerinin şekil ve esas bakımından Anayasaya aykırılığı iddiasıyla Anayasa Mahkemesinde doğrudan doğruya iptal davası açabilme hakkı, Cumhurbaşkanına, Türkiye Büyük Millet Meclisinde en fazla üyeye sahip iki siyasi parti grubuna ve üye tamsayısının en az beşte biri tutarındaki üyelere aittir. (Mülga son cümle: 21/1/2017-6771/16 md.) [91] 6. Dava açma süresi\n\ne) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000274
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000274
+Metin:
+[Bağlam 1]
+Madde 10 – Herkes, dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünde eşittir.
+
+Madde 150 – Kanunların, Cumhurbaşkanlığı kararnamelerinin, Türkiye Büyük Millet Meclisi İçtüzüğünün veya bunların belirli madde ve hükümlerinin şekil ve esas bakımından Anayasaya aykırılığı iddiasıyla Anayasa Mahkemesinde doğrudan doğruya iptal davası açabilme hakkı, Cumhurbaşkanına, Türkiye Büyük Millet Meclisinde en fazla üyeye sahip iki siyasi parti grubuna ve üye tamsayısının en az beşte biri tutarındaki üyelere aittir. (Mülga son cümle: 21/1/2017-6771/16 md.) [91] 6. Dava açma süresi
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Soru: Bir grup vatandaş, belirli bir etnik grubun diğerlerinden daha fazla hakka sahip olması için imza kampanyası başlatmıştır. Bu durum Anayasanın 10. Maddesi ile nasıl çelişir? [/INST]","[Bağlam 1] Madde 10 – Herkes, dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünde eşittir.
+
+Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000274","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 10 – Herkes, dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ve benzeri sebeplerle ayırım gözetilmeksizin kanun önünde eşittir.
+
+Madde 150 – Kanunların, Cumhurbaşkanlığı kararnamelerinin, Türkiye Büyük Millet Meclisi İçtüzüğünün veya bunların belirli madde ve hükümlerinin şekil ve esas bakımından Anayasaya aykırılığı iddiasıyla Anayasa Mahkemesinde doğrudan doğruya iptal davası açabilme hakkı, Cumhurbaşkanına, Türkiye Büyük Millet Meclisinde en fazla üyeye sahip iki siyasi parti grubuna ve üye tamsayısının en az beşte biri tutarındaki üyelere aittir. (Mülga son cümle: 21/1/2017-6771/16 md.) [91] 6. Dava açma süresi
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Soru:
+Bir grup vatandaş, belirli bir etnik grubun diğerlerinden daha fazla hakka sahip olması için imza kampanyası başlatmıştır. Bu durum Anayasanın 10. Maddesi ile nasıl çelişir?
+
+Nihai cevap: [/INST]","Anayasanın 10. Maddesi ile çelişirse, Anayasanın 11. inci maddesi gereğince uygulanır. Bu kaynak, kesin resmî karar metni değil; temizlenmiş kaynak özeti olarak değerlendirilmelidir.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türkiye Cumhuriyeti Anayasası m.10 - turkish_law_eski_5271_turkiye_cumhuriyeti_anayasasi_m10_p001",0.13114754098360656,0.21800947867298578,1,0.2631578947368421,0.3193916349809886,0,0.13043478260869565,0.35443037974683544,1
+"Bir grup akademisyen, yaşama hakkının sınırlanamayacağını savunmaktadır. Bu durum Anayasanın 17. Maddesi'ne aykırı mıdır?","Evet, Anayasanın 17. Maddesi, herkesin yaşama hakkına sahip olduğunu ve bu hakkın ancak kanunlarla düzenlenebileceğini belirtir. Bu tür bir savunma bu maddeye aykırıdır.","Hayır. Anayasanın 17. Maddesi, herkesin yaşama hakkını koruma ve geliştirme hakkını belirten hükümüdür. Akademisyenin savunması, bu hakın sınırlanam","Hayır. Anayasanın 17. Maddesi, herkesin yaşama hakkını koruma ve geliştirme hakkını belirten hükümüdür. Akademisyenin savunması, bu hakın sınırlanam",chunk_000373,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 17 – Herkes, yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir.",1.0,1,1,0.3851697146892547,1.0,"Madde 17 – Herkes, yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir.
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması",True,0.5,"[""Madde 17 – Herkes, yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir.\n\ne) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.\n\nTemel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000373
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000373
+Metin:
+[Bağlam 1]
+Madde 17 – Herkes, yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir.
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması
+
+Soru: Bir grup akademisyen, yaşama hakkının sınırlanamayacağını savunmaktadır. Bu durum Anayasanın 17. Maddesi'ne aykırı mıdır? [/INST]","Kaynak metindeki açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Anayasa Hukuku; Hukuk alanı: Anayasa Hukuku; Karar sonucu: Bozma. Kaynak metindeki esas içerik şudur: [Bağlam 1] Madde 17 – Herkes, yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir.
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlem","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 17 – Herkes, yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir.
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması
+
+Soru:
+Bir grup akademisyen, yaşama hakkının sınırlanamayacağını savunmaktadır. Bu durum Anayasanın 17. Maddesi'ne aykırı mıdır?
+
+Nihai cevap: [/INST]","Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - BELGE 1211 - Hukuk Genel Kurulu 2014/1232 E., 2015/1322 K. - Anayasa Hukuku - yargitay_1211_anayasa_hukuku_004",0.0,0.15181518151815182,1,0.34146341463414637,0.5798045602605864,0,0.1098901098901099,0.2696296296296296,0
+Geçici madde 20 ne zaman eklendi?,20 mayıs 2016 tarihinde.,Geçici madde 20 13/5/1981 gün eklendi.,Geçici madde 20 13/5/1981 gün eklendi.,chunk_003745,Türkiye Cumhuriyeti İş Kanunu,,"31/7/2008-5797/10 md.) Bu fıkrada düzenlenen teşvik, kamu idareleri hariç 506 sayılı Kanun kapsamındaki sigortalılara ilişkin matrah ve oranlar üzerinden olmak üzere, 506 sayılı Kanunun geçici 20 nci maddesi kapsamındaki sandıkların statülerine tabi personeli için de uygulanır. Bu fıkranın uygulanmasına ilişkin usul ve esaslar Maliye Bakanlığı ile Çalışma ve Sosyal Güvenlik Bakanlığı ve Hazine Müsteşarlığı tarafından müştereken belirlenir.[13]
+(Değişik yedinci fıkra: 11/10/2011-KHK-665/28 md.) Bu maddeye aykırılık hallerinde 101 inci madde uyarınca tahsil edilecek cezalar, engellilerin ve eski hükümlülerin kendi işini kurmaları, engellinin iş bulmasını sağlayacak destek teknolojileri, engellinin işe yerleştirilmesi, işe ve işyerine uyumunun sağlanması ve bu gibi projelerde kullanılır.",1.0,1,1,0.4382551312446594,1.0,"31/7/2008-5797/10 md.) Bu fıkrada düzenlenen teşvik, kamu idareleri hariç 506 sayılı Kanun kapsamındaki sigortalılara ilişkin matrah ve oranlar üzerinden olmak üzere, 506 sayılı Kanunun geçici 20 nci maddesi kapsamındaki sandıkların statülerine tabi personeli için de uygulanır. Bu fıkranın uygulanmasına ilişkin usul ve esaslar Maliye Bakanlığı ile Çalışma ve Sosyal Güvenlik Bakanlığı ve Hazine Müsteşarlığı tarafından müştereken belirlenir.[13]
+(Değişik yedinci fıkra: 11/10/2011-KHK-665/28 md.) Bu maddeye aykırılık hallerinde 101 inci madde uyarınca tahsil edilecek cezalar, engellilerin ve eski hükümlülerin kendi işini kurmaları, engellinin iş bulmasını sağlayacak destek teknolojileri, engellinin işe yerleştirilmesi, işe ve işyerine uyumunun sağlanması ve bu gibi projelerde kullanılır.
+
+Madde 20- Açıklanması veya zamanından önce açıklanması hâlinde; a) Suç işlenmesine yol açacak,
+
+Madde 12 – 13/5/1981 gün ve 2461 sayılı Hakimler ve Savcılar Yüksek Kurulu Kanununun geçici 1 inci maddesi uyarınca Yargıtay ve Danıştaydan Kurulun asıl ve yedek üyeliğine; 1730 sayılı Yargıtay Kanununa 25/6/1981 gün ve 2483 sayılı Kanunla eklenen geçici madde uyarınca Cumhuriyet Başsavcılığı ile Cumhuriyet Başsavcıvekilliğine; 6/1/1982 gün ve 2575 sayılı Danıştay Kanununun geçici 14 üncü maddesinin ikinci fıkrası uyarınca Danıştay Başkanlığına, Başsavcılığına, başkanvekilliklerine ve daire başkanlıklarına, Devlet Başkanınca seçilmiş bulunanlar, seçildikleri dönem için bu görevlerine devam ederler.",True,0.0,"[""31/7/2008-5797/10 md.) Bu fıkrada düzenlenen teşvik, kamu idareleri hariç 506 sayılı Kanun kapsamındaki sigortalılara ilişkin matrah ve oranlar üzerinden olmak üzere, 506 sayılı Kanunun geçici 20 nci maddesi kapsamındaki sandıkların statülerine tabi personeli için de uygulanır. Bu fıkranın uygulanmasına ilişkin usul ve esaslar Maliye Bakanlığı ile Çalışma ve Sosyal Güvenlik Bakanlığı ve Hazine Müsteşarlığı tarafından müştereken belirlenir.[13]\r\n(Değişik yedinci fıkra: 11/10/2011-KHK-665/28 md.) Bu maddeye aykırılık hallerinde 101 inci madde uyarınca tahsil edilecek cezalar, engellilerin ve eski hükümlülerin kendi işini kurmaları, engellinin iş bulmasını sağlayacak destek teknolojileri, engellinin işe yerleştirilmesi, işe ve işyerine uyumunun sağlanması ve bu gibi projelerde kullanılır.\n\nMadde 20- Açıklanması veya zamanından önce açıklanması hâlinde; a) Suç işlenmesine yol açacak,\n\nMadde 12 – 13/5/1981 gün ve 2461 sayılı Hakimler ve Savcılar Yüksek Kurulu Kanununun geçici 1 inci maddesi uyarınca Yargıtay ve Danıştaydan Kurulun asıl ve yedek üyeliğine; 1730 sayılı Yargıtay Kanununa 25/6/1981 gün ve 2483 sayılı Kanunla eklenen geçici madde uyarınca Cumhuriyet Başsavcılığı ile Cumhuriyet Başsavcıvekilliğine; 6/1/1982 gün ve 2575 sayılı Danıştay Kanununun geçici 14 üncü maddesinin ikinci fıkrası uyarınca Danıştay Başkanlığına, Başsavcılığına, başkanvekilliklerine ve daire başkanlıklarına, Devlet Başkanınca seçilmiş bulunanlar, seçildikleri dönem için bu görevlerine devam ederler.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti İş Kanunu
+Chunk ID: chunk_003745
+Citation: Türkiye Cumhuriyeti İş Kanunu - chunk_003745
+Metin:
+[Bağlam 1]
+31/7/2008-5797/10 md.) Bu fıkrada düzenlenen teşvik, kamu idareleri hariç 506 sayılı Kanun kapsamındaki sigortalılara ilişkin matrah ve oranlar üzerinden olmak üzere, 506 sayılı Kanunun geçici 20 nci maddesi kapsamındaki sandıkların statülerine tabi personeli için de uygulanır. Bu fıkranın uygulanmasına ilişkin usul ve esaslar Maliye Bakanlığı ile Çalışma ve Sosyal Güvenlik Bakanlığı ve Hazine Müsteşarlığı tarafından müştereken belirlenir.[13]
+(Değişik yedinci fıkra: 11/10/2011-KHK-665/28 md.) Bu maddeye aykırılık hallerinde 101 inci madde uyarınca tahsil edilecek cezalar, engellilerin ve eski hükümlülerin kendi işini kurmaları, engellinin iş bulmasını sağlayacak destek teknolojileri, engellinin işe yerleştirilmesi, işe ve işyerine uyumunun sağlanması ve bu gibi projelerde kullanılır.
+
+Madde 20- Açıklanması veya zamanından önce açıklanması hâlinde; a) Suç işlenmesine yol açacak,
+
+Madde 12 – 13/5/1981 gün ve 2461 sayılı Hakimler ve Savcılar Yüksek Kurulu Kanununun geçici 1 inci maddesi uyarınca Yargıtay ve Danıştaydan Kurulun asıl ve yedek üyeliğine; 1730 sayılı Yargıtay Kanununa 25/6/1981 gün ve 2483 sayılı Kanunla eklenen geçici madde uyarınca Cumhuriyet Başsavcılığı ile Cumhuriyet Başsavcıvekilliğine; 6/1/1982 gün ve 2575 sayılı Danıştay Kanununun geçici 14 üncü maddesinin ikinci fıkrası uyarınca Danıştay Başkanlığına, Başsavcılığına, başkanvekilliklerine ve daire başkanlıkl
+
+Soru: Geçici madde 20 ne zaman eklendi? [/INST]","Geçici madde 20, 13/5/1981 gün ve 2461 sayılı Hakimler ve Savcılar Yüksek Kurulu Kanununun geçici 1 inci maddesi uyarınca Yargıtay ve Danıştaydan Kurulun asıl ve yedek üyeliğine; 1730 sayılı Yargıtay Kanununa 25/6/1981 gün ve 2483 sayılı Kanunla eklenen geçici madde uyarınca Cumhuriyet Başsavcılığı ile Cumhuriyet Başsavcıvekilliğine; 6/1/1982 gün ve 2575 sayılı Danıştay Kanununun geçici 14 üncü maddesinin ikinci fıkrası uyarınca Danıştay Başkanlığına, Başsavc","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+31/7/2008-5797/10 md.) Bu fıkrada düzenlenen teşvik, kamu idareleri hariç 506 sayılı Kanun kapsamındaki sigortalılara ilişkin matrah ve oranlar üzerinden olmak üzere, 506 sayılı Kanunun geçici 20 nci maddesi kapsamındaki sandıkların statülerine tabi personeli için de uygulanır. Bu fıkranın uygulanmasına ilişkin usul ve esaslar Maliye Bakanlığı ile Çalışma ve Sosyal Güvenlik Bakanlığı ve Hazine Müsteşarlığı tarafından müştereken belirlenir.[13]
+(Değişik yedinci fıkra: 11/10/2011-KHK-665/28 md.) Bu maddeye aykırılık hallerinde 101 inci madde uyarınca tahsil edilecek cezalar, engellilerin ve eski hükümlülerin kendi işini kurmaları, engellinin iş bulmasını sağlayacak destek teknolojileri, engellinin işe yerleştirilmesi, işe ve işyerine uyumunun sağlanması ve bu gibi projelerde kullanılır.
+
+Madde 20- Açıklanması veya zamanından önce açıklanması hâlinde; a) Suç işlenmesine yol açacak,
+
+Madde 12 – 13/5/1981 gün ve 2461 sayılı Hakimler ve Savcılar Yüksek Kurulu Kanununun geçici 1 inci maddesi uyarınca Yargıtay ve Danıştaydan Kurulun asıl ve yedek üyeliğine; 1730 sayılı Yargıtay Kanununa 25/6/1981 gün ve 2483 sayılı Kanunla eklenen geçici madde uyarınca Cumhuriyet Başsavcılığı ile Cumhuriyet Başsavcıvekilliğine; 6/1/1982 gün ve 2575 sayılı Danıştay Kanununun geçici 14 üncü maddesinin ikinci fıkrası uyarınca Danıştay Başkanlığına, Başsavcılığına, başkanvekilliklerine ve daire başkanlıkl
+
+Soru:
+Geçici madde 20 ne zaman eklendi?
+
+Nihai cevap: [/INST]","Geçici madde 20, 13/5/1981 gün ve 2461 sayılı Hakimler ve Savcılar Yüksek Kurulu Kanununun geçici 1 inci maddesi uyarınca Yargıtay ve Danıştaydan Kurulun asıl ve yedek üyeliğine; 1730 sayılı Yargıtay Kanununa 25/6/1981 gün ve 2483 sayılı Kanunla eklenen geçici madde uyarınca Cumhuriyet Başsavcılığı ile Cumhuriyet Başsavcıvekilliğine; 6/1/1982 gün ve 257",0.03333333333333333,0.07466666666666667,0,0.16666666666666666,0.3,0,0.0273972602739726,0.058091286307053944,0
+Videoda TCK 121 ihlali sabit değil mi?,"Bu tür hususlar dosyalarında bilişimci bilirkişi raporu alınarak sonuca ulaşılabilir, bu şekilde değerlendirme yapılması hatalı olacaktır.","Evet, TCK 121 madde hakkının kullanılmasının engellenmesi için sabit değil.","Evet, TCK 121 madde hakkının kullanılmasının engellenmesi için sabit değil.",chunk_003431,Türk Ceza Kanunu,Türk Ceza Kanunu,"ÜÇÜNCÜ KISIM
+Topluma Karşı Suçlar ALTINCI BÖLÜM
+Ulaşım Araçlarına veya Sabit Platformlara Karşı Suçlar",0.0,1,5,0.0020672536920756,0.76,"ÜÇÜNCÜ KISIM
+Topluma Karşı Suçlar ALTINCI BÖLÜM
+Ulaşım Araçlarına veya Sabit Platformlara Karşı Suçlar
+
+(5) Bu suçun ihmali davranışla işlenmesi hâlinde, verilecek cezada bu nedenle indirim yapılmaz. Neticesi sebebiyle ağırlaşmış işkence
+MADDE 95. - (1) İşkence fiilleri, mağdurun; a) Duyularından veya organlarından birinin işlevinin sürekli zayıflamasına,
+b) Konuşmasında sürekli zorluğa,
+c) Yüzünde sabit ize,
+d) Yaşamını tehlikeye sokan bir duruma,
+e) Gebe bir kadına karşı işlenip de çocuğunun vaktinden önce doğmasına,
+Neden olmuşsa, yukarıdaki maddeye göre belirlenen ceza, yarı oranında artırılır. (2) İşkence fiilleri, mağdurun;
+
+Dilekçe hakkının kullanılmasının engellenmesi
+MADDE 121. - (1) Kişinin belli bir hakkı kullanmak için yetkili kamu makamlarına verdiği dilekçenin hukukî bir neden olmaksızın kabul edilmemesi hâlinde, fail hakkında altı aya kadar hapis cezasına hükmolunur. Ayırımcılık
+MADDE 122. - (1) Kişiler arasında dil, ırk, renk, cinsiyet, siyasî düşünce, felsefî inanç, din, mezhep ve benzeri sebeplerle ayırım yaparak;",True,0.5,"[""ÜÇÜNCÜ KISIM\r\nTopluma Karşı Suçlar ALTINCI BÖLÜM\r\nUlaşım Araçlarına veya Sabit Platformlara Karşı Suçlar\n\n(5) Bu suçun ihmali davranışla işlenmesi hâlinde, verilecek cezada bu nedenle indirim yapılmaz. Neticesi sebebiyle ağırlaşmış işkence\r\nMADDE 95. - (1) İşkence fiilleri, mağdurun; a) Duyularından veya organlarından birinin işlevinin sürekli zayıflamasına,\r\nb) Konuşmasında sürekli zorluğa,\r\nc) Yüzünde sabit ize,\r\nd) Yaşamını tehlikeye sokan bir duruma,\r\ne) Gebe bir kadına karşı işlenip de çocuğunun vaktinden önce doğmasına,\r\nNeden olmuşsa, yukarıdaki maddeye göre belirlenen ceza, yarı oranında artırılır. (2) İşkence fiilleri, mağdurun;\n\nDilekçe hakkının kullanılmasının engellenmesi\r\nMADDE 121. - (1) Kişinin belli bir hakkı kullanmak için yetkili kamu makamlarına verdiği dilekçenin hukukî bir neden olmaksızın kabul edilmemesi hâlinde, fail hakkında altı aya kadar hapis cezasına hükmolunur. Ayırımcılık\r\nMADDE 122. - (1) Kişiler arasında dil, ırk, renk, cinsiyet, siyasî düşünce, felsefî inanç, din, mezhep ve benzeri sebeplerle ayırım yaparak;""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türk Ceza Kanunu
+Chunk ID: chunk_003431
+Citation: Türk Ceza Kanunu - chunk_003431
+Metin:
+[Bağlam 1]
+ÜÇÜNCÜ KISIM
+Topluma Karşı Suçlar ALTINCI BÖLÜM
+Ulaşım Araçlarına veya Sabit Platformlara Karşı Suçlar
+
+(5) Bu suçun ihmali davranışla işlenmesi hâlinde, verilecek cezada bu nedenle indirim yapılmaz. Neticesi sebebiyle ağırlaşmış işkence
+MADDE 95. - (1) İşkence fiilleri, mağdurun; a) Duyularından veya organlarından birinin işlevinin sürekli zayıflamasına,
+b) Konuşmasında sürekli zorluğa,
+c) Yüzünde sabit ize,
+d) Yaşamını tehlikeye sokan bir duruma,
+e) Gebe bir kadına karşı işlenip de çocuğunun vaktinden önce doğmasına,
+Neden olmuşsa, yukarıdaki maddeye göre belirlenen ceza, yarı oranında artırılır. (2) İşkence fiilleri, mağdurun;
+
+Dilekçe hakkının kullanılmasının engellenmesi
+MADDE 121. - (1) Kişinin belli bir hakkı kullanmak için yetkili kamu makamlarına verdiği dilekçenin hukukî bir neden olmaksızın kabul edilmemesi hâlinde, fail hakkında altı aya kadar hapis cezasına hükmolunur. Ayırımcılık
+MADDE 122. - (1) Kişiler arasında dil, ırk, renk, cinsiyet, siyasî düşünce, felsefî inanç, din, mezhep ve benzeri sebeplerle ayırım yaparak;
+
+Soru: Videoda TCK 121 ihlali sabit değil mi? [/INST]","Kaynak metindeki esas içerik şudur: [Bağlam 1] ÜÇÜNCÜ KISIM/ Topluma Karşı Suçlar ALTINCI BÖLÜM/ Ulaşım Araçlarına veya Sabit Platformlara Karşı Suçlar
+
+(5) Bu suçun ihmali davranışla işlenmesi hâlinde, verilecek cezada bu nedenle indirim yapılmaz. Neticesi sebebiyle ağırlaşmış işkence MADDE 95. - (1) İşkence fiilleri, mağdurun; a) Duyularından veya organlarından birinin işlevinin sürekli zayıflamasına, b) Konuşmasında sürekli zorluğa, c) Yüzünde sabit ize, d) Yaşamını tehlikeye sokan bir duruma, e) Gebe","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+ÜÇÜNCÜ KISIM
+Topluma Karşı Suçlar ALTINCI BÖLÜM
+Ulaşım Araçlarına veya Sabit Platformlara Karşı Suçlar
+
+(5) Bu suçun ihmali davranışla işlenmesi hâlinde, verilecek cezada bu nedenle indirim yapılmaz. Neticesi sebebiyle ağırlaşmış işkence
+MADDE 95. - (1) İşkence fiilleri, mağdurun; a) Duyularından veya organlarından birinin işlevinin sürekli zayıflamasına,
+b) Konuşmasında sürekli zorluğa,
+c) Yüzünde sabit ize,
+d) Yaşamını tehlikeye sokan bir duruma,
+e) Gebe bir kadına karşı işlenip de çocuğunun vaktinden önce doğmasına,
+Neden olmuşsa, yukarıdaki maddeye göre belirlenen ceza, yarı oranında artırılır. (2) İşkence fiilleri, mağdurun;
+
+Dilekçe hakkının kullanılmasının engellenmesi
+MADDE 121. - (1) Kişinin belli bir hakkı kullanmak için yetkili kamu makamlarına verdiği dilekçenin hukukî bir neden olmaksızın kabul edilmemesi hâlinde, fail hakkında altı aya kadar hapis cezasına hükmolunur. Ayırımcılık
+MADDE 122. - (1) Kişiler arasında dil, ırk, renk, cinsiyet, siyasî düşünce, felsefî inanç, din, mezhep ve benzeri sebeplerle ayırım yaparak;
+
+Soru:
+Videoda TCK 121 ihlali sabit değil mi?
+
+Nihai cevap: [/INST]",Nihai cevap: Videoda TCK 121 ihlali sabit değil mi? Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Topluma Karşı Suçlar ALTINCI BÖLÜM; Hukuk alanı: İdare Hukuku / Medeni Hukuk; Karar sonucu: Bozma. Kaynak metindeki esas içerik şudur: [Bağlam 1] ÜÇÜNCÜ KISIM; Topluma Karşı Suçlar ALTINCI BÖLÜM; Ulaşım Araçlarına veya Sabit Platformlara Karşı Suçlar. (5) Bu suçun ihmali davranışla,0.0547945205479452,0.23689320388349513,0,0.0,0.21052631578947367,0,0.04651162790697674,0.2032258064516129,0
+Cumhurbaşkanının yemin etme zorunluluğu nedir,"Cumhurbaşkanının yemin etme zorunluluğu, anayasa ve yasalara sadakatle bağlı kalacağını ve görevini tarafsız bir şekilde yürüteceğini taahhüt etmesini sağlar. yemin, cumhurbaşkanının görevine resmen başlaması için gereklidir.","Cumhurbaşkanın yemin etme zorunluluğu, Cumhurbaşkanının verilen bağlamlarda belirtilen seçme ve atama görevleri yerine getirirken ve yetkilerini kullanırken görülebil","Cumhurbaşkanın yemin etme zorunluluğu, Cumhurbaşkanının verilen bağlamlarda belirtilen seçme ve atama görevleri yerine getirirken ve yetkilerini kullanırken görülebil",chunk_000057,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]",0.0,1,1,0.0064382124692201,1.0,"Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]
+
+c) Cumhurbaşkanının istemine göre, iç ve dış güvenlik ile gerekli görülen diğer konularda inceleme ve araştırma yapmak ve sonuçlarını Cumhurbaşkanına sunmak. Geçici
+
+Cumhurbaşkanının hastalık ve yurt dışına çıkma gibi sebeplerle geçici olarak görevinden ayrılması hallerinde, Cumhurbaşkanı yardımcısı Cumhurbaşkanına vekâlet eder ve Cumhurbaşkanına ait yetkileri kullanır.",True,0.0,"[""Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]\n\nc) Cumhurbaşkanının istemine göre, iç ve dış güvenlik ile gerekli görülen diğer konularda inceleme ve araştırma yapmak ve sonuçlarını Cumhurbaşkanına sunmak. Geçici\n\nCumhurbaşkanının hastalık ve yurt dışına çıkma gibi sebeplerle geçici olarak görevinden ayrılması hallerinde, Cumhurbaşkanı yardımcısı Cumhurbaşkanına vekâlet eder ve Cumhurbaşkanına ait yetkileri kullanır.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000057
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000057
+Metin:
+[Bağlam 1]
+Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]
+
+c) Cumhurbaşkanının istemine göre, iç ve dış güvenlik ile gerekli görülen diğer konularda inceleme ve araştırma yapmak ve sonuçlarını Cumhurbaşkanına sunmak. Geçici
+
+Cumhurbaşkanının hastalık ve yurt dışına çıkma gibi sebeplerle geçici olarak görevinden ayrılması hallerinde, Cumhurbaşkanı yardımcısı Cumhurbaşkanına vekâlet eder ve Cumhurbaşkanına ait yetkileri kullanır.
+
+Soru: Cumhurbaşkanının yemin etme zorunluluğu nedir [/INST]","Cumhurbaşkanının yemin etme zorunluluğu:
+[Bağlam 1]
+Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]
+
+c) Cumhurbaşkanının istemine göre, iç ve dış güvenlik ile gerekli görülen diğer konularda inceleme ve araştırma yapmak ve sonuçlarını Cumhurbaşkanına sunmak. Geçici
+
+Cumhurbaşkanının hastalık ve yurt dışına çıkma gibi sebeplerle geçici olarak görevinden ayr","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]
+
+c) Cumhurbaşkanının istemine göre, iç ve dış güvenlik ile gerekli görülen diğer konularda inceleme ve araştırma yapmak ve sonuçlarını Cumhurbaşkanına sunmak. Geçici
+
+Cumhurbaşkanının hastalık ve yurt dışına çıkma gibi sebeplerle geçici olarak görevinden ayrılması hallerinde, Cumhurbaşkanı yardımcısı Cumhurbaşkanına vekâlet eder ve Cumhurbaşkanına ait yetkileri kullanır.
+
+Soru:
+Cumhurbaşkanının yemin etme zorunluluğu nedir
+
+Nihai cevap: [/INST]","Cumhurbaşkanının yemin etme zorunluluğu: Cumhurbaşkanı, ayrıca Anayasada ve kanunlarda verilen seçme ve atama görevleri ile diğer görevleri yerine getirir ve yetkileri kullanır. E. Cumhurbaşkanının cezai sorumluluğu [48]
+
+c) Cumhurbaşkanının istemine göre, iç ve dış güvenlik ile gerekli görülen diğer konularda inceleme ve araştırma yapmak ve sonuçlarını Cumhurbaşkanına sunmak. Geç",0.18666666666666665,0.2053872053872054,0,0.27272727272727276,0.26424870466321243,0,0.15730337078651685,0.17478510028653296,0
+Anayasanın 122. Maddesi Nedir?,"Anayasanın 122. maddesi, sıkıyönetim ilanı ve yönetimine ilişkin hükümleri içerir.",Anayasanın 122. Maddesi yoktur.,Anayasanın 122. Maddesi yoktur.,chunk_000102,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,Madde 122 – (Mülga: 21/1/2017-6771/16 md.) Devamı…,1.0,1,1,0.1299938410520553,1.0,"Madde 122 – (Mülga: 21/1/2017-6771/16 md.) Devamı…
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Madde 4 – Anayasanın 1 inci maddesindeki Devletin şeklinin Cumhuriyet olduğu hakkındaki hüküm ile, 2 nci maddesindeki Cumhuriyetin nitelikleri ve 3 üncü maddesi hükümleri değiştirilemez ve değiştirilmesi teklif edilemez. V. Devletin temel amaç ve görevleri",True,0.0,"[""Madde 122 – (Mülga: 21/1/2017-6771/16 md.) Devamı…\n\ne) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.\n\nMadde 4 – Anayasanın 1 inci maddesindeki Devletin şeklinin Cumhuriyet olduğu hakkındaki hüküm ile, 2 nci maddesindeki Cumhuriyetin nitelikleri ve 3 üncü maddesi hükümleri değiştirilemez ve değiştirilmesi teklif edilemez. V. Devletin temel amaç ve görevleri""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000102
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000102
+Metin:
+[Bağlam 1]
+Madde 122 – (Mülga: 21/1/2017-6771/16 md.) Devamı…
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Madde 4 – Anayasanın 1 inci maddesindeki Devletin şeklinin Cumhuriyet olduğu hakkındaki hüküm ile, 2 nci maddesindeki Cumhuriyetin nitelikleri ve 3 üncü maddesi hükümleri değiştirilemez ve değiştirilmesi teklif edilemez. V. Devletin temel amaç ve görevleri
+
+Soru: Anayasanın 122. Maddesi Nedir? [/INST]","Anayasanın 122. Maddesi: e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000102","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 122 – (Mülga: 21/1/2017-6771/16 md.) Devamı…
+
+e) Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Madde 4 – Anayasanın 1 inci maddesindeki Devletin şeklinin Cumhuriyet olduğu hakkındaki hüküm ile, 2 nci maddesindeki Cumhuriyetin nitelikleri ve 3 üncü maddesi hükümleri değiştirilemez ve değiştirilmesi teklif edilemez. V. Devletin temel amaç ve görevleri
+
+Soru:
+Anayasanın 122. Maddesi Nedir?
+
+Nihai cevap: [/INST]","Anayasanın halkoylaması sonucu kabulünün ilanıyle birlikte yürürlüğe girecek hükümleri ve mevcut ve kurulacak kurum, kuruluş ve kurullar için yeniden kanun yapılması veya mevcut kanunlarda değişiklik yapılması gerekiyorsa bunlara ilişkin işlemler mevcut kanunların Anayasaya aykırı olmayan hükümleri veya doğrudan Anayasa hükümleri, Anayasanın 11 inci maddesi gereğince uygulanır.
+
+Madde 4 – Anayasanın",0.1694915254237288,0.2231578947368421,0,0.4285714285714285,0.48148148148148145,0,0.18181818181818182,0.23728813559322035,1
+Yasama dokunulmazlığının kaldırılmasına karşı itiraz süresi kaç gündür?,"Yasama dokunulmazlığının kaldırılmasına veya milletvekilliğinin düşmesine 84 üncü maddenin birinci, üçüncü veya dördüncü fıkralarına göre karar verilmiş olması hallerinde, meclis genel kurulu kararının alındığı tarihten başlayarak yedi gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın, anayasaya, kanuna veya i̇çtüzüğe aykırılığı iddiasıyla iptali için anayasa mahkemesine başvurabilir. anayasa mahkemesi, iptal istemini onbeş gün içerisinde kesin karara bağlar. (madde 85)","Verilen bağlamlara göre, itiraz süresi yedi gün'dur.","Verilen bağlamlara göre, itiraz süresi yedi gün'dur.",chunk_000332,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Bu maddenin yürürlüğe girdiği tarihten itibaren onbeş gün içinde; Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığında, Türkiye Büyük Millet Meclisi Başkanlığında, Başbakanlıkta ve Adalet Bakanlığında bulunan yasama dokunulmazlığının kaldırılmasına ilişkin dosyalar, gereğinin yapılması amacıyla, yetkili merciine iade edilir.",0.0,1,1,0.872126579284668,1.0,"Bu maddenin yürürlüğe girdiği tarihten itibaren onbeş gün içinde; Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığında, Türkiye Büyük Millet Meclisi Başkanlığında, Başbakanlıkta ve Adalet Bakanlığında bulunan yasama dokunulmazlığının kaldırılmasına ilişkin dosyalar, gereğinin yapılması amacıyla, yetkili merciine iade edilir.
+
+Yasama dokunulmazlığının kaldırılmasına veya milletvekilliğinin düşmesine 84 üncü maddenin birinci, üçüncü veya dördüncü fıkralarına göre karar verilmiş olması hallerinde, Meclis Genel Kurulu kararının alındığı tarihten başlayarak yedi gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın, Anayasaya, kanuna veya İçtüzüğe aykırılığı iddiasıyla iptali için Anayasa Mahkemesine başvurabilir. Anayasa Mahkemesi, iptal istemini onbeş gün içerisinde kesin karara bağlar. 7. Ödenek ve yolluklar
+
+Bu maddenin Türkiye Büyük Millet Meclisinde kabul edildiği tarihte; soruşturmaya veya soruşturma ya da kovuşturma izni vermeye yetkili mercilerden, Cumhuriyet başsavcılıklarından ve mahkemelerden; Adalet Bakanlığına, Başbakanlığa, Türkiye Büyük Millet Meclisi Başkanlığına veya Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığına intikal etmiş yasama dokunulmazlığının kaldırılmasına ilişkin dosyaları bulunan milletvekilleri hakkında, bu dosyalar bakımından, Anayasanın 83 üncü maddesinin ikinci fıkrasının birinci cümlesi hükmü uygulanmaz.",True,1.0,"[""Bu maddenin yürürlüğe girdiği tarihten itibaren onbeş gün içinde; Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığında, Türkiye Büyük Millet Meclisi Başkanlığında, Başbakanlıkta ve Adalet Bakanlığında bulunan yasama dokunulmazlığının kaldırılmasına ilişkin dosyalar, gereğinin yapılması amacıyla, yetkili merciine iade edilir.\n\nYasama dokunulmazlığının kaldırılmasına veya milletvekilliğinin düşmesine 84 üncü maddenin birinci, üçüncü veya dördüncü fıkralarına göre karar verilmiş olması hallerinde, Meclis Genel Kurulu kararının alındığı tarihten başlayarak yedi gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın, Anayasaya, kanuna veya İçtüzüğe aykırılığı iddiasıyla iptali için Anayasa Mahkemesine başvurabilir. Anayasa Mahkemesi, iptal istemini onbeş gün içerisinde kesin karara bağlar. 7. Ödenek ve yolluklar\n\nBu maddenin Türkiye Büyük Millet Meclisinde kabul edildiği tarihte; soruşturmaya veya soruşturma ya da kovuşturma izni vermeye yetkili mercilerden, Cumhuriyet başsavcılıklarından ve mahkemelerden; Adalet Bakanlığına, Başbakanlığa, Türkiye Büyük Millet Meclisi Başkanlığına veya Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığına intikal etmiş yasama dokunulmazlığının kaldırılmasına ilişkin dosyaları bulunan milletvekilleri hakkında, bu dosyalar bakımından, Anayasanın 83 üncü maddesinin ikinci fıkrasının birinci cümlesi hükmü uygulanmaz.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000332
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000332
+Metin:
+[Bağlam 1]
+Bu maddenin yürürlüğe girdiği tarihten itibaren onbeş gün içinde; Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığında, Türkiye Büyük Millet Meclisi Başkanlığında, Başbakanlıkta ve Adalet Bakanlığında bulunan yasama dokunulmazlığının kaldırılmasına ilişkin dosyalar, gereğinin yapılması amacıyla, yetkili merciine iade edilir.
+
+Yasama dokunulmazlığının kaldırılmasına veya milletvekilliğinin düşmesine 84 üncü maddenin birinci, üçüncü veya dördüncü fıkralarına göre karar verilmiş olması hallerinde, Meclis Genel Kurulu kararının alındığı tarihten başlayarak yedi gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın, Anayasaya, kanuna veya İçtüzüğe aykırılığı iddiasıyla iptali için Anayasa Mahkemesine başvurabilir. Anayasa Mahkemesi, iptal istemini onbeş gün içerisinde kesin karara bağlar. 7. Ödenek ve yolluklar
+
+Bu maddenin Türkiye Büyük Millet Meclisinde kabul edildiği tarihte; soruşturmaya veya soruşturma ya da kovuşturma izni vermeye yetkili mercilerden, Cumhuriyet başsavcılıklarından ve mahkemelerden; Adalet Bakanlığına, Başbakanlığa, Türkiye Büyük Millet Meclisi Başkanlığına veya Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığına intikal etmiş yasama dokunulmazlığının kaldırılmasına ilişkin dosyaları bulunan milletvekilleri hakkında, bu dosyalar bakımından, Anayasanın 83 üncü maddesinin ikinci fıkrasının bir
+
+Soru: Yasama dokunulmazlığının kaldırılmasına karşı itiraz süresi kaç gündür? [/INST]","Yasama dokunulmazlığının kaldırılmasına ilişkin karar, kaynak metindeki esas içerik şudur: [Bağlam 1] Bu maddenin yürürlüğe girdiği tarihten itibaren onbeş gün içinde; Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığında, Türkiye Büyük Millet Meclisi Başkanlığında, Başbakanlıkta ve Adalet Bakanlığında bulunan yasama dokunulmazlığının kaldırılmasına ilişkin dosyalar, gereğinin yapılması amacıyla, yetkili merciine iade edilir.
+
+Yasama dokunulmazlığının kaldırılmasına veya milletvekill","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Bu maddenin yürürlüğe girdiği tarihten itibaren onbeş gün içinde; Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığında, Türkiye Büyük Millet Meclisi Başkanlığında, Başbakanlıkta ve Adalet Bakanlığında bulunan yasama dokunulmazlığının kaldırılmasına ilişkin dosyalar, gereğinin yapılması amacıyla, yetkili merciine iade edilir.
+
+Yasama dokunulmazlığının kaldırılmasına veya milletvekilliğinin düşmesine 84 üncü maddenin birinci, üçüncü veya dördüncü fıkralarına göre karar verilmiş olması hallerinde, Meclis Genel Kurulu kararının alındığı tarihten başlayarak yedi gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın, Anayasaya, kanuna veya İçtüzüğe aykırılığı iddiasıyla iptali için Anayasa Mahkemesine başvurabilir. Anayasa Mahkemesi, iptal istemini onbeş gün içerisinde kesin karara bağlar. 7. Ödenek ve yolluklar
+
+Bu maddenin Türkiye Büyük Millet Meclisinde kabul edildiği tarihte; soruşturmaya veya soruşturma ya da kovuşturma izni vermeye yetkili mercilerden, Cumhuriyet başsavcılıklarından ve mahkemelerden; Adalet Bakanlığına, Başbakanlığa, Türkiye Büyük Millet Meclisi Başkanlığına veya Anayasa ve Adalet komisyonları üyelerinden kurulu Karma Komisyon Başkanlığına intikal etmiş yasama dokunulmazlığının kaldırılmasına ilişkin dosyaları bulunan milletvekilleri hakkında, bu dosyalar bakımından, Anayasanın 83 üncü maddesinin ikinci fıkrasının bir
+
+Soru:
+Yasama dokunulmazlığının kaldırılmasına karşı itiraz süresi kaç gündür?
+
+Nihai cevap: [/INST]","Bu ayrıntılı kaynak, kesin resmî karar metni değil; temizlenmiş kaynak özeti olarak değerlendirilmelidir.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - BELGE 1124 - Hukuk Genel Kurulu 2014/1234 E., 2015/1345 K. - Anayasa Hukuku - yasama_dokunulmazligi_001",0.125,0.027777777777777776,1,0.08823529411764708,0.048507462686567165,0,0.18803418803418803,0.13765182186234817,0
+"Bir siyasi parti, çalışma şartlarının belirli durumlarda devlet tarafından keyfi olarak düzenlenebileceğini savunmaktadır. Bu durum Anayasanın 50. Maddesi'ne aykırı mıdır?","Evet, Anayasanın 50. Maddesi, herkesin çalışma şartları ve dinlenme hakkına sahip olduğunu belirtir. Bu tür bir savunma bu maddeye aykırıdır.","Evet, Anayasanın 50. Maddesi, siyasi partilerin çalışma şartlarının belirli durumlarda devlet tarafından düzenlenmesine olanak tanır, ancak bu durum, küçükler ve k","Evet, Anayasanın 50. Maddesi, siyasi partilerin çalışma şartlarının belirli durumlarda devlet tarafından düzenlenmesine olanak tanır, ancak bu durum, küçükler ve k",chunk_000469,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkıdır. Ücretli hafta ve bayram tatili ile ücretli yıllık izin hakları ve şartları kanunla düzenlenir. Devamı…",1.0,1,1,0.1052610427141189,1.0,"Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkıdır. Ücretli hafta ve bayram tatili ile ücretli yıllık izin hakları ve şartları kanunla düzenlenir. Devamı…
+
+Siyasi partilerin faaliyetleri, parti içi düzenlemeleri ve çalışmaları demokrasi ilkelerine uygun olur. Bu ilkelerin uygulanması kanunla düzenlenir. Siyasi partiler, ticari faaliyetlere girişemezler.
+
+Madde 67 – Vatandaşlar, kanunda gösterilen şartlara uygun olarak seçme, seçilme ve bağımsız olarak veya bir siyasi parti içinde siyasi faaliyette bulunma ve halkoylamasına katılma hakkına sahiptir.",True,0.5,"[""Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkıdır. Ücretli hafta ve bayram tatili ile ücretli yıllık izin hakları ve şartları kanunla düzenlenir. Devamı…\n\nSiyasi partilerin faaliyetleri, parti içi düzenlemeleri ve çalışmaları demokrasi ilkelerine uygun olur. Bu ilkelerin uygulanması kanunla düzenlenir. Siyasi partiler, ticari faaliyetlere girişemezler.\n\nMadde 67 – Vatandaşlar, kanunda gösterilen şartlara uygun olarak seçme, seçilme ve bağımsız olarak veya bir siyasi parti içinde siyasi faaliyette bulunma ve halkoylamasına katılma hakkına sahiptir.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000469
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000469
+Metin:
+[Bağlam 1]
+Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkıdır. Ücretli hafta ve bayram tatili ile ücretli yıllık izin hakları ve şartları kanunla düzenlenir. Devamı…
+
+Siyasi partilerin faaliyetleri, parti içi düzenlemeleri ve çalışmaları demokrasi ilkelerine uygun olur. Bu ilkelerin uygulanması kanunla düzenlenir. Siyasi partiler, ticari faaliyetlere girişemezler.
+
+Madde 67 – Vatandaşlar, kanunda gösterilen şartlara uygun olarak seçme, seçilme ve bağımsız olarak veya bir siyasi parti içinde siyasi faaliyette bulunma ve halkoylamasına katılma hakkına sahiptir.
+
+Soru: Bir siyasi parti, çalışma şartlarının belirli durumlarda devlet tarafından keyfi olarak düzenlenebileceğini savunmaktadır. Bu durum Anayasanın 50. Maddesi'ne aykırı mıdır? [/INST]","[Bağlam 1] Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkıdır. Ücretli hafta ve bayram tatili ile ücretli yıllık izin hakları ve şartları kanunla düzenlenir. Devamı…
+
+Siyasi partilerin faaliyetleri, parti içi düzenlemeleri ve çalışmaları demokrasi ilkelerine uygun olur. Bu","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkıdır. Ücretli hafta ve bayram tatili ile ücretli yıllık izin hakları ve şartları kanunla düzenlenir. Devamı…
+
+Siyasi partilerin faaliyetleri, parti içi düzenlemeleri ve çalışmaları demokrasi ilkelerine uygun olur. Bu ilkelerin uygulanması kanunla düzenlenir. Siyasi partiler, ticari faaliyetlere girişemezler.
+
+Madde 67 – Vatandaşlar, kanunda gösterilen şartlara uygun olarak seçme, seçilme ve bağımsız olarak veya bir siyasi parti içinde siyasi faaliyette bulunma ve halkoylamasına katılma hakkına sahiptir.
+
+Soru:
+Bir siyasi parti, çalışma şartlarının belirli durumlarda devlet tarafından keyfi olarak düzenlenebileceğini savunmaktadır. Bu durum Anayasanın 50. Maddesi'ne aykırı mıdır?
+
+Nihai cevap: [/INST]","Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Anayasa Hukuku; Hukuk alanı: Anayasa Hukuku; Karar sonucu: Bozma. Kaynak metindeki esas içerik şudur: Madde 50 – Kimse, yaşına, cinsiyetine ve gücüne uymayan işlerde çalıştırılamaz. Küçükler ve kadınlar ile bedeni ve ruhi yetersizliği olanlar çalışma şartları bakımından özel olarak korunurlar. Dinlenmek, çalışanların hakkı",0.14492753623188406,0.23228346456692914,0,0.3414634146341463,0.47619047619047616,0,0.12820512820512822,0.210896309314587,0
+"Devlet Denetleme Kurulu, Silahlı Kuvvetler üzerinde denetim yapmıştır. Bu durum Anayasanın 108. Maddesi ile nasıl çelişir?","Anayasanın 108. Maddesi, Silahlı Kuvvetlerin Devlet Denetleme Kurulu'nun denetiminin dışında olduğunu belirtir. Bu durum maddeye aykırıdır.","Anayasanın 108. Maddesi, Devlet Denetleme Kurulusunun Silahlı Kuvvetlerle ilgili denetim hakkının belirtilen bağlamda açıkça söylenmiş olduğu gibi, Devlet Denetleme","Anayasanın 108. Maddesi, Devlet Denetleme Kurulusunun Silahlı Kuvvetlerle ilgili denetim hakkının belirtilen bağlamda açıkça söylenmiş olduğu gibi, Devlet Denetleme",chunk_000074,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 108 – İdarenin hukuka uygunluğunun, düzenli ve verimli şekilde yürütülmesinin ve geliştirilmesinin sağlanması amacıyla, Cumhurbaşkanlığına bağlı olarak kurulan Devlet Denetleme Kurulu, Cumhurbaşkanının isteği üzerine, tüm kamu kurum ve kuruluşlarında ve sermayesinin yarısından fazlasına bu kurum ve kuruluşların katıldığı her türlü kuruluşta, kamu kurumu niteliğinde olan meslek kuruluşlarında, her düzeydeki işçi ve işveren meslek kuruluşlarında, kamuya yararlı derneklerle vakıflarda, her türlü idari soruşturma, inceleme, araştırma ve denetlemeleri yapar. [50] (…) [51] yargı organları, Devlet Denetleme Kurulunun görev alanı dışındadır. Devlet Denetleme Kurulunun Başkan ve üyeleri, Cumhurbaşkanınca atanır. [52]",1.0,1,1,0.3984798192977905,1.0,"Madde 108 – İdarenin hukuka uygunluğunun, düzenli ve verimli şekilde yürütülmesinin ve geliştirilmesinin sağlanması amacıyla, Cumhurbaşkanlığına bağlı olarak kurulan Devlet Denetleme Kurulu, Cumhurbaşkanının isteği üzerine, tüm kamu kurum ve kuruluşlarında ve sermayesinin yarısından fazlasına bu kurum ve kuruluşların katıldığı her türlü kuruluşta, kamu kurumu niteliğinde olan meslek kuruluşlarında, her düzeydeki işçi ve işveren meslek kuruluşlarında, kamuya yararlı derneklerle vakıflarda, her türlü idari soruşturma, inceleme, araştırma ve denetlemeleri yapar. [50] (…) [51] yargı organları, Devlet Denetleme Kurulunun görev alanı dışındadır. Devlet Denetleme Kurulunun Başkan ve üyeleri, Cumhurbaşkanınca atanır. [52]
+
+Madde 107 – (Mülga: 21/1/2017-6771/16 md.) H. Devlet Denetleme Kurulu
+
+Birinci fıkra hükmü, Silahlı Kuvvetler ve kolluk kuvvetleri mensuplarına ve görevlerinin gerektirdiği ölçüde Devlet memurlarına kanunla sınırlamalar getirilmesine engel değildir. Bu madde hükümleri vakıflarla ilgili olarak da uygulanır. B. Toplantı ve gösteri yürüyüşü düzenleme hakkı",True,0.0,"[""Madde 108 – İdarenin hukuka uygunluğunun, düzenli ve verimli şekilde yürütülmesinin ve geliştirilmesinin sağlanması amacıyla, Cumhurbaşkanlığına bağlı olarak kurulan Devlet Denetleme Kurulu, Cumhurbaşkanının isteği üzerine, tüm kamu kurum ve kuruluşlarında ve sermayesinin yarısından fazlasına bu kurum ve kuruluşların katıldığı her türlü kuruluşta, kamu kurumu niteliğinde olan meslek kuruluşlarında, her düzeydeki işçi ve işveren meslek kuruluşlarında, kamuya yararlı derneklerle vakıflarda, her türlü idari soruşturma, inceleme, araştırma ve denetlemeleri yapar. [50] (…) [51] yargı organları, Devlet Denetleme Kurulunun görev alanı dışındadır. Devlet Denetleme Kurulunun Başkan ve üyeleri, Cumhurbaşkanınca atanır. [52]\n\nMadde 107 – (Mülga: 21/1/2017-6771/16 md.) H. Devlet Denetleme Kurulu\n\nBirinci fıkra hükmü, Silahlı Kuvvetler ve kolluk kuvvetleri mensuplarına ve görevlerinin gerektirdiği ölçüde Devlet memurlarına kanunla sınırlamalar getirilmesine engel değildir. Bu madde hükümleri vakıflarla ilgili olarak da uygulanır. B. Toplantı ve gösteri yürüyüşü düzenleme hakkı""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000074
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000074
+Metin:
+[Bağlam 1]
+Madde 108 – İdarenin hukuka uygunluğunun, düzenli ve verimli şekilde yürütülmesinin ve geliştirilmesinin sağlanması amacıyla, Cumhurbaşkanlığına bağlı olarak kurulan Devlet Denetleme Kurulu, Cumhurbaşkanının isteği üzerine, tüm kamu kurum ve kuruluşlarında ve sermayesinin yarısından fazlasına bu kurum ve kuruluşların katıldığı her türlü kuruluşta, kamu kurumu niteliğinde olan meslek kuruluşlarında, her düzeydeki işçi ve işveren meslek kuruluşlarında, kamuya yararlı derneklerle vakıflarda, her türlü idari soruşturma, inceleme, araştırma ve denetlemeleri yapar. [50] (…) [51] yargı organları, Devlet Denetleme Kurulunun görev alanı dışındadır. Devlet Denetleme Kurulunun Başkan ve üyeleri, Cumhurbaşkanınca atanır. [52]
+
+Madde 107 – (Mülga: 21/1/2017-6771/16 md.) H. Devlet Denetleme Kurulu
+
+Birinci fıkra hükmü, Silahlı Kuvvetler ve kolluk kuvvetleri mensuplarına ve görevlerinin gerektirdiği ölçüde Devlet memurlarına kanunla sınırlamalar getirilmesine engel değildir. Bu madde hükümleri vakıflarla ilgili olarak da uygulanır. B. Toplantı ve gösteri yürüyüşü düzenleme hakkı
+
+Soru: Devlet Denetleme Kurulu, Silahlı Kuvvetler üzerinde denetim yapmıştır. Bu durum Anayasanın 108. Maddesi ile nasıl çelişir? [/INST]","108. Maddesi şu içerik ile karşılaşmaktadır: [Bağlam 1] Madde 108 – İdarenin hukuka uygunluğunun, düzenli ve verimli şekilde yürütülmesinin ve geliştirilmesinin sağlanması amacıyla, Cumhurbaşkanlığına bağlı olarak kurulan Devlet Denetleme Kurulu, Cumhurbaşkanının isteği üzerine, tüm kamu kurum ve kuruluşlarında ve sermayesinin yarısından fazlasına bu kurum ve kuruluşların katıldığı her türlü kuruluşta, kamu kurumu niteliğinde olan meslek kuruluşlarında, her düzeydeki işçi ve işveren meslek kuruluşları","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 108 – İdarenin hukuka uygunluğunun, düzenli ve verimli şekilde yürütülmesinin ve geliştirilmesinin sağlanması amacıyla, Cumhurbaşkanlığına bağlı olarak kurulan Devlet Denetleme Kurulu, Cumhurbaşkanının isteği üzerine, tüm kamu kurum ve kuruluşlarında ve sermayesinin yarısından fazlasına bu kurum ve kuruluşların katıldığı her türlü kuruluşta, kamu kurumu niteliğinde olan meslek kuruluşlarında, her düzeydeki işçi ve işveren meslek kuruluşlarında, kamuya yararlı derneklerle vakıflarda, her türlü idari soruşturma, inceleme, araştırma ve denetlemeleri yapar. [50] (…) [51] yargı organları, Devlet Denetleme Kurulunun görev alanı dışındadır. Devlet Denetleme Kurulunun Başkan ve üyeleri, Cumhurbaşkanınca atanır. [52]
+
+Madde 107 – (Mülga: 21/1/2017-6771/16 md.) H. Devlet Denetleme Kurulu
+
+Birinci fıkra hükmü, Silahlı Kuvvetler ve kolluk kuvvetleri mensuplarına ve görevlerinin gerektirdiği ölçüde Devlet memurlarına kanunla sınırlamalar getirilmesine engel değildir. Bu madde hükümleri vakıflarla ilgili olarak da uygulanır. B. Toplantı ve gösteri yürüyüşü düzenleme hakkı
+
+Soru:
+Devlet Denetleme Kurulu, Silahlı Kuvvetler üzerinde denetim yapmıştır. Bu durum Anayasanın 108. Maddesi ile nasıl çelişir?
+
+Nihai cevap: [/INST]","Anayasanın 108. Maddesi ile çelişirse de, Devlet Denetleme Kurulu, Silahlı Kuvvetler üzerinde denetim yapmıştır. Bu durum Anayasanın 108. Maddesi ile çelişirse de, Devlet Denetleme Kurulu, Silahlı Kuvvetler üzerinde denetim yapmıştır. Anayasa hukuku kaynak satırı yazma.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.108 - turkish_law_eski_4721_turk_medeni_kanunu_m10",0.24999999999999997,0.3658051689860835,1,0.33333333333333337,0.5202702702702703,0,0.15,0.2,0
+"Bir belediye, yerel yönetimde temel hak ve hürriyetlerin keyfi olarak sınırlandırılmasını kararlaştırmıştır. Bu uygulama Anayasanın 13. Maddesi'ne aykırı mıdır?","Evet, Anayasanın 13. Maddesi, temel hak ve hürriyetlerin ancak kanunla ve Anayasanın sözüne ve ruhuna uygun olarak sınırlandırılabileceğini vurgular. Keyfi sınırlandırmalar bu maddeye aykırıdır.","Evet, bu uygulama Anayasanın 13. Maddesine aykırıdır, çünkü temel hak ve hürriyetlerin sınırlandırılması, Anayasada belirtilen sebeplerle ve kanunla sı","Evet, bu uygulama Anayasanın 13. Maddesine aykırıdır, çünkü temel hak ve hürriyetlerin sınırlandırılması, Anayasada belirtilen sebeplerle ve kanunla sı",chunk_000368,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere aykırı faaliyette bulunanlar hakkında uygulanacak müeyyideler, kanunla düzenlenir. I V. Temel hak ve hürriyetlerin kullanılmasının durdurulması",0.0,1,2,0.3198956251144409,0.85,"Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere aykırı faaliyette bulunanlar hakkında uygulanacak müeyyideler, kanunla düzenlenir. I V. Temel hak ve hürriyetlerin kullanılmasının durdurulması
+
+Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması
+
+Madde 15 – Savaş, seferberlik (…)[10] veya olağanüstü hallerde, milletlerarası hukuktan doğan yükümlülükler ihlal edilmemek kaydıyla, durumun gerektirdiği ölçüde temel hak ve hürriyetlerin kullanılması kısmen veya tamamen durdurulabilir veya bunlar için Anayasada öngörülen güvencelere aykırı tedbirler alınabilir.",True,1.0,"[""Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere aykırı faaliyette bulunanlar hakkında uygulanacak müeyyideler, kanunla düzenlenir. I V. Temel hak ve hürriyetlerin kullanılmasının durdurulması\n\nTemel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması\n\nMadde 15 – Savaş, seferberlik (…)[10] veya olağanüstü hallerde, milletlerarası hukuktan doğan yükümlülükler ihlal edilmemek kaydıyla, durumun gerektirdiği ölçüde temel hak ve hürriyetlerin kullanılması kısmen veya tamamen durdurulabilir veya bunlar için Anayasada öngörülen güvencelere aykırı tedbirler alınabilir.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000368
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000368
+Metin:
+[Bağlam 1]
+Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere aykırı faaliyette bulunanlar hakkında uygulanacak müeyyideler, kanunla düzenlenir. I V. Temel hak ve hürriyetlerin kullanılmasının durdurulması
+
+Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması
+
+Madde 15 – Savaş, seferberlik (…)[10] veya olağanüstü hallerde, milletlerarası hukuktan doğan yükümlülükler ihlal edilmemek kaydıyla, durumun gerektirdiği ölçüde temel hak ve hürriyetlerin kullanılması kısmen veya tamamen durdurulabilir veya bunlar için Anayasada öngörülen güvencelere aykırı tedbirler alınabilir.
+
+Soru: Bir belediye, yerel yönetimde temel hak ve hürriyetlerin keyfi olarak sınırlandırılmasını kararlaştırmıştır. Bu uygulama Anayasanın 13. Maddesi'ne aykırı mıdır? [/INST]","Kaynak metindeki açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Anayasa Hukuku; Hukuk alanı: Anayasa Hukuku; Karar sonucu: Bozma. Kaynak metindeki esas içerik şudur: [Bağlam 1] Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere aykırı faaliyette bulunanlar hakkında uygulanacak müeyyideler, kanunla düzenlenir. I V.","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere aykırı faaliyette bulunanlar hakkında uygulanacak müeyyideler, kanunla düzenlenir. I V. Temel hak ve hürriyetlerin kullanılmasının durdurulması
+
+Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz. II I. Temel hak ve hürriyetlerin kötüye kullanılamaması
+
+Madde 15 – Savaş, seferberlik (…)[10] veya olağanüstü hallerde, milletlerarası hukuktan doğan yükümlülükler ihlal edilmemek kaydıyla, durumun gerektirdiği ölçüde temel hak ve hürriyetlerin kullanılması kısmen veya tamamen durdurulabilir veya bunlar için Anayasada öngörülen güvencelere aykırı tedbirler alınabilir.
+
+Soru:
+Bir belediye, yerel yönetimde temel hak ve hürriyetlerin keyfi olarak sınırlandırılmasını kararlaştırmıştır. Bu uygulama Anayasanın 13. Maddesi'ne aykırı mıdır?
+
+Nihai cevap: [/INST]","Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Anayasa Hukuku - turkish_law_eski_4721_anayasa_hukuku_p001
+
+Bağlam:
+[Bağlam 1]
+Anayasa hükümlerinden hiçbiri, Devlete veya kişilere, Anayasayla tanınan temel hak ve hürriyetlerin yok edilmesini veya Anayasada belirtilenden daha geniş şekilde sınırlandırılmasını amaçlayan bir faaliyette bulunmayı mümkün kılacak şekilde yorumlanamaz. Bu hükümlere ayk",0.13333333333333333,0.34507042253521125,1,0.5116279069767442,0.47619047619047616,0,0.1348314606741573,0.28690807799442897,0
+İlgili kişi ne demektir?,Kişisel verisi işlenen gerçek kişi demektir.,"İlgili kişi, bir hukuk sorununa bağlıdır ve bu sorunun çözülmesi için gereken bilgilerin bir kısmının sahibi olduğu kişidir.","İlgili kişi, bir hukuk sorununa bağlıdır ve bu sorunun çözülmesi için gereken bilgilerin bir kısmının sahibi olduğu kişidir.",chunk_001050,Ceza Muhakemesi Kanunu,,"Madde 8 – (1) Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.",0.0,1,2,0.0873046293854713,0.85,"Madde 8 – (1) Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.
+
+Madde 432- Akıl hastalığı, akıl zayıflığı, alkol veya uyuşturucu madde bağımlılığı, ağır 
+tehlike arzeden bulaşıcı hastalık veya serserilik sebeplerinden biriyle toplum için tehlike 
+oluşturan her ergin kişi, kişisel korunmasının başka şekilde sağlanamaması hâlinde, tedavisi, 
+eğitimi veya ıslahı için elverişli bir kuruma yerleştirilir veya alıkonulabilir. Görevlerini 
+yaparlarken bu sebeplerden birinin varlığını öğrenen kamu görevlileri, bu durumu hemen yetkili 
+vesayet makamına bildirmek zorundadırlar.
+Bu konuda kişinin çevresine getirdiği külfet de göz önünde tutulur.
+İlgili kişi durumu elverir elvermez kurumdan çıkarılır. B. Yetki
+
+Şüpheli veya Sanıkla İlgili Arama (Madde 116): Makul şüphe varsa, şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya diğer yerleri aranabilir.",True,0.0,"[""Madde 8 – (1) Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.\n\nMadde 432- Akıl hastalığı, akıl zayıflığı, alkol veya uyuşturucu madde bağımlılığı, ağır \r\ntehlike arzeden bulaşıcı hastalık veya serserilik sebeplerinden biriyle toplum için tehlike \r\noluşturan her ergin kişi, kişisel korunmasının başka şekilde sağlanamaması hâlinde, tedavisi, \r\neğitimi veya ıslahı için elverişli bir kuruma yerleştirilir veya alıkonulabilir. Görevlerini \r\nyaparlarken bu sebeplerden birinin varlığını öğrenen kamu görevlileri, bu durumu hemen yetkili \r\nvesayet makamına bildirmek zorundadırlar.\r\nBu konuda kişinin çevresine getirdiği külfet de göz önünde tutulur.\r\nİlgili kişi durumu elverir elvermez kurumdan çıkarılır. B. Yetki\n\nŞüpheli veya Sanıkla İlgili Arama (Madde 116): Makul şüphe varsa, şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya diğer yerleri aranabilir.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Ceza Muhakemesi Kanunu
+Chunk ID: chunk_001050
+Citation: Ceza Muhakemesi Kanunu - chunk_001050
+Metin:
+[Bağlam 1]
+Madde 8 – (1) Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.
+
+Madde 432- Akıl hastalığı, akıl zayıflığı, alkol veya uyuşturucu madde bağımlılığı, ağır 
+tehlike arzeden bulaşıcı hastalık veya serserilik sebeplerinden biriyle toplum için tehlike 
+oluşturan her ergin kişi, kişisel korunmasının başka şekilde sağlanamaması hâlinde, tedavisi, 
+eğitimi veya ıslahı için elverişli bir kuruma yerleştirilir veya alıkonulabilir. Görevlerini 
+yaparlarken bu sebeplerden birinin varlığını öğrenen kamu görevlileri, bu durumu hemen yetkili 
+vesayet makamına bildirmek zorundadırlar.
+Bu konuda kişinin çevresine getirdiği külfet de göz önünde tutulur.
+İlgili kişi durumu elverir elvermez kurumdan çıkarılır. B. Yetki
+
+Şüpheli veya Sanıkla İlgili Arama (Madde 116): Makul şüphe varsa, şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya diğer yerleri aranabilir.
+
+Soru: İlgili kişi ne demektir? [/INST]",İlgili kişi: Ceza Muhakemesi Kanunu - chunk_001050,"<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 8 – (1) Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.
+
+Madde 432- Akıl hastalığı, akıl zayıflığı, alkol veya uyuşturucu madde bağımlılığı, ağır 
+tehlike arzeden bulaşıcı hastalık veya serserilik sebeplerinden biriyle toplum için tehlike 
+oluşturan her ergin kişi, kişisel korunmasının başka şekilde sağlanamaması hâlinde, tedavisi, 
+eğitimi veya ıslahı için elverişli bir kuruma yerleştirilir veya alıkonulabilir. Görevlerini 
+yaparlarken bu sebeplerden birinin varlığını öğrenen kamu görevlileri, bu durumu hemen yetkili 
+vesayet makamına bildirmek zorundadırlar.
+Bu konuda kişinin çevresine getirdiği külfet de göz önünde tutulur.
+İlgili kişi durumu elverir elvermez kurumdan çıkarılır. B. Yetki
+
+Şüpheli veya Sanıkla İlgili Arama (Madde 116): Makul şüphe varsa, şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya diğer yerleri aranabilir.
+
+Soru:
+İlgili kişi ne demektir?
+
+Nihai cevap: [/INST]","İlgili kişi: Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.8 - turkish_law_eski_4721_turk_medeni_kanunu_m8",0.0392156862745098,0.0821917808219178,1,0.08,0.14457831325301204,0,0.14285714285714288,0.3076923076923077,0
+Anayasa mahkemesi kararlarının kesinliği nedir,"Anayasa mahkemesi kararlarının kesinliği, mahkemenin verdiği kararların nihai ve değiştirilemez olduğu anlamına gelir. bu kararlar, başka bir yargı merci tarafından bozulamaz veya yeniden incelenemez.","Anayasa Mahkemesi kararları, Anayasa Mahkemesi üyelerinin salt çoğunluğunun kararına dayalı olarak kesin olarak uygulanır. [Bağlam 3]","Anayasa Mahkemesi kararları, Anayasa Mahkemesi üyelerinin salt çoğunluğunun kararına dayalı olarak kesin olarak uygulanır. []",chunk_000212,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Diğer mahkemelerle, Anayasa Mahkemesi arasındaki görev uyuşmazlıklarında, Anayasa Mahkemesinin kararı esas alınır.
+Devamı…",0.0,1,6,0.093826524913311,0.75,"Diğer mahkemelerle, Anayasa Mahkemesi arasındaki görev uyuşmazlıklarında, Anayasa Mahkemesinin kararı esas alınır.
+Devamı…
+
+Kanun, Cumhurbaşkanlığı kararnamesi veya Türkiye Büyük Millet Meclisi İçtüzüğü ya da bunların hükümleri, iptal kararlarının Resmî Gazetede yayımlandığı tarihte yürürlükten kalkar. Gereken hallerde Anayasa Mahkemesi iptal hükmünün yürürlüğe gireceği tarihi ayrıca kararlaştırabilir. Bu tarih, kararın Resmî Gazetede yayımlandığı günden başlayarak bir yılı geçemez. [95]
+
+Anayasa Mahkemesi üyeliği, bir üyenin hakimlik mesleğinden çıkarılmayı gerektiren bir suçtan dolayı hüküm giymesi halinde kendiliğinden; görevini sağlık bakımından yerine getiremeyeceğinin kesin olarak anlaşılması halinde de, Anayasa Mahkemesi üye tamsayısının salt çoğunluğunun kararı ile sona erer. 3. Görev ve yetkileri [83]",True,0.5,"[""Diğer mahkemelerle, Anayasa Mahkemesi arasındaki görev uyuşmazlıklarında, Anayasa Mahkemesinin kararı esas alınır.\nDevamı…\n\nKanun, Cumhurbaşkanlığı kararnamesi veya Türkiye Büyük Millet Meclisi İçtüzüğü ya da bunların hükümleri, iptal kararlarının Resmî Gazetede yayımlandığı tarihte yürürlükten kalkar. Gereken hallerde Anayasa Mahkemesi iptal hükmünün yürürlüğe gireceği tarihi ayrıca kararlaştırabilir. Bu tarih, kararın Resmî Gazetede yayımlandığı günden başlayarak bir yılı geçemez. [95]\n\nAnayasa Mahkemesi üyeliği, bir üyenin hakimlik mesleğinden çıkarılmayı gerektiren bir suçtan dolayı hüküm giymesi halinde kendiliğinden; görevini sağlık bakımından yerine getiremeyeceğinin kesin olarak anlaşılması halinde de, Anayasa Mahkemesi üye tamsayısının salt çoğunluğunun kararı ile sona erer. 3. Görev ve yetkileri [83]""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000212
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000212
+Metin:
+[Bağlam 1]
+Diğer mahkemelerle, Anayasa Mahkemesi arasındaki görev uyuşmazlıklarında, Anayasa Mahkemesinin kararı esas alınır.
+Devamı…
+
+Kanun, Cumhurbaşkanlığı kararnamesi veya Türkiye Büyük Millet Meclisi İçtüzüğü ya da bunların hükümleri, iptal kararlarının Resmî Gazetede yayımlandığı tarihte yürürlükten kalkar. Gereken hallerde Anayasa Mahkemesi iptal hükmünün yürürlüğe gireceği tarihi ayrıca kararlaştırabilir. Bu tarih, kararın Resmî Gazetede yayımlandığı günden başlayarak bir yılı geçemez. [95]
+
+Anayasa Mahkemesi üyeliği, bir üyenin hakimlik mesleğinden çıkarılmayı gerektiren bir suçtan dolayı hüküm giymesi halinde kendiliğinden; görevini sağlık bakımından yerine getiremeyeceğinin kesin olarak anlaşılması halinde de, Anayasa Mahkemesi üye tamsayısının salt çoğunluğunun kararı ile sona erer. 3. Görev ve yetkileri [83]
+
+Soru: Anayasa mahkemesi kararlarının kesinliği nedir [/INST]",Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000212,"<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Diğer mahkemelerle, Anayasa Mahkemesi arasındaki görev uyuşmazlıklarında, Anayasa Mahkemesinin kararı esas alınır.
+Devamı…
+
+Kanun, Cumhurbaşkanlığı kararnamesi veya Türkiye Büyük Millet Meclisi İçtüzüğü ya da bunların hükümleri, iptal kararlarının Resmî Gazetede yayımlandığı tarihte yürürlükten kalkar. Gereken hallerde Anayasa Mahkemesi iptal hükmünün yürürlüğe gireceği tarihi ayrıca kararlaştırabilir. Bu tarih, kararın Resmî Gazetede yayımlandığı günden başlayarak bir yılı geçemez. [95]
+
+Anayasa Mahkemesi üyeliği, bir üyenin hakimlik mesleğinden çıkarılmayı gerektiren bir suçtan dolayı hüküm giymesi halinde kendiliğinden; görevini sağlık bakımından yerine getiremeyeceğinin kesin olarak anlaşılması halinde de, Anayasa Mahkemesi üye tamsayısının salt çoğunluğunun kararı ile sona erer. 3. Görev ve yetkileri [83]
+
+Soru:
+Anayasa mahkemesi kararlarının kesinliği nedir
+
+Nihai cevap: [/INST]","Anayasa mahkemesi kararlarının kesinliği şu kaynak bilgilerine dayandırılmalıdır: Kategori: Anayasa Hukuku; Hukuk alanı: Anayasa Hukuku; Karar sonucu: Bozma. Kaynak metindeki esas içerik şudur: Diğer mahkemelerle, Anayasa Mahkemesi arasındaki görev uyuşmazlıklarında, Anayasa Mahkemesinin kararı esas alınır. Devamı…
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - BELGE 1009 - Hukuk Genel Kurulu 201",0.10958904109589039,0.3111888111888112,1,0.10526315789473685,0.44936708860759494,0,0.0,0.11428571428571428,1
+"Anayasa madde 63'e göre, tarih, kültür ve tabiat varlıklarının korunması nasıl sağlanır?","Anayasa madde 63'e göre, devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar ve bu amaçla destekleyici ve teşvik edici tedbirleri alır.","Anayasa madde 63'e göre, devlet destekleyici ve teşvik edici tedbirler alır, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasına yardımcı olur.","Anayasa madde 63'e göre, devlet destekleyici ve teşvik edici tedbirler alır, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasına yardımcı olur.",chunk_000495,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.",1.0,1,1,0.9986403584480286,1.0,"Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.
+
+Madde 62 – Devlet, yabancı ülkelerde çalışan Türk vatandaşlarının aile birliğinin, çocuklarının eğitiminin, kültürel ihtiyaçlarının ve sosyal güvenliklerinin sağlanması, anavatanla bağlarının korunması ve yurda dönüşlerinde yardımcı olunması için gereken tedbirleri alır. X I. Tarih, kültür ve tabiat varlıklarının korunması
+
+Madde 129 – Memurlar ve diğer kamu görevlileri Anayasa ve kanunlara sadık kalarak faaliyette bulunmakla yükümlüdürler.",True,1.0,"[""Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.\n\nMadde 62 – Devlet, yabancı ülkelerde çalışan Türk vatandaşlarının aile birliğinin, çocuklarının eğitiminin, kültürel ihtiyaçlarının ve sosyal güvenliklerinin sağlanması, anavatanla bağlarının korunması ve yurda dönüşlerinde yardımcı olunması için gereken tedbirleri alır. X I. Tarih, kültür ve tabiat varlıklarının korunması\n\nMadde 129 – Memurlar ve diğer kamu görevlileri Anayasa ve kanunlara sadık kalarak faaliyette bulunmakla yükümlüdürler.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000495
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000495
+Metin:
+[Bağlam 1]
+Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.
+
+Madde 62 – Devlet, yabancı ülkelerde çalışan Türk vatandaşlarının aile birliğinin, çocuklarının eğitiminin, kültürel ihtiyaçlarının ve sosyal güvenliklerinin sağlanması, anavatanla bağlarının korunması ve yurda dönüşlerinde yardımcı olunması için gereken tedbirleri alır. X I. Tarih, kültür ve tabiat varlıklarının korunması
+
+Madde 129 – Memurlar ve diğer kamu görevlileri Anayasa ve kanunlara sadık kalarak faaliyette bulunmakla yükümlüdürler.
+
+Soru: Anayasa madde 63'e göre, tarih, kültür ve tabiat varlıklarının korunması nasıl sağlanır? [/INST]","Anayasa Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.
+
+Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000495","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.
+
+Madde 62 – Devlet, yabancı ülkelerde çalışan Türk vatandaşlarının aile birliğinin, çocuklarının eğitiminin, kültürel ihtiyaçlarının ve sosyal güvenliklerinin sağlanması, anavatanla bağlarının korunması ve yurda dönüşlerinde yardımcı olunması için gereken tedbirleri alır. X I. Tarih, kültür ve tabiat varlıklarının korunması
+
+Madde 129 – Memurlar ve diğer kamu görevlileri Anayasa ve kanunlara sadık kalarak faaliyette bulunmakla yükümlüdürler.
+
+Soru:
+Anayasa madde 63'e göre, tarih, kültür ve tabiat varlıklarının korunması nasıl sağlanır?
+
+Nihai cevap: [/INST]","Anayasa Madde 63 – Devlet, tarih, kültür ve tabiat varlıklarının ve değerlerinin korunmasını sağlar, bu amaçla destekleyici ve teşvik edici tedbirleri alır.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.63 - turkish_law_eski_4721_turk_medeni_kanunu_m63",0.6461538461538462,0.7211538461538461,1,0.7826086956521738,0.6325878594249201,0,0.823529411764706,0.8333333333333334,1
+"Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin korunması için ne tür tedbirler alınacağını düzenler","Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin korunması için devletin, bu işlemleri anayasal ve kanuni düzenlemelere uygun olarak gerçekleştirmesini düzenler. devlet, devletleştirme ve özelleştirme işlemlerini adil ve hukuka uygun olarak gerçekleştirmek zorundadır.","Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin gerçek karşılığının hesaplanması için tümleştirilmesi ve kanunla düzenlenmesi gerekir.","Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin gerçek karşılığının hesaplanması için tümleştirilmesi ve kanunla düzenlenmesi gerekir.",chunk_000463,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 47 – Kamu hizmeti niteliği taşıyan özel teşebbüsler, kamu yararının zorunlu kıldığı hallerde devletleştirilebilir. Devletleştirme gerçek karşılığı üzerinden yapılır. Gerçek karşılığın hesaplanma tarzı ve usulleri kanunla düzenlenir.",1.0,1,1,0.4143493473529815,1.0,"Madde 47 – Kamu hizmeti niteliği taşıyan özel teşebbüsler, kamu yararının zorunlu kıldığı hallerde devletleştirilebilir. Devletleştirme gerçek karşılığı üzerinden yapılır. Gerçek karşılığın hesaplanma tarzı ve usulleri kanunla düzenlenir.
+
+İkinci fıkrada öngörülen taksitlendirmelerde ve herhangi bir sebeple ödenmemiş kamulaştırma bedellerinde kamu alacakları için öngörülen en yüksek faiz uygulanır. E. Devletleştirme ve Özelleştirme[19]
+
+Madde 172 – Devlet, tüketicileri koruyucu ve aydınlatıcı tedbirler alır, tüketicilerin kendilerini koruyucu girişimlerini teşvik eder. B. Esnaf ve sanatkarların korunması",True,0.5,"[""Madde 47 – Kamu hizmeti niteliği taşıyan özel teşebbüsler, kamu yararının zorunlu kıldığı hallerde devletleştirilebilir. Devletleştirme gerçek karşılığı üzerinden yapılır. Gerçek karşılığın hesaplanma tarzı ve usulleri kanunla düzenlenir.\n\nİkinci fıkrada öngörülen taksitlendirmelerde ve herhangi bir sebeple ödenmemiş kamulaştırma bedellerinde kamu alacakları için öngörülen en yüksek faiz uygulanır. E. Devletleştirme ve Özelleştirme[19]\n\nMadde 172 – Devlet, tüketicileri koruyucu ve aydınlatıcı tedbirler alır, tüketicilerin kendilerini koruyucu girişimlerini teşvik eder. B. Esnaf ve sanatkarların korunması""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000463
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000463
+Metin:
+[Bağlam 1]
+Madde 47 – Kamu hizmeti niteliği taşıyan özel teşebbüsler, kamu yararının zorunlu kıldığı hallerde devletleştirilebilir. Devletleştirme gerçek karşılığı üzerinden yapılır. Gerçek karşılığın hesaplanma tarzı ve usulleri kanunla düzenlenir.
+
+İkinci fıkrada öngörülen taksitlendirmelerde ve herhangi bir sebeple ödenmemiş kamulaştırma bedellerinde kamu alacakları için öngörülen en yüksek faiz uygulanır. E. Devletleştirme ve Özelleştirme[19]
+
+Madde 172 – Devlet, tüketicileri koruyucu ve aydınlatıcı tedbirler alır, tüketicilerin kendilerini koruyucu girişimlerini teşvik eder. B. Esnaf ve sanatkarların korunması
+
+Soru: Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin korunması için ne tür tedbirler alınacağını düzenler [/INST]",Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000463,"<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 47 – Kamu hizmeti niteliği taşıyan özel teşebbüsler, kamu yararının zorunlu kıldığı hallerde devletleştirilebilir. Devletleştirme gerçek karşılığı üzerinden yapılır. Gerçek karşılığın hesaplanma tarzı ve usulleri kanunla düzenlenir.
+
+İkinci fıkrada öngörülen taksitlendirmelerde ve herhangi bir sebeple ödenmemiş kamulaştırma bedellerinde kamu alacakları için öngörülen en yüksek faiz uygulanır. E. Devletleştirme ve Özelleştirme[19]
+
+Madde 172 – Devlet, tüketicileri koruyucu ve aydınlatıcı tedbirler alır, tüketicilerin kendilerini koruyucu girişimlerini teşvik eder. B. Esnaf ve sanatkarların korunması
+
+Soru:
+Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin korunması için ne tür tedbirler alınacağını düzenler
+
+Nihai cevap: [/INST]","Anayasa madde 47, devletleştirme ve özelleştirme işlemlerinin korunması için ne tür tedbirler alınacağını düzenler: Madde 47 – Kamu hizmeti niteliği taşıyan özel teşebbüsler, kamu yararının zorunlu kıldığı hallerde devletleştirilebilir. Devletleştirme gerçek karşılığı üzerinden yapılır. Gerçek karşılığın hesaplanma tarzı ve usulleri kanunla düzenlenir.
+
+İkinci fıkrada öngörülen taksitlendirmelerde",0.30769230769230765,0.23353293413173654,0,0.375,0.2985781990521327,0,0.0,0.024615384615384615,1
+Kişisel veriler hangi mevzuata göre işlenir?,Kvk kanununda ve diğer kanunlarda öngörülen mevzuata göre işlenir.,"Kişisel veriler, kanunla düzenlenir.","Kişisel veriler, kanunla düzenlenir.",chunk_000388,Türkiye Cumhuriyeti Anayasası,,"(Ek fıkra: 7/5/2010-5982/2 md.) Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir. Bu hak; kişinin kendisiyle ilgili kişisel veriler hakkında bilgilendirilme, bu verilere erişme, bunların düzeltilmesini veya silinmesini talep etme ve amaçları doğrultusunda kullanılıp kullanılmadığını öğrenmeyi de kapsar. Kişisel veriler, ancak kanunda öngörülen hallerde veya kişinin açık rızasıyla işlenebilir. Kişisel verilerin korunmasına ilişkin esas ve usuller kanunla düzenlenir. B. Konut dokunulmazlığı",0.0,1,1,0.8672710657119751,1.0,"(Ek fıkra: 7/5/2010-5982/2 md.) Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir. Bu hak; kişinin kendisiyle ilgili kişisel veriler hakkında bilgilendirilme, bu verilere erişme, bunların düzeltilmesini veya silinmesini talep etme ve amaçları doğrultusunda kullanılıp kullanılmadığını öğrenmeyi de kapsar. Kişisel veriler, ancak kanunda öngörülen hallerde veya kişinin açık rızasıyla işlenebilir. Kişisel verilerin korunmasına ilişkin esas ve usuller kanunla düzenlenir. B. Konut dokunulmazlığı
+
+Madde 42- Kişisel durumdaki değişiklikler, özellikle evlilik dışı bir çocuğun tanınması 
+veya hâkimin babalığa karar vermesi, soybağının düzeltilmesi, evlât edinme ya da bulunmuş bir 
+çocuğun soybağının belli olması, ilgili kanun hükümlerine göre kütüğe işlenir. C. Ölüm kütüğü I. Ölümün bildirilmesi
+
+(1) 75, 76 ve 78 inci madde hükümlerine göre alınan örnekler üzerinde yapılan inceleme sonuçları, kişisel veri niteliğinde olup, başka bir amaçla kullanılamaz; dosya içeriğini öğrenme yetkisine sahip bulunan kişiler tarafından bir başkasına verilemez.",True,0.5,"[""(Ek fıkra: 7/5/2010-5982/2 md.) Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir. Bu hak; kişinin kendisiyle ilgili kişisel veriler hakkında bilgilendirilme, bu verilere erişme, bunların düzeltilmesini veya silinmesini talep etme ve amaçları doğrultusunda kullanılıp kullanılmadığını öğrenmeyi de kapsar. Kişisel veriler, ancak kanunda öngörülen hallerde veya kişinin açık rızasıyla işlenebilir. Kişisel verilerin korunmasına ilişkin esas ve usuller kanunla düzenlenir. B. Konut dokunulmazlığı\n\nMadde 42- Kişisel durumdaki değişiklikler, özellikle evlilik dışı bir çocuğun tanınması \r\nveya hâkimin babalığa karar vermesi, soybağının düzeltilmesi, evlât edinme ya da bulunmuş bir \r\nçocuğun soybağının belli olması, ilgili kanun hükümlerine göre kütüğe işlenir. C. Ölüm kütüğü I. Ölümün bildirilmesi\n\n(1) 75, 76 ve 78 inci madde hükümlerine göre alınan örnekler üzerinde yapılan inceleme sonuçları, kişisel veri niteliğinde olup, başka bir amaçla kullanılamaz; dosya içeriğini öğrenme yetkisine sahip bulunan kişiler tarafından bir başkasına verilemez.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000388
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000388
+Metin:
+[Bağlam 1]
+(Ek fıkra: 7/5/2010-5982/2 md.) Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir. Bu hak; kişinin kendisiyle ilgili kişisel veriler hakkında bilgilendirilme, bu verilere erişme, bunların düzeltilmesini veya silinmesini talep etme ve amaçları doğrultusunda kullanılıp kullanılmadığını öğrenmeyi de kapsar. Kişisel veriler, ancak kanunda öngörülen hallerde veya kişinin açık rızasıyla işlenebilir. Kişisel verilerin korunmasına ilişkin esas ve usuller kanunla düzenlenir. B. Konut dokunulmazlığı
+
+Madde 42- Kişisel durumdaki değişiklikler, özellikle evlilik dışı bir çocuğun tanınması 
+veya hâkimin babalığa karar vermesi, soybağının düzeltilmesi, evlât edinme ya da bulunmuş bir 
+çocuğun soybağının belli olması, ilgili kanun hükümlerine göre kütüğe işlenir. C. Ölüm kütüğü I. Ölümün bildirilmesi
+
+(1) 75, 76 ve 78 inci madde hükümlerine göre alınan örnekler üzerinde yapılan inceleme sonuçları, kişisel veri niteliğinde olup, başka bir amaçla kullanılamaz; dosya içeriğini öğrenme yetkisine sahip bulunan kişiler tarafından bir başkasına verilemez.
+
+Soru: Kişisel veriler hangi mevzuata göre işlenir? [/INST]","Kişisel veriler, Türkiye Cumhuriyeti Anayasası - chunk_000388 göre işlenir.
+
+Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000388","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+(Ek fıkra: 7/5/2010-5982/2 md.) Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir. Bu hak; kişinin kendisiyle ilgili kişisel veriler hakkında bilgilendirilme, bu verilere erişme, bunların düzeltilmesini veya silinmesini talep etme ve amaçları doğrultusunda kullanılıp kullanılmadığını öğrenmeyi de kapsar. Kişisel veriler, ancak kanunda öngörülen hallerde veya kişinin açık rızasıyla işlenebilir. Kişisel verilerin korunmasına ilişkin esas ve usuller kanunla düzenlenir. B. Konut dokunulmazlığı
+
+Madde 42- Kişisel durumdaki değişiklikler, özellikle evlilik dışı bir çocuğun tanınması 
+veya hâkimin babalığa karar vermesi, soybağının düzeltilmesi, evlât edinme ya da bulunmuş bir 
+çocuğun soybağının belli olması, ilgili kanun hükümlerine göre kütüğe işlenir. C. Ölüm kütüğü I. Ölümün bildirilmesi
+
+(1) 75, 76 ve 78 inci madde hükümlerine göre alınan örnekler üzerinde yapılan inceleme sonuçları, kişisel veri niteliğinde olup, başka bir amaçla kullanılamaz; dosya içeriğini öğrenme yetkisine sahip bulunan kişiler tarafından bir başkasına verilemez.
+
+Soru:
+Kişisel veriler hangi mevzuata göre işlenir?
+
+Nihai cevap: [/INST]","Kişisel veriler, kaynakta belirtilen mevzuata göre işlenir. Bu kaynak, kesin resmî karar metni değil; temizlenmiş kaynak özeti olarak değerlendirilmelidir.
+
+Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - BELGE 1001 - Hukuk Genel Kurulu 2010/223 E., 2012/123 K. - Sen Türk Hukuku - yargitay_1001_sen_turk_hukuku_001",0.10909090909090909,0.22598870056497175,1,0.0,0.48484848484848486,0,0.16666666666666669,0.2903225806451613,1
+"Anayasa madde 140'a göre, hakimlerin ve savcıların görev ve yetkileri nasıl düzenlenir?","Anayasa madde 140'a göre, hakimlerin ve savcıların görev ve yetkileri, çalışma usulleri, mesleğe kabul, atanma, nakil, geçici yetki verme, yükselme, aylık, ödenek ve diğer özlük işleri, meslek içi eğitim, görevden uzaklaştırılma, emeklilik ve disiplin işlerine ilişkin esaslar kanunla düzenlenir.","Anayasa madde 140'a göre, hakimler ve savcıların görev ve yetkileri kanunla düzenlenir.","Anayasa madde 140'a göre, hakimler ve savcıların görev ve yetkileri kanunla düzenlenir.",chunk_000158,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,"Madde 140 – Hakimler ve savcılar adli ve idari yargı hakim ve savcıları olarak görev yaparlar. Bu görevler meslekten hakim ve savcılar eliyle yürütülür. Hakimler, mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre görev ifa ederler.",1.0,1,1,0.995032548904419,1.0,"Madde 140 – Hakimler ve savcılar adli ve idari yargı hakim ve savcıları olarak görev yaparlar. Bu görevler meslekten hakim ve savcılar eliyle yürütülür. Hakimler, mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre görev ifa ederler.
+
+Madde 142 – Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.
+
+Hakim ve savcıların nitelikleri, atanmaları, hakları ve ödevleri, aylık ve ödenekleri, meslekte ilerlemeleri, görevlerinin ve görev yerlerinin geçici veya sürekli olarak değiştirilmesi, haklarında disiplin kovuşturması açılması ve disiplin cezası verilmesi, görevleriyle ilgili veya görevleri sırasında işledikleri suçlarından dolayı soruşturma yapılması ve yargılanmalarına karar verilmesi, meslekten çıkarmayı gerektiren suçluluk veya yetersizlik halleri ve meslek içi eğitimleri ile diğer özlük işleri mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre kanunla düzenlenir.",True,0.5,"[""Madde 140 – Hakimler ve savcılar adli ve idari yargı hakim ve savcıları olarak görev yaparlar. Bu görevler meslekten hakim ve savcılar eliyle yürütülür. Hakimler, mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre görev ifa ederler.\n\nMadde 142 – Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.\n\nHakim ve savcıların nitelikleri, atanmaları, hakları ve ödevleri, aylık ve ödenekleri, meslekte ilerlemeleri, görevlerinin ve görev yerlerinin geçici veya sürekli olarak değiştirilmesi, haklarında disiplin kovuşturması açılması ve disiplin cezası verilmesi, görevleriyle ilgili veya görevleri sırasında işledikleri suçlarından dolayı soruşturma yapılması ve yargılanmalarına karar verilmesi, meslekten çıkarmayı gerektiren suçluluk veya yetersizlik halleri ve meslek içi eğitimleri ile diğer özlük işleri mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre kanunla düzenlenir.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000158
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000158
+Metin:
+[Bağlam 1]
+Madde 140 – Hakimler ve savcılar adli ve idari yargı hakim ve savcıları olarak görev yaparlar. Bu görevler meslekten hakim ve savcılar eliyle yürütülür. Hakimler, mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre görev ifa ederler.
+
+Madde 142 – Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.
+
+Hakim ve savcıların nitelikleri, atanmaları, hakları ve ödevleri, aylık ve ödenekleri, meslekte ilerlemeleri, görevlerinin ve görev yerlerinin geçici veya sürekli olarak değiştirilmesi, haklarında disiplin kovuşturması açılması ve disiplin cezası verilmesi, görevleriyle ilgili veya görevleri sırasında işledikleri suçlarından dolayı soruşturma yapılması ve yargılanmalarına karar verilmesi, meslekten çıkarmayı gerektiren suçluluk veya yetersizlik halleri ve meslek içi eğitimleri ile diğer özlük işleri mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre kanunla düzenlenir.
+
+Soru: Anayasa madde 140'a göre, hakimlerin ve savcıların görev ve yetkileri nasıl düzenlenir? [/INST]",Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000158,"<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+Madde 140 – Hakimler ve savcılar adli ve idari yargı hakim ve savcıları olarak görev yaparlar. Bu görevler meslekten hakim ve savcılar eliyle yürütülür. Hakimler, mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre görev ifa ederler.
+
+Madde 142 – Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.
+
+Hakim ve savcıların nitelikleri, atanmaları, hakları ve ödevleri, aylık ve ödenekleri, meslekte ilerlemeleri, görevlerinin ve görev yerlerinin geçici veya sürekli olarak değiştirilmesi, haklarında disiplin kovuşturması açılması ve disiplin cezası verilmesi, görevleriyle ilgili veya görevleri sırasında işledikleri suçlarından dolayı soruşturma yapılması ve yargılanmalarına karar verilmesi, meslekten çıkarmayı gerektiren suçluluk veya yetersizlik halleri ve meslek içi eğitimleri ile diğer özlük işleri mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre kanunla düzenlenir.
+
+Soru:
+Anayasa madde 140'a göre, hakimlerin ve savcıların görev ve yetkileri nasıl düzenlenir?
+
+Nihai cevap: [/INST]","Anayasa Madde 140 – Hakimler ve savcılar adli ve idari yargı hakim ve savcıları olarak görev yaparlar. Bu görevler meslekten hakim ve savcılar eliyle yürütülür. Hakimler, mahkemelerin bağımsızlığı ve hakimlik teminatı esaslarına göre görev ifa ederler.
+
+Madde 142 – Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.
+
+Hakim ve savcıların nitelikleri, atanmaları, hakları ve ö",0.2916666666666667,0.17201166180758018,0,0.4528301886792453,0.46195652173913043,0,0.0,0.006024096385542169,1
+Ekonomik ve sosyal konsey hangi anayasa maddesi ile düzenlenmiştir,"Ekonomik ve sosyal konsey, türkiye cumhuriyeti anayasası'nın 115. maddesi ile düzenlenmiştir. bu madde, konseyi ve görevlerini belirler.",Anayasa maddesi 109'da düzenlenmiştir.,Anayasa maddesi 109'da düzenlenmiştir.,chunk_000248,Türkiye Cumhuriyeti Anayasası,Türkiye Cumhuriyeti Anayasası,(Ek fıkra: 7/5/2010-5982/23 md.) Ekonomik ve sosyal politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kuruluş ve işleyişi kanunla düzenlenir. [110] I I. Piyasaların denetimi ve dış ticaretin düzenlenmesi,0.0,1,1,0.931627094745636,1.0,"(Ek fıkra: 7/5/2010-5982/23 md.) Ekonomik ve sosyal politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kuruluş ve işleyişi kanunla düzenlenir. [110] I I. Piyasaların denetimi ve dış ticaretin düzenlenmesi
+
+DÖRDÜNCÜ KISIM MALİ VE EKONOMİK HÜKÜMLER İKİNCİ BÖLÜM Ekonomik Hükümler I. Planlama; Ekonomik ve Sosyal Konsey [109]
+
+Devlet, sosyal ve ekonomik alanlarda Anayasa ile belirlenen görevlerini, bu görevlerin amaçlarına uygun öncelikleri gözeterek malî kaynaklarının yeterliliği ölçüsünde yerine getirir.",True,0.0,"[""(Ek fıkra: 7/5/2010-5982/23 md.) Ekonomik ve sosyal politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kuruluş ve işleyişi kanunla düzenlenir. [110] I I. Piyasaların denetimi ve dış ticaretin düzenlenmesi\n\nDÖRDÜNCÜ KISIM MALİ VE EKONOMİK HÜKÜMLER İKİNCİ BÖLÜM Ekonomik Hükümler I. Planlama; Ekonomik ve Sosyal Konsey [109]\n\nDevlet, sosyal ve ekonomik alanlarda Anayasa ile belirlenen görevlerini, bu görevlerin amaçlarına uygun öncelikleri gözeterek malî kaynaklarının yeterliliği ölçüsünde yerine getirir.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000248
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000248
+Metin:
+[Bağlam 1]
+(Ek fıkra: 7/5/2010-5982/23 md.) Ekonomik ve sosyal politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kuruluş ve işleyişi kanunla düzenlenir. [110] I I. Piyasaların denetimi ve dış ticaretin düzenlenmesi
+
+DÖRDÜNCÜ KISIM MALİ VE EKONOMİK HÜKÜMLER İKİNCİ BÖLÜM Ekonomik Hükümler I. Planlama; Ekonomik ve Sosyal Konsey [109]
+
+Devlet, sosyal ve ekonomik alanlarda Anayasa ile belirlenen görevlerini, bu görevlerin amaçlarına uygun öncelikleri gözeterek malî kaynaklarının yeterliliği ölçüsünde yerine getirir.
+
+Soru: Ekonomik ve sosyal konsey hangi anayasa maddesi ile düzenlenmiştir [/INST]","Kaynak metindeki esas içerik şudur: [Bağlam 1] (Ek fıkra: 7/5/2010-5982/23 md.) Ekonomik ve Sosyal Politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kuruluş ve işleyişi kanunla düzenlenir. [110] I I. Piyasaların denetimi ve dış ticaretin düzenlenmesi
+
+DÖRDÜNCÜ KISIM MALİ VE EKONOMİK HÜKÜMLER İKİNCİ BÖLÜM Ekonomik Hükümler I. Planlama; Ekonomik ve Sosyal Konsey [109]
+
+Devlet, sosyal ve ekonomik alan","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+(Ek fıkra: 7/5/2010-5982/23 md.) Ekonomik ve sosyal politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kuruluş ve işleyişi kanunla düzenlenir. [110] I I. Piyasaların denetimi ve dış ticaretin düzenlenmesi
+
+DÖRDÜNCÜ KISIM MALİ VE EKONOMİK HÜKÜMLER İKİNCİ BÖLÜM Ekonomik Hükümler I. Planlama; Ekonomik ve Sosyal Konsey [109]
+
+Devlet, sosyal ve ekonomik alanlarda Anayasa ile belirlenen görevlerini, bu görevlerin amaçlarına uygun öncelikleri gözeterek malî kaynaklarının yeterliliği ölçüsünde yerine getirir.
+
+Soru:
+Ekonomik ve sosyal konsey hangi anayasa maddesi ile düzenlenmiştir
+
+Nihai cevap: [/INST]",Bu açıklama şu kaynak bilgilerine dayandırılmalıdır: Kategori: Devlet Sembolleri / İdare Hukuku; Hukuk alanı: Devlet Sembolleri / İdare Hukuku; Karar sonucu: Bozma. Kaynak metindeki esas içerik şudur: (Ek fikra: 7/5/2010-5982/23 md.) Ekonomik ve sosyal politikaların oluşturulmasında Cumhurbaşkanına istişarî nitelikte görüş bildirmek amacıyla Ekonomik ve Sosyal Konsey kurulur. Ekonomik ve Sosyal Konseyin kur,0.16216216216216214,0.1676190476190476,0,0.1739130434782609,0.36904761904761907,0,0.10869565217391305,0.2552504038772213,0
+Bilgi edinme hakkının ihlali durumunda ne yapılabilir,"Bilgi edinme hakkının ihlali durumunda, bireyler bilgi edinme değerlendirme kurulu'na başvurarak ihlalin durdurulmasını ve talep ettikleri bilgilere erişim sağlanmasını isteyebilirler.","Bilgi edinme hakkın ihlali durumunda, Kurum ve kuruluşların Bilgi Edinme Değerlendirme Kurulu'na başvurulmalıdır.","Bilgi edinme hakkın ihlali durumunda, Kurum ve kuruluşların Bilgi Edinme Değerlendirme Kurulu'na başvurulmalıdır.",chunk_000592,Bilgi Edinme Kanunu,Bilgi Edinme Kanunu,DÖRDÜNCÜ BÖLÜM Bilgi Edinme Hakkının Sınırları Yargı denetimi dışında kalan işlemler,0.0,1,5,0.0246486347168684,0.76,"DÖRDÜNCÜ BÖLÜM Bilgi Edinme Hakkının Sınırları Yargı denetimi dışında kalan işlemler
+
+Madde 14- Bilgi edinme başvurusuyla ilgili yapılacak itirazlar üzerine, (…)3 verilen kararları incelemek ve kurum ve kuruluşlar için bilgi edinme hakkının kullanılmasına ilişkin olarak kararlar vermek üzere; Bilgi Edinme Değerlendirme Kurulu oluşturulmuştur.
+
+Madde 8- Kurum ve kuruluşlarca yayımlanmış veya yayın, broşür, ilân ve benzeri yollarla kamuya açıklanmış bilgi veya belgeler, bilgi edinme başvurularına konu olamaz. Ancak, yayımlanmış veya kamuya açıklanmış bilgi veya belgelerin ne şekilde, ne zaman ve nerede yayımlandığı veya açıklandığı başvurana bildirilir. Gizli bilgileri ayırarak bilgi veya belge verme",True,1.0,"[""DÖRDÜNCÜ BÖLÜM Bilgi Edinme Hakkının Sınırları Yargı denetimi dışında kalan işlemler\n\nMadde 14- Bilgi edinme başvurusuyla ilgili yapılacak itirazlar üzerine, (…)3 verilen kararları incelemek ve kurum ve kuruluşlar için bilgi edinme hakkının kullanılmasına ilişkin olarak kararlar vermek üzere; Bilgi Edinme Değerlendirme Kurulu oluşturulmuştur.\n\nMadde 8- Kurum ve kuruluşlarca yayımlanmış veya yayın, broşür, ilân ve benzeri yollarla kamuya açıklanmış bilgi veya belgeler, bilgi edinme başvurularına konu olamaz. Ancak, yayımlanmış veya kamuya açıklanmış bilgi veya belgelerin ne şekilde, ne zaman ve nerede yayımlandığı veya açıklandığı başvurana bildirilir. Gizli bilgileri ayırarak bilgi veya belge verme""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Bilgi Edinme Kanunu
+Chunk ID: chunk_000592
+Citation: Bilgi Edinme Kanunu - chunk_000592
+Metin:
+[Bağlam 1]
+DÖRDÜNCÜ BÖLÜM Bilgi Edinme Hakkının Sınırları Yargı denetimi dışında kalan işlemler
+
+Madde 14- Bilgi edinme başvurusuyla ilgili yapılacak itirazlar üzerine, (…)3 verilen kararları incelemek ve kurum ve kuruluşlar için bilgi edinme hakkının kullanılmasına ilişkin olarak kararlar vermek üzere; Bilgi Edinme Değerlendirme Kurulu oluşturulmuştur.
+
+Madde 8- Kurum ve kuruluşlarca yayımlanmış veya yayın, broşür, ilân ve benzeri yollarla kamuya açıklanmış bilgi veya belgeler, bilgi edinme başvurularına konu olamaz. Ancak, yayımlanmış veya kamuya açıklanmış bilgi veya belgelerin ne şekilde, ne zaman ve nerede yayımlandığı veya açıklandığı başvurana bildirilir. Gizli bilgileri ayırarak bilgi veya belge verme
+
+Soru: Bilgi edinme hakkının ihlali durumunda ne yapılabilir [/INST]",Kaynak: Bilgi Edinme Kanunu - chunk_000592,"<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+DÖRDÜNCÜ BÖLÜM Bilgi Edinme Hakkının Sınırları Yargı denetimi dışında kalan işlemler
+
+Madde 14- Bilgi edinme başvurusuyla ilgili yapılacak itirazlar üzerine, (…)3 verilen kararları incelemek ve kurum ve kuruluşlar için bilgi edinme hakkının kullanılmasına ilişkin olarak kararlar vermek üzere; Bilgi Edinme Değerlendirme Kurulu oluşturulmuştur.
+
+Madde 8- Kurum ve kuruluşlarca yayımlanmış veya yayın, broşür, ilân ve benzeri yollarla kamuya açıklanmış bilgi veya belgeler, bilgi edinme başvurularına konu olamaz. Ancak, yayımlanmış veya kamuya açıklanmış bilgi veya belgelerin ne şekilde, ne zaman ve nerede yayımlandığı veya açıklandığı başvurana bildirilir. Gizli bilgileri ayırarak bilgi veya belge verme
+
+Soru:
+Bilgi edinme hakkının ihlali durumunda ne yapılabilir
+
+Nihai cevap: [/INST]",Kaynak: TURKISH_LAW_ESKI_LOW_RISK_ONLY - Türk Medenî Kanunu m.14 - turkish_law_eski_4721_turk_medeni_kanunu_m14_p001,0.0,0.10273972602739725,1,0.5714285714285714,0.6279863481228669,0,0.14814814814814814,0.19909502262443438,1
+İdari yargı nedir?,"Hukuki dinlenilme hakkı, tarafların yargılama sürecinde savunmalarını yapabilme ve delillerini sunabilme hakkıdır.","Idari yargı, yargı yetkisinin idari işlemlerin ve eylemlerin hukuka uygun olduğunu denetleyen ve kısıtlayan yüksek askerî şûranın kararıdır.","Idari yargı, yargı yetkisinin idari işlemlerin ve eylemlerin hukuka uygun olduğunu denetleyen ve kısıtlayan yüksek askerî şûranın kararıdır.",chunk_000107,Türkiye Cumhuriyeti Anayasası,,"(…) (Ek cümle: 7/5/2010-5982/11 md.) (…)[68] Yüksek Askerî Şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemlere karşı açılacak davalarda süre, yazılı bildirim tarihinden başlar.",0.0,1,3,0.1378214657306671,0.7999999999999999,"(…) (Ek cümle: 7/5/2010-5982/11 md.) (…)[68] Yüksek Askerî Şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemlere karşı açılacak davalarda süre, yazılı bildirim tarihinden başlar.
+
+İdari işlemin uygulanması halinde telafisi güç veya imkansız zararların doğması ve idari işlemin açıkça hukuka aykırı olması şartlarının birlikte gerçekleşmesi durumunda gerekçe gösterilerek yürütmenin durdurulmasına karar verilebilir.
+
+(Değişik birinci cümle: 7/5/2010-5982/11 md.) Yargı yetkisi, idarî eylem ve işlemlerin hukuka uygunluğunun denetimi ile sınırlı olup, hiçbir surette yerindelik denetimi şeklinde kullanılamaz. Yürütme görevinin kanunlarda gösterilen şekil ve esaslara uygun olarak yerine getirilmesini kısıtlayacak, idari eylem ve işlem niteliğinde veya takdir yetkisini kaldıracak biçimde yargı kararı verilemez.",False,0.0,"[""(…) (Ek cümle: 7/5/2010-5982/11 md.) (…)[68] Yüksek Askerî Şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemlere karşı açılacak davalarda süre, yazılı bildirim tarihinden başlar.\n\nİdari işlemin uygulanması halinde telafisi güç veya imkansız zararların doğması ve idari işlemin açıkça hukuka aykırı olması şartlarının birlikte gerçekleşmesi durumunda gerekçe gösterilerek yürütmenin durdurulmasına karar verilebilir.\n\n(Değişik birinci cümle: 7/5/2010-5982/11 md.) Yargı yetkisi, idarî eylem ve işlemlerin hukuka uygunluğunun denetimi ile sınırlı olup, hiçbir surette yerindelik denetimi şeklinde kullanılamaz. Yürütme görevinin kanunlarda gösterilen şekil ve esaslara uygun olarak yerine getirilmesini kısıtlayacak, idari eylem ve işlem niteliğinde veya takdir yetkisini kaldıracak biçimde yargı kararı verilemez.""]","<s>[INST] Sen bir Türk hukuku RAG asistanısın. Yalnızca kullanıcı tarafından verilen kaynak metne dayanarak cevap ver. Kaynakta olmayan bilgiyi üretme. Cevabın sonunda kaynak/citation bilgisini mutlaka belirt. Kaynak kesin resmî karar metni değilse bunu kesin hüküm gibi sunma.
+
+[Kaynak]
+Başlık: Retrieved Legal Contexts
+Kaynak: Türkiye Cumhuriyeti Anayasası
+Chunk ID: chunk_000107
+Citation: Türkiye Cumhuriyeti Anayasası - chunk_000107
+Metin:
+[Bağlam 1]
+(…) (Ek cümle: 7/5/2010-5982/11 md.) (…)[68] Yüksek Askerî Şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemlere karşı açılacak davalarda süre, yazılı bildirim tarihinden başlar.
+
+İdari işlemin uygulanması halinde telafisi güç veya imkansız zararların doğması ve idari işlemin açıkça hukuka aykırı olması şartlarının birlikte gerçekleşmesi durumunda gerekçe gösterilerek yürütmenin durdurulmasına karar verilebilir.
+
+(Değişik birinci cümle: 7/5/2010-5982/11 md.) Yargı yetkisi, idarî eylem ve işlemlerin hukuka uygunluğunun denetimi ile sınırlı olup, hiçbir surette yerindelik denetimi şeklinde kullanılamaz. Yürütme görevinin kanunlarda gösterilen şekil ve esaslara uygun olarak yerine getirilmesini kısıtlayacak, idari eylem ve işlem niteliğinde veya takdir yetkisini kaldıracak biçimde yargı kararı verilemez.
+
+Soru: İdari yargı nedir? [/INST]","İdari yargı, yüksek askerî şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemin uygulanması halinde telafisi güç veya imkansız zararların doğması ve idari işlemin açıkça hukuka aykırı olması şartlarının birlikte gerçekleşmesi durumunda gerekçe gösterilerek yürütmenin durdurulmasına karar verilebilir.
+
+Kaynak: Türkiye Cumhuriyeti Anayasası - chunk_000107","<s>[INST] Sen Türk hukuku RAG asistanısın.
+Yalnızca verilen bağlamlara dayanarak cevap ver.
+Kaynakta olmayan bilgiyi uydurma.
+Bu değerlendirmede kaynak/citation satırı yazma.
+Bağlam numarası veya chunk bilgisini yazma.
+Bağlamı kopyalama.
+Sadece sorunun kısa ve doğrudan nihai cevabını Türkçe yaz.
+
+Bağlam:
+[Bağlam 1]
+(…) (Ek cümle: 7/5/2010-5982/11 md.) (…)[68] Yüksek Askerî Şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemlere karşı açılacak davalarda süre, yazılı bildirim tarihinden başlar.
+
+İdari işlemin uygulanması halinde telafisi güç veya imkansız zararların doğması ve idari işlemin açıkça hukuka aykırı olması şartlarının birlikte gerçekleşmesi durumunda gerekçe gösterilerek yürütmenin durdurulmasına karar verilebilir.
+
+(Değişik birinci cümle: 7/5/2010-5982/11 md.) Yargı yetkisi, idarî eylem ve işlemlerin hukuka uygunluğunun denetimi ile sınırlı olup, hiçbir surette yerindelik denetimi şeklinde kullanılamaz. Yürütme görevinin kanunlarda gösterilen şekil ve esaslara uygun olarak yerine getirilmesini kısıtlayacak, idari eylem ve işlem niteliğinde veya takdir yetkisini kaldıracak biçimde yargı kararı verilemez.
+
+Soru:
+İdari yargı nedir?
+
+Nihai cevap: [/INST]","İdari yargı, kaynakta belirtilen hukuk alanında da bulunan temizlenmiş kaynak özeti olarak değerlendirilmelidir. Kaynak metindeki esas içerik şudur: (…) (Ek cümle: 7/5/2010-5982/11 md.) (…)[68] Yüksek Askerî Şûranın terfi işlemleri ile kadrosuzluk nedeniyle emekliye ayırma hariç her türlü ilişik kesme kararlarına karşı yargı yolu açıktır. İdari işlemlere karşı açılacak daval",0.0,0.2029598308668076,0,0.06451612903225808,0.2570281124497992,0,0.028571428571428574,0.2018018018018018,1
