@@ -118,8 +118,6 @@ The Starlar fine-tuned LLM is reported as a successful controlled fine-tuning re
 
 ## 7. Custom Evaluation Support
 
-## 7. Custom Evaluation Support
-
 A runnable custom RAG benchmark workspace is provided under:
 
 ```text
