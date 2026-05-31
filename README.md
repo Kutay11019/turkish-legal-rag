@@ -185,27 +185,54 @@ The final project reports two complementary findings:
 
 ## Repository Structure
 
+The repository is organized as follows:
+
 ```text
 .
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── interim/
-│   └── gold_test/
-│
 ├── final_system/
 │   ├── README.md
 │   ├── requirements.txt
 │   ├── config.yaml
 │   ├── run_custom_rag_benchmark.py
+│   │
 │   ├── data/
 │   │   ├── custom_documents/
+│   │   │   ├── README.md
+│   │   │   └── sample_legal_document.txt
+│   │   │
 │   │   ├── custom_benchmark/
+│   │   │   └── sample_benchmark.csv
+│   │   │
 │   │   └── outputs/
+│   │       └── .gitkeep
+│   │
 │   ├── models/
+│   │   └── .gitkeep
+│   │
 │   └── src/
+│       ├── __init__.py
+│       ├── chunking.py
+│       ├── document_loader.py
+│       ├── generation.py
+│       ├── metrics.py
+│       ├── retrieval.py
+│       └── utils.py
 │
 ├── notebooks/
+│   ├── 01_data_preparation.ipynb
+│   ├── 02_baseline_retrieval.ipynb
+│   ├── 03_rag_generation.ipynb
+│   ├── 04_flashrank_reranker_experiment.ipynb
+│   ├── 05_turkish_bge_reranker_experiment.ipynb
+│   ├── 06_error_analysis.ipynb
+│   ├── 07_prompt_context_improvement.ipynb
+│   ├── 08_article_aware_retrieval_improvement.ipynb
+│   ├── 09_data_coverage_analysis.ipynb
+│   ├── 10_multi_dataset_smoke_test.ipynb
+│   ├── 11_reranker_finetuning.ipynb
+│   ├── 12_llm_finetuning_data_preparation.ipynb
+│   ├── 13_llm_finetuning_qlora_friend_clean.ipynb
+│   ├── 14_evaluate_finetuned_llm_rag.ipynb
 │   ├── 18_starlar_llm_finetune_v2_inspection.ipynb
 │   ├── 19_llm_finetune_starlar_v2.ipynb
 │   ├── 20_evaluate_starlar_finetuned_llm.ipynb
@@ -213,29 +240,36 @@ The final project reports two complementary findings:
 │   ├── 22_evaluate_starlar_finetuned_llm_on_old_best_rag_contexts.ipynb
 │   ├── 23_prepare_target_style_sft_for_rag_alignment.ipynb
 │   ├── 24_finetune_starlar_adapter_target_style_alignment.ipynb
-│   ├── 26_package_finetuned_adapter_for_delivery.ipynb
 │   └── 27_final_system_colab_runner.ipynb
 │
 ├── outputs/
 │   └── metrics/
+│       └── selected final metric CSV files
 │
 ├── reports/
 │   └── final_experiment_summary.md
 │
-├── src/
+├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
 ## Important Files
 
-| Path                                           | Purpose                                                 |
-| ---------------------------------------------- | ------------------------------------------------------- |
-| `final_system/`                                | Final runnable custom RAG benchmark system              |
-| `final_system/README.md`                       | Instructions for running the final system               |
-| `notebooks/27_final_system_colab_runner.ipynb` | Colab runner for GPU-based testing                      |
-| `reports/final_experiment_summary.md`          | Final experiment summary and results                    |
-| `outputs/metrics/`                             | Selected final experiment metric outputs                |
-| `notebooks/`                                   | Experimental notebooks documenting the research process |
+| Path                                                      | Purpose                                                                                                             |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `final_system/`                                           | Final runnable custom RAG benchmark system. This is the main folder to use for custom evaluation.                   |
+| `final_system/README.md`                                  | Detailed instructions for running the final system, using custom documents, and configuring the fine-tuned adapter. |
+| `final_system/run_custom_rag_benchmark.py`                | Main script for running `base`, `finetuned`, or `both` RAG modes.                                                   |
+| `final_system/config.yaml`                                | Configuration file for model names, adapter path, retrieval settings, generation settings, and input/output paths.  |
+| `final_system/data/custom_documents/`                     | Folder where custom `.txt`, `.pdf`, or `.docx` legal documents should be placed.                                    |
+| `final_system/data/custom_benchmark/sample_benchmark.csv` | Example benchmark format. A custom benchmark must include `question` and `expected_answer` columns.                 |
+| `final_system/src/`                                       | Source code for document loading, chunking, retrieval, generation, metrics, and utility functions.                  |
+| `notebooks/27_final_system_colab_runner.ipynb`            | Colab runner for GPU-based testing when local hardware is not sufficient for Mistral-7B generation.                 |
+| `reports/final_experiment_summary.md`                     | Final experiment summary, including best RAG result, LLM fine-tuning result, and ablation conclusions.              |
+| `outputs/metrics/`                                        | Selected final metric CSV files supporting the reported results.                                                    |
+| `notebooks/`                                              | Experimental notebooks documenting the research and development process.                                            |
+
 
 ## Selected Metric Outputs
 
