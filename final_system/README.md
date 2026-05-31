@@ -67,10 +67,45 @@ Fine-tuned mode requires the QLoRA adapter files.
 
 The adapter is not committed to GitHub because it contains large model weight files.
 
+Download the clean fine-tuned adapter zip from:
+
+```text
+https://drive.google.com/drive/folders/1yVp0kwU0ImgiG3dnE6z-QHI3ZcIaHovQ?usp=sharing
+```
+
+After downloading the zip file, create this folder if it does not already exist:
+
+```text
+final_system/models/mistral_legal_qlora_starlar_v2_800steps/
+```
+
+Then extract the contents of the zip file into that folder.
+
+The folder should contain files such as:
+
+```text
+adapter_config.json
+adapter_model.safetensors
+tokenizer_config.json
+tokenizer.json
+chat_template.jinja
+```
+
 After downloading the adapter, place it under:
 
 ```text
 final_system/models/mistral_legal_qlora_starlar_v2_800steps/
+```
+
+Then extract the contents of the zip file into that folder.
+The folder should contain files such as:
+
+```text
+adapter_config.json
+adapter_model.safetensors
+tokenizer_config.json
+tokenizer.json
+chat_template.jinja
 ```
 
 Then update `config.yaml`:
