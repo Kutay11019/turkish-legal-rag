@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+from io import StringIO
 from typing import List
 
+import pandas as pd
 import requests
 import streamlit as st
 
@@ -18,7 +20,7 @@ st.markdown(
 )
 
 st.title("⚖️ Turkish Legal RAG")
-st.caption("Upload legal documents, ask a question, get one generated answer.")
+st.caption("Upload legal files, ask a question, get one generated answer.")
 
 with st.sidebar:
     st.subheader("Backend")
@@ -55,11 +57,16 @@ with st.sidebar:
             except Exception as exc:
                 st.error(f"Backend'e ulaşılamadı: {exc}")
 
-st.subheader("1. Upload Legal Document(s)")
+st.subheader("1. Upload Legal File(s)")
 uploaded_files = st.file_uploader(
-    "Upload .txt, .pdf, or .docx legal document(s)",
-    type=["txt", "pdf", "docx"],
+    "Upload .txt, .pdf, .docx, .csv, .json, or .jsonl file(s)",
+    type=["txt", "pdf", "docx", "csv", "json", "jsonl"],
     accept_multiple_files=True,
+)
+
+st.info(
+    "CSV/JSON/JSONL dosyaları iki şekilde kullanılabilir: Eğer içinde hukuk metni varsa yukarıya legal file olarak yükle. "
+    "Eğer içinde question/expected_answer satırları varsa aşağıdaki Batch Benchmark alanına yükle."
 )
 
 st.subheader("2. Ask a Question")
@@ -80,7 +87,7 @@ if generate:
         st.error("Lütfen bir soru yaz.")
         st.stop()
     if not uploaded_files and not include_repo_docs:
-        st.error("Lütfen en az bir doküman yükle veya repo sample documents seçeneğini aç.")
+        st.error("Lütfen en az bir dosya yükle veya repo sample documents seçeneğini aç.")
         st.stop()
 
     files_payload: List[tuple] = []
@@ -99,7 +106,7 @@ if generate:
                 f"{backend_url}/answer",
                 data=data,
                 files=files_payload,
-                timeout=600,
+                timeout=900,
             )
             response.raise_for_status()
             result = response.json()
@@ -128,3 +135,89 @@ if generate:
     except Exception as exc:
         st.error("Answer generation failed.")
         st.exception(exc)
+
+st.markdown("---")
+
+with st.expander("Optional: Batch Benchmark Test (.csv / .json / .jsonl)", expanded=False):
+    st.write(
+        "Buraya question/soru ve isteğe bağlı expected_answer/cevap kolonları olan benchmark dosyası yükleyebilirsin. "
+        "Sistem aynı legal files üzerinden soruları sırayla cevaplar ve sonuçları indirilebilir CSV olarak verir."
+    )
+
+    benchmark_file = st.file_uploader(
+        "Upload benchmark file",
+        type=["csv", "json", "jsonl"],
+        accept_multiple_files=False,
+        key="benchmark_uploader",
+    )
+
+    max_questions = st.number_input(
+        "Max questions to run",
+        min_value=1,
+        max_value=50,
+        value=5,
+        step=1,
+        help="Mistral generation yavaş olabileceği için demo sırasında 3-5 soru idealdir.",
+    )
+
+    run_benchmark = st.button("Run Benchmark", use_container_width=True)
+
+    if run_benchmark:
+        if not backend_url:
+            st.error("Önce sol taraftaki Colab GPU backend URL alanına link yapıştır.")
+            st.stop()
+        if benchmark_file is None:
+            st.error("Lütfen .csv, .json veya .jsonl benchmark dosyası yükle.")
+            st.stop()
+        if not uploaded_files and not include_repo_docs:
+            st.error("Benchmark çalıştırmak için en az bir legal file yükle veya repo sample documents seçeneğini aç.")
+            st.stop()
+
+        files_payload: List[tuple] = []
+        for uploaded in uploaded_files:
+            files_payload.append(("files", (uploaded.name, uploaded.getvalue(), uploaded.type or "application/octet-stream")))
+        files_payload.append(("benchmark_file", (benchmark_file.name, benchmark_file.getvalue(), benchmark_file.type or "application/octet-stream")))
+
+        data = {
+            "include_repo_docs": str(include_repo_docs).lower(),
+            "hf_token": hf_token or "",
+            "max_questions": str(int(max_questions)),
+        }
+
+        try:
+            with st.spinner("Running benchmark on Colab GPU backend..."):
+                response = requests.post(
+                    f"{backend_url}/benchmark",
+                    data=data,
+                    files=files_payload,
+                    timeout=1800,
+                )
+                response.raise_for_status()
+                result = response.json()
+
+            rows = result.get("results", [])
+            if not rows:
+                st.warning("Benchmark sonucu boş geldi.")
+            else:
+                df = pd.DataFrame(rows)
+                st.success(
+                    f"Benchmark completed. Questions: {result.get('num_questions')} | "
+                    f"Documents: {result.get('num_documents')} | Chunks: {result.get('num_chunks')}"
+                )
+                st.dataframe(df, use_container_width=True)
+
+                csv_buffer = StringIO()
+                df.to_csv(csv_buffer, index=False, encoding="utf-8-sig")
+                st.download_button(
+                    "Download results CSV",
+                    data=csv_buffer.getvalue().encode("utf-8-sig"),
+                    file_name="rag_benchmark_results.csv",
+                    mime="text/csv",
+                    use_container_width=True,
+                )
+
+        except requests.exceptions.Timeout:
+            st.error("Benchmark zaman aşımına uğradı. Max questions değerini düşürüp tekrar deneyebilirsin.")
+        except Exception as exc:
+            st.error("Benchmark failed.")
+            st.exception(exc)
