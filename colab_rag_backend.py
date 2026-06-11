@@ -52,7 +52,7 @@ MIN_FILTERED_ROWS = 1
 SUPPORTED_UPLOAD_TYPES = {".txt", ".pdf", ".docx", ".csv", ".json", ".jsonl"}
 
 app = FastAPI(title="Turkish Legal RAG GPU Backend")
-BACKEND_VERSION = "structured-csv-json-chunks-v2"
+BACKEND_VERSION = "structured-csv-json-chunks-v3-strict-source-article-guard"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -325,7 +325,7 @@ def article_match_bonus(query: str, chunk_text: str, chunk_article_number: str =
         ]
     else:
         patterns = [
-            rf"madde\s+{article_no}\b", rf"madde\s*{article_no}\s*[–-]", rf"{article_no}\.\s*madde",
+            rf"madde_no\s*:\s*{article_no}\b", rf"madde\s+{article_no}\b", rf"madde\s*{article_no}\s*[–-]", rf"{article_no}\.\s*madde",
             rf"{article_no}\s*maddesi", rf"{article_no}\s*(inci|ıncı|uncu|üncü|nci|ncı|ncu|ncü)\s+madde",
         ]
     return 1.0 if any(re.search(pattern, text) for pattern in patterns) else 0.0
@@ -333,7 +333,7 @@ def article_match_bonus(query: str, chunk_text: str, chunk_article_number: str =
 
 def extract_article_no_from_text(text: str) -> str:
     head = str(text)[:400].lower()
-    patterns = [r"geçici\s+madde\s+(\d+)", r"gecici\s+madde\s+(\d+)", r"madde\s+([0-9]+)\s*[–\-:]", r"madde\s+([0-9]+)\b", r"^\s*([0-9]+)\.\s*madde"]
+    patterns = [r"madde_no\s*:\s*(\d+)", r"geçici\s+madde\s+(\d+)", r"gecici\s+madde\s+(\d+)", r"madde\s+([0-9]+)\s*[–\-:]", r"madde\s+([0-9]+)\b", r"^\s*([0-9]+)\.\s*madde"]
     for pattern in patterns:
         match = re.search(pattern, head, flags=re.IGNORECASE | re.MULTILINE)
         if match:
@@ -561,7 +561,9 @@ ANSWER_STOPWORDS = {
     "hangi", "kim", "kime", "nereye", "nasıl", "mı", "mi", "mu", "mü", "bir",
     "da", "de", "ta", "te", "ise", "halinde", "durumunda", "edilir", "edilebilir",
     "mi̇", "midir", "mıdır", "olur", "alır", "alir", "kaçtır", "kactir",
+    "madde", "maddesi", "maddede", "duzenler", "düzenler", "duzenlenir", "düzenlenir",
 }
+
 
 MONEY_QUESTION_HINTS = [
     "tl", "₺", "ücret", "ucret", "harç", "harc", "bedel", "para", "maliyet", "masraf"
@@ -633,6 +635,38 @@ def context_has_minimum_relevance(question: str, contexts: List[str], min_overla
             s_tokens = meaningful_tokens(sentence)
             best_overlap = max(best_overlap, tokens_soft_overlap_count(q_tokens, s_tokens))
     return best_overlap >= min_overlap
+
+
+def query_constraints_satisfied(question: str, retrieved: List[Dict[str, object]]) -> bool:
+    """
+    Soru belirli bir kanun/kaynak veya madde numarası istiyorsa, retrieved contextlerde
+    bu kısıt gerçekten yoksa cevap üretme.
+
+    Örn. yalnızca demo_legal.csv yüklüyken "Anayasa 10. madde neyi düzenler?" sorusu
+    retrieval tarafından bir şeylere eşleşebilir; ama kaynak Anayasa değil ve madde 10 yoktur.
+    Bu durumda modelin genel bilgisinden cevap uydurmasını engeller.
+    """
+    if not retrieved:
+        return False
+
+    source_filter = detect_source_filter(question)
+    if source_filter:
+        if not any(source_matches(source_filter, item) for item in retrieved[:3]):
+            return False
+
+    article_ref = extract_article_reference(question)
+    if article_ref is not None:
+        if not any(
+            article_match_bonus(
+                question,
+                str(item.get("chunk_text", "")),
+                str(item.get("article_no", "")),
+            ) > 0
+            for item in retrieved[:3]
+        ):
+            return False
+
+    return True
 
 
 def is_duration_or_count_question(question: str) -> bool:
@@ -892,8 +926,10 @@ def run_single_question(question: str, documents: List[Dict[str, str]], hf_token
     contexts = [item["chunk_text"] for item in retrieved]
 
     # Alakasız sorularda retriever yine top-1 döndürür; bu normaldir.
-    # Ama cevap üretmeden önce soru-context arasında asgari konu örtüşmesi arıyoruz.
-    if not context_has_minimum_relevance(question, contexts, min_overlap=1):
+    # Ama cevap üretmeden önce kaynak/madde kısıtları ve soru-context konu örtüşmesi kontrol edilir.
+    if not query_constraints_satisfied(question, retrieved):
+        cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
+    elif not context_has_minimum_relevance(question, contexts, min_overlap=1):
         cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
     elif asks_about_money(question) and not context_mentions_money(contexts):
         cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
@@ -967,7 +1003,9 @@ async def benchmark(
         question = sample["question"]
         retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
         contexts = [item["chunk_text"] for item in retrieved]
-        if not context_has_minimum_relevance(question, contexts, min_overlap=1):
+        if not query_constraints_satisfied(question, retrieved):
+            cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
+        elif not context_has_minimum_relevance(question, contexts, min_overlap=1):
             cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
         elif asks_about_money(question) and not context_mentions_money(contexts):
             cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
