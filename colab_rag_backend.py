@@ -522,6 +522,113 @@ def retrieve_best_pipeline(question: str, chunks_df: pd.DataFrame, embedding_mod
     return final
 
 
+
+DURATION_QUESTION_HINTS = [
+    "kaç gün", "kaç ay", "kaç yıl", "kaç hafta", "kaç saat",
+    "ne kadar süre", "süresi", "süre", "hangi süre", "kaç",
+]
+
+ANSWER_STOPWORDS = {
+    "bu", "şu", "o", "ve", "veya", "ile", "için", "göre", "nedir", "ne", "kaç",
+    "hangi", "kim", "kime", "nereye", "nasıl", "mı", "mi", "mu", "mü", "bir",
+    "da", "de", "ta", "te", "ise", "halinde", "durumunda", "edilir", "edilebilir",
+    "başvuru", "başvurunun", "reddedilirse", "reddedilmesi", "süre", "süresi",
+}
+
+
+def normalize_for_overlap(text: str) -> str:
+    text = str(text).lower()
+    text = text.replace("ı", "i").replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ç", "c")
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def meaningful_tokens(text: str) -> List[str]:
+    toks = normalize_for_overlap(text).split()
+    return [t for t in toks if len(t) > 2 and t not in ANSWER_STOPWORDS]
+
+
+def is_duration_or_count_question(question: str) -> bool:
+    q = str(question).lower()
+    return any(hint in q for hint in DURATION_QUESTION_HINTS)
+
+
+def split_context_into_answer_sentences(context_text: str) -> List[str]:
+    text = normalize_whitespace(context_text)
+    # CSV/JSON kaynaklarında her kayıt ayrı cümle gibi değerlendirilebilsin.
+    text = re.sub(r"\n+(?=(?:CSV|JSON|JSONL)\s+Kayıt\s+\d+)", " . ", text, flags=re.IGNORECASE)
+    pieces = re.split(r"(?<=[.!?])\s+|\n+", text)
+    sentences = []
+    for piece in pieces:
+        piece = piece.strip(" -–\t\n")
+        if not piece:
+            continue
+        if len(piece) < 8:
+            continue
+        sentences.append(piece)
+    return sentences
+
+
+def clean_extracted_sentence(sentence: str) -> str:
+    sent = normalize_whitespace(sentence)
+    # CSV/JSON metne dönüştürülürken eklenen teknik prefixleri kullanıcı cevabından temizle.
+    # Örnek: "CSV Kayıt 2 madde_no: 2 baslik: İtiraz Süresi metin: Başvurunun..."
+    sent = re.sub(r"^(CSV|JSON|JSONL)\s+Kayıt\s+\d+\s*", "", sent, flags=re.IGNORECASE)
+    lower = sent.lower()
+    for key in ["metin:", "text:", "content:", "cevap:", "answer:"]:
+        idx = lower.rfind(key)
+        if idx != -1:
+            sent = sent[idx + len(key):].strip()
+            break
+    # Kalan kolon prefixlerini agresif olmadan temizle.
+    sent = re.sub(r"^madde_no:\s*[^:]+?\s+", "", sent, flags=re.IGNORECASE)
+    sent = re.sub(r"^baslik:\s*[^:]+?\s+", "", sent, flags=re.IGNORECASE)
+    sent = sent.strip(" -–.;\n\t")
+    if sent and sent[-1] not in ".!?":
+        sent += "."
+    return sent
+
+
+def extractive_answer_from_context(question: str, contexts: List[str]) -> Optional[str]:
+    """
+    Süre/sayı sorularında Mistral'in hukuki fiili yanlış paraphrase etmesini engellemek için
+    retrieved bağlamdan en alakalı cümleyi doğrudan seçer. Retrieval+BGE yine kullanılır;
+    sadece generation tarafına güvenlik kemeri ekler.
+    """
+    if not is_duration_or_count_question(question):
+        return None
+
+    q_tokens = set(meaningful_tokens(question))
+    if not q_tokens:
+        return None
+
+    best_sentence = None
+    best_score = -1.0
+    duration_pattern = re.compile(r"\b\d+\s*(gün|gun|ay|yıl|yil|hafta|saat|günde|gunde|yılda|yilda)\b", re.IGNORECASE)
+
+    for context_rank, ctx in enumerate(contexts):
+        for sentence in split_context_into_answer_sentences(ctx):
+            norm_sent = normalize_for_overlap(sentence)
+            s_tokens = set(meaningful_tokens(sentence))
+            overlap = len(q_tokens & s_tokens)
+            has_duration = bool(duration_pattern.search(sentence))
+            has_number = bool(re.search(r"\d+", sentence))
+            # İlk context daha güvenilir olduğu için minik rank bonusu.
+            score = overlap + (3.0 if has_duration else 0.0) + (1.0 if has_number else 0.0) + (0.2 / (context_rank + 1))
+            # İtiraz sorusunda itiraz cümlesini başvuru süresine tercih et.
+            if "itiraz" in normalize_for_overlap(question) and "itiraz" in norm_sent:
+                score += 3.0
+            if "başvuru" in normalize_for_overlap(question) and "başvuru" in norm_sent:
+                score += 1.0
+            if score > best_score:
+                best_score = score
+                best_sentence = sentence
+
+    if best_sentence and best_score >= 3.0:
+        return clean_extracted_sentence(best_sentence)
+    return None
+
 def build_improved_legal_rag_prompt(question: str, retrieved_contexts: List[str]) -> str:
     context_text = "\n\n".join([f"[Bağlam {i + 1}]\n{ctx}" for i, ctx in enumerate(retrieved_contexts)])
     prompt = f"""
@@ -533,15 +640,13 @@ Sadece verilen bağlamları kullanarak soruya kısa, net ve hukuki olarak doğru
 Zorunlu kurallar:
 1. Cevabı yalnızca verilen bağlamlara dayandır.
 2. Bağlamda açıkça bulunmayan bilgiyi uydurma.
-3. Cevap verirken bağlamdaki hukuki fiili ve anlamı koru. Örneğin "itirazda bulunabilir" ifadesini "itiraz tebliğ edilir" gibi farklı ve hatalı bir fiile çevirme.
-4. Soru bir süre, tarih, sayı veya madde soruyorsa ilgili değeri ver ve bağlamdaki cümle yapısına sadık kalarak kısa açıklama yap.
-5. Mümkünse cevabı bağlamdaki ilgili cümleyi kısaltarak ver; anlamı değiştirme.
-6. Soru "aykırı mıdır", "çelişir mi", "uygun mudur" gibi bir değerlendirme soruyorsa cevaba mutlaka "Evet" veya "Hayır" ile başla.
-7. Cevapta "Bağlam", "Context", "verilen metne göre" gibi ifadeler kullanma.
-8. Cevap en fazla iki kısa cümle olmalı.
-9. Alternatif cevap, yeni soru, örnek soru, başlık veya açıklama bölümü üretme.
-10. Cevabı verdikten sonra dur.
-11. Eğer bağlamda cevap yoksa sadece şunu yaz: "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
+3. Soru bir süre, tarih, sayı veya madde soruyorsa sadece ilgili değeri ve kısa açıklamasını ver.
+4. Soru "aykırı mıdır", "çelişir mi", "uygun mudur" gibi bir değerlendirme soruyorsa cevaba mutlaka "Evet" veya "Hayır" ile başla.
+5. Cevapta "Bağlam", "Context", "verilen metne göre" gibi ifadeler kullanma.
+6. Cevap en fazla iki kısa cümle olmalı.
+7. Alternatif cevap, yeni soru, örnek soru, başlık veya açıklama bölümü üretme.
+8. Cevabı verdikten sonra dur.
+9. Eğer bağlamda cevap yoksa sadece şunu yaz: "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
 
 Bağlamlar:
 {context_text}
@@ -678,9 +783,13 @@ def run_single_question(question: str, documents: List[Dict[str, str]], hf_token
     embedding_model, embeddings, bm25 = build_retrieval_index(chunks_df)
     retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
     contexts = [item["chunk_text"] for item in retrieved]
-    prompt = build_improved_legal_rag_prompt(question, contexts)
-    raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
-    cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
+    extractive_answer = extractive_answer_from_context(question, contexts)
+    if extractive_answer:
+        cleaned = extractive_answer
+    else:
+        prompt = build_improved_legal_rag_prompt(question, contexts)
+        raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
+        cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
     safe_sources = []
     for item in retrieved:
         safe_sources.append({
@@ -743,9 +852,13 @@ async def benchmark(
         question = sample["question"]
         retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
         contexts = [item["chunk_text"] for item in retrieved]
-        prompt = build_improved_legal_rag_prompt(question, contexts)
-        raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
-        cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
+        extractive_answer = extractive_answer_from_context(question, contexts)
+        if extractive_answer:
+            cleaned = extractive_answer
+        else:
+            prompt = build_improved_legal_rag_prompt(question, contexts)
+            raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
+            cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
         top_source = retrieved[0] if retrieved else {}
         rows.append({
             "row_id": sample.get("row_id", ""),
