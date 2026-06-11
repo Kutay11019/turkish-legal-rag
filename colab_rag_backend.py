@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import io
+import json
 import os
 import re
 from pathlib import Path
@@ -48,7 +49,7 @@ ARTICLE_BONUS_WEIGHT = 0.15
 CHUNK_SIZE = 1200
 CHUNK_OVERLAP = 200
 MIN_FILTERED_ROWS = 1
-SUPPORTED_UPLOAD_TYPES = {".txt", ".pdf", ".docx"}
+SUPPORTED_UPLOAD_TYPES = {".txt", ".pdf", ".docx", ".csv", ".json", ".jsonl"}
 
 app = FastAPI(title="Turkish Legal RAG GPU Backend")
 app.add_middleware(
@@ -111,6 +112,104 @@ def read_docx_from_bytes(data: bytes) -> str:
     return "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
 
 
+def read_csv_from_bytes(data: bytes) -> str:
+    last_error = None
+    for enc in ["utf-8-sig", "utf-8", "cp1254", "latin-1"]:
+        try:
+            df = pd.read_csv(io.BytesIO(data), encoding=enc)
+            break
+        except Exception as exc:
+            last_error = exc
+            df = None
+    if df is None:
+        raise ValueError(f"CSV okunamadı: {last_error}")
+
+    if df.empty:
+        return ""
+
+    # Çok büyük CSV'lerde demo sırasında aşırı uzun context oluşmasın.
+    max_rows = 500
+    if len(df) > max_rows:
+        df = df.head(max_rows)
+
+    rows = []
+    for i, row in df.fillna("").iterrows():
+        parts = []
+        for col in df.columns:
+            value = str(row[col]).strip()
+            if value:
+                parts.append(f"{col}: {value}")
+        if parts:
+            rows.append(f"CSV Kayıt {i + 1}\n" + "\n".join(parts))
+    return "\n\n".join(rows)
+
+
+def json_value_to_text(value, prefix: str = "") -> str:
+    pieces = []
+    if isinstance(value, dict):
+        for key, val in value.items():
+            label = f"{prefix}.{key}" if prefix else str(key)
+            if isinstance(val, (dict, list)):
+                nested = json_value_to_text(val, label)
+                if nested:
+                    pieces.append(nested)
+            else:
+                val_text = str(val).strip()
+                if val_text:
+                    pieces.append(f"{label}: {val_text}")
+    elif isinstance(value, list):
+        for idx, item in enumerate(value, start=1):
+            nested = json_value_to_text(item, f"{prefix}[{idx}]" if prefix else f"Kayıt {idx}")
+            if nested:
+                pieces.append(nested)
+    else:
+        val_text = str(value).strip()
+        if val_text:
+            pieces.append(f"{prefix}: {val_text}" if prefix else val_text)
+    return "\n".join(pieces)
+
+
+def read_json_from_bytes(data: bytes) -> str:
+    raw = read_txt_from_bytes(data)
+    obj = json.loads(raw)
+
+    # Yaygın benchmark/dataset formatlarında data/questions/items gibi üst alanlar olabilir.
+    if isinstance(obj, dict):
+        for key in ["data", "questions", "items", "records", "benchmark", "samples", "examples"]:
+            if isinstance(obj.get(key), list):
+                obj = obj[key]
+                break
+
+    if isinstance(obj, list):
+        rows = []
+        for i, item in enumerate(obj[:500], start=1):
+            text = json_value_to_text(item)
+            if text:
+                rows.append(f"JSON Kayıt {i}\n{text}")
+        return "\n\n".join(rows)
+
+    return json_value_to_text(obj)
+
+
+def read_jsonl_from_bytes(data: bytes) -> str:
+    raw = read_txt_from_bytes(data)
+    rows = []
+    for i, line in enumerate(raw.splitlines(), start=1):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+            text = json_value_to_text(obj)
+        except Exception:
+            text = line
+        if text:
+            rows.append(f"JSONL Kayıt {i}\n{text}")
+        if len(rows) >= 500:
+            break
+    return "\n\n".join(rows)
+
+
 def read_file_bytes(file_name: str, data: bytes) -> str:
     suffix = Path(file_name).suffix.lower()
     if suffix == ".txt":
@@ -119,6 +218,12 @@ def read_file_bytes(file_name: str, data: bytes) -> str:
         return read_pdf_from_bytes(data)
     if suffix == ".docx":
         return read_docx_from_bytes(data)
+    if suffix == ".csv":
+        return read_csv_from_bytes(data)
+    if suffix == ".json":
+        return read_json_from_bytes(data)
+    if suffix == ".jsonl":
+        return read_jsonl_from_bytes(data)
     raise ValueError(f"Unsupported file type: {file_name}")
 
 
@@ -284,7 +389,7 @@ def build_documents_from_uploads(uploaded_files: Optional[List[UploadFile]], inc
             safe_stem = Path(uploaded.filename).stem.replace(" ", "_")
             documents.append({"doc_id": f"uploaded_{safe_stem}", "file_name": uploaded.filename, "source": infer_source_name(uploaded.filename, text), "text": text})
     if not documents:
-        raise ValueError("Hiç doküman bulunamadı. Lütfen .txt, .pdf veya .docx hukuk dokümanı yükleyin.")
+        raise ValueError("Hiç doküman bulunamadı. Lütfen .txt, .pdf, .docx, .csv, .json veya .jsonl dosyası yükleyin.")
     return documents
 
 
@@ -484,26 +589,89 @@ def generate_with_base_mistral(prompt: str, hf_token: str = "", max_new_tokens: 
     return tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
 
 
-class HealthResponse(BaseModel):
-    ok: bool
-    cuda_available: bool
-    gpu_name: str
-    model: str
+QUESTION_COLUMNS = ["question", "soru", "query", "prompt"]
+EXPECTED_COLUMNS = ["expected_answer", "answer", "cevap", "gold_answer", "ground_truth", "reference_answer"]
 
 
-@app.get("/health", response_model=HealthResponse)
-def health():
-    return HealthResponse(ok=True, cuda_available=torch.cuda.is_available(), gpu_name=torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No GPU", model=BASE_MISTRAL_MODEL_NAME)
+def parse_records_from_json_bytes(data: bytes):
+    raw = read_txt_from_bytes(data)
+    obj = json.loads(raw)
+    if isinstance(obj, dict):
+        for key in ["data", "questions", "items", "records", "benchmark", "samples", "examples"]:
+            if isinstance(obj.get(key), list):
+                return obj[key]
+        return [obj]
+    if isinstance(obj, list):
+        return obj
+    return []
 
 
-@app.post("/answer")
-async def answer(
-    question: str = Form(...),
-    include_repo_docs: bool = Form(False),
-    hf_token: str = Form(""),
-    files: Optional[List[UploadFile]] = File(None),
-):
-    documents = build_documents_from_uploads(files, include_repo_docs=include_repo_docs)
+def parse_records_from_jsonl_bytes(data: bytes):
+    raw = read_txt_from_bytes(data)
+    records = []
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+            if isinstance(obj, dict):
+                records.append(obj)
+        except Exception:
+            continue
+    return records
+
+
+def parse_benchmark_upload(file_name: str, data: bytes) -> List[Dict[str, str]]:
+    suffix = Path(file_name).suffix.lower()
+    records: List[Dict[str, object]] = []
+
+    if suffix == ".csv":
+        last_error = None
+        df = None
+        for enc in ["utf-8-sig", "utf-8", "cp1254", "latin-1"]:
+            try:
+                df = pd.read_csv(io.BytesIO(data), encoding=enc)
+                break
+            except Exception as exc:
+                last_error = exc
+        if df is None:
+            raise ValueError(f"Benchmark CSV okunamadı: {last_error}")
+        records = df.fillna("").to_dict(orient="records")
+    elif suffix == ".json":
+        records = parse_records_from_json_bytes(data)
+    elif suffix == ".jsonl":
+        records = parse_records_from_jsonl_bytes(data)
+    else:
+        raise ValueError("Benchmark dosyası .csv, .json veya .jsonl olmalı.")
+
+    parsed = []
+    for i, record in enumerate(records, start=1):
+        if not isinstance(record, dict):
+            continue
+        lower_map = {str(k).lower().strip(): k for k in record.keys()}
+        q_key = next((lower_map[c] for c in QUESTION_COLUMNS if c in lower_map), None)
+        e_key = next((lower_map[c] for c in EXPECTED_COLUMNS if c in lower_map), None)
+        if q_key is None:
+            # İlk string değerini question olarak kullanmayı dene.
+            string_keys = [k for k, v in record.items() if str(v).strip()]
+            q_key = string_keys[0] if string_keys else None
+        if q_key is None:
+            continue
+        question = str(record.get(q_key, "")).strip()
+        if not question:
+            continue
+        parsed.append({
+            "row_id": str(record.get("row_id", record.get("id", i))),
+            "question": question,
+            "expected_answer": str(record.get(e_key, "")).strip() if e_key is not None else "",
+        })
+    if not parsed:
+        raise ValueError("Benchmark içinde question/soru alanı bulunamadı.")
+    return parsed
+
+
+def run_single_question(question: str, documents: List[Dict[str, str]], hf_token: str = "") -> Dict[str, object]:
     chunks_df = build_chunks_from_documents(documents)
     embedding_model, embeddings, bm25 = build_retrieval_index(chunks_df)
     retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
@@ -524,4 +692,73 @@ async def answer(
             "source_filter": item.get("source_filter"),
             "chunk_text": item.get("chunk_text"),
         })
-    return {"answer": cleaned, "sources": safe_sources, "num_documents": len(documents), "num_chunks": len(chunks_df)}
+    return {"answer": cleaned, "sources": safe_sources, "num_chunks": len(chunks_df)}
+
+
+class HealthResponse(BaseModel):
+    ok: bool
+    cuda_available: bool
+    gpu_name: str
+    model: str
+
+
+@app.get("/health", response_model=HealthResponse)
+def health():
+    return HealthResponse(ok=True, cuda_available=torch.cuda.is_available(), gpu_name=torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No GPU", model=BASE_MISTRAL_MODEL_NAME)
+
+
+@app.post("/answer")
+async def answer(
+    question: str = Form(...),
+    include_repo_docs: bool = Form(False),
+    hf_token: str = Form(""),
+    files: Optional[List[UploadFile]] = File(None),
+):
+    documents = build_documents_from_uploads(files, include_repo_docs=include_repo_docs)
+    result = run_single_question(question, documents, hf_token=hf_token)
+    result["num_documents"] = len(documents)
+    return result
+
+
+@app.post("/benchmark")
+async def benchmark(
+    include_repo_docs: bool = Form(False),
+    hf_token: str = Form(""),
+    max_questions: int = Form(5),
+    files: Optional[List[UploadFile]] = File(None),
+    benchmark_file: UploadFile = File(...),
+):
+    documents = build_documents_from_uploads(files, include_repo_docs=include_repo_docs)
+    benchmark_bytes = await benchmark_file.read()
+    samples = parse_benchmark_upload(benchmark_file.filename, benchmark_bytes)
+    samples = samples[: max(1, min(int(max_questions), 50))]
+
+    chunks_df = build_chunks_from_documents(documents)
+    embedding_model, embeddings, bm25 = build_retrieval_index(chunks_df)
+
+    rows = []
+    for sample in samples:
+        question = sample["question"]
+        retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
+        contexts = [item["chunk_text"] for item in retrieved]
+        prompt = build_improved_legal_rag_prompt(question, contexts)
+        raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
+        cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
+        top_source = retrieved[0] if retrieved else {}
+        rows.append({
+            "row_id": sample.get("row_id", ""),
+            "question": question,
+            "generated_answer": cleaned,
+            "expected_answer": sample.get("expected_answer", ""),
+            "top_source": top_source.get("source", ""),
+            "top_file_name": top_source.get("file_name", ""),
+            "top_article_no": top_source.get("article_no", ""),
+            "top_context": top_source.get("chunk_text", ""),
+        })
+
+    return {
+        "num_documents": len(documents),
+        "num_chunks": len(chunks_df),
+        "num_questions": len(rows),
+        "results": rows,
+    }
