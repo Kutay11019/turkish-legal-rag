@@ -533,13 +533,15 @@ Sadece verilen bağlamları kullanarak soruya kısa, net ve hukuki olarak doğru
 Zorunlu kurallar:
 1. Cevabı yalnızca verilen bağlamlara dayandır.
 2. Bağlamda açıkça bulunmayan bilgiyi uydurma.
-3. Soru bir süre, tarih, sayı veya madde soruyorsa sadece ilgili değeri ve kısa açıklamasını ver.
-4. Soru "aykırı mıdır", "çelişir mi", "uygun mudur" gibi bir değerlendirme soruyorsa cevaba mutlaka "Evet" veya "Hayır" ile başla.
-5. Cevapta "Bağlam", "Context", "verilen metne göre" gibi ifadeler kullanma.
-6. Cevap en fazla iki kısa cümle olmalı.
-7. Alternatif cevap, yeni soru, örnek soru, başlık veya açıklama bölümü üretme.
-8. Cevabı verdikten sonra dur.
-9. Eğer bağlamda cevap yoksa sadece şunu yaz: "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
+3. Cevap verirken bağlamdaki hukuki fiili ve anlamı koru. Örneğin "itirazda bulunabilir" ifadesini "itiraz tebliğ edilir" gibi farklı ve hatalı bir fiile çevirme.
+4. Soru bir süre, tarih, sayı veya madde soruyorsa ilgili değeri ver ve bağlamdaki cümle yapısına sadık kalarak kısa açıklama yap.
+5. Mümkünse cevabı bağlamdaki ilgili cümleyi kısaltarak ver; anlamı değiştirme.
+6. Soru "aykırı mıdır", "çelişir mi", "uygun mudur" gibi bir değerlendirme soruyorsa cevaba mutlaka "Evet" veya "Hayır" ile başla.
+7. Cevapta "Bağlam", "Context", "verilen metne göre" gibi ifadeler kullanma.
+8. Cevap en fazla iki kısa cümle olmalı.
+9. Alternatif cevap, yeni soru, örnek soru, başlık veya açıklama bölümü üretme.
+10. Cevabı verdikten sonra dur.
+11. Eğer bağlamda cevap yoksa sadece şunu yaz: "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
 
 Bağlamlar:
 {context_text}
