@@ -532,8 +532,16 @@ ANSWER_STOPWORDS = {
     "bu", "şu", "o", "ve", "veya", "ile", "için", "göre", "nedir", "ne", "kaç",
     "hangi", "kim", "kime", "nereye", "nasıl", "mı", "mi", "mu", "mü", "bir",
     "da", "de", "ta", "te", "ise", "halinde", "durumunda", "edilir", "edilebilir",
-    "başvuru", "başvurunun", "reddedilirse", "reddedilmesi", "süre", "süresi",
+    "mi̇", "midir", "mıdır", "olur", "alır", "alir", "kaçtır", "kactir",
 }
+
+MONEY_QUESTION_HINTS = [
+    "tl", "₺", "ücret", "ucret", "harç", "harc", "bedel", "para", "maliyet", "masraf"
+]
+
+MONEY_CONTEXT_HINTS = [
+    "tl", "₺", "ücret", "ucret", "harç", "harc", "bedel", "para", "maliyet", "masraf", "lira"
+]
 
 
 def normalize_for_overlap(text: str) -> str:
@@ -547,6 +555,56 @@ def normalize_for_overlap(text: str) -> str:
 def meaningful_tokens(text: str) -> List[str]:
     toks = normalize_for_overlap(text).split()
     return [t for t in toks if len(t) > 2 and t not in ANSWER_STOPWORDS]
+
+
+def tokens_soft_overlap_count(query_tokens: List[str], sentence_tokens: List[str]) -> int:
+    """
+    Türkçe ekler yüzünden birebir token eşleşmesi çoğu zaman kaçıyor.
+    Örn. "itiraz" ↔ "itirazda", "başvuru" ↔ "başvurunun".
+    Bu yüzden kısa ve güvenli bir prefix/eşleşme kontrolü kullanıyoruz.
+    """
+    count = 0
+    used_sentence_indices = set()
+    for qt in query_tokens:
+        if len(qt) <= 2:
+            continue
+        for idx, st in enumerate(sentence_tokens):
+            if idx in used_sentence_indices or len(st) <= 2:
+                continue
+            exact = qt == st
+            prefix = len(qt) >= 4 and len(st) >= 4 and (qt.startswith(st[:4]) or st.startswith(qt[:4]))
+            contains = len(qt) >= 5 and len(st) >= 5 and (qt in st or st in qt)
+            if exact or prefix or contains:
+                count += 1
+                used_sentence_indices.add(idx)
+                break
+    return count
+
+
+def asks_about_money(question: str) -> bool:
+    q = normalize_for_overlap(question)
+    return any(hint in q for hint in MONEY_QUESTION_HINTS)
+
+
+def context_mentions_money(contexts: List[str]) -> bool:
+    ctx = normalize_for_overlap(" ".join(contexts))
+    return any(hint in ctx for hint in MONEY_CONTEXT_HINTS)
+
+
+def context_has_minimum_relevance(question: str, contexts: List[str], min_overlap: int = 1) -> bool:
+    """
+    Top context her zaman bir şey döndürdüğü için, alakasız sorularda modelin contextten rastgele cevap
+    seçmesini engelleyen basit cevaplanabilirlik kapısı.
+    """
+    q_tokens = meaningful_tokens(question)
+    if not q_tokens:
+        return False
+    best_overlap = 0
+    for ctx in contexts[:3]:
+        for sentence in split_context_into_answer_sentences(ctx):
+            s_tokens = meaningful_tokens(sentence)
+            best_overlap = max(best_overlap, tokens_soft_overlap_count(q_tokens, s_tokens))
+    return best_overlap >= min_overlap
 
 
 def is_duration_or_count_question(question: str) -> bool:
@@ -603,29 +661,39 @@ def extractive_answer_from_context(question: str, contexts: List[str]) -> Option
     if not q_tokens:
         return None
 
+    # Para/ücret sorusunda contextte para bilgisi yoksa süre cümlesini yanlışlıkla cevap yapma.
+    if asks_about_money(question) and not context_mentions_money(contexts):
+        return None
+
     best_sentence = None
     best_score = -1.0
+    best_overlap = 0
     duration_pattern = re.compile(r"\b\d+\s*(gün|gun|ay|yıl|yil|hafta|saat|günde|gunde|yılda|yilda)\b", re.IGNORECASE)
+
+    norm_question = normalize_for_overlap(question)
 
     for context_rank, ctx in enumerate(contexts):
         for sentence in split_context_into_answer_sentences(ctx):
             norm_sent = normalize_for_overlap(sentence)
-            s_tokens = set(meaningful_tokens(sentence))
-            overlap = len(q_tokens & s_tokens)
+            s_tokens = meaningful_tokens(sentence)
+            overlap = tokens_soft_overlap_count(list(q_tokens), s_tokens)
             has_duration = bool(duration_pattern.search(sentence))
             has_number = bool(re.search(r"\d+", sentence))
             # İlk context daha güvenilir olduğu için minik rank bonusu.
             score = overlap + (3.0 if has_duration else 0.0) + (1.0 if has_number else 0.0) + (0.2 / (context_rank + 1))
             # İtiraz sorusunda itiraz cümlesini başvuru süresine tercih et.
-            if "itiraz" in normalize_for_overlap(question) and "itiraz" in norm_sent:
+            if "itiraz" in norm_question and "itiraz" in norm_sent:
                 score += 3.0
-            if "başvuru" in normalize_for_overlap(question) and "başvuru" in norm_sent:
+            if "basvuru" in norm_question and "basvuru" in norm_sent:
                 score += 1.0
             if score > best_score:
                 best_score = score
                 best_sentence = sentence
+                best_overlap = overlap
 
-    if best_sentence and best_score >= 3.0:
+    # En kritik guard: soru ile seçilen cümle arasında hiç konu örtüşmesi yoksa cevap verme.
+    # Örn. "öykü nlpden kaç alır" sorusunda sadece "kaç" var diye 15 gün cevabı dönmemeli.
+    if best_sentence and best_score >= 3.0 and best_overlap >= 1:
         return clean_extracted_sentence(best_sentence)
     return None
 
@@ -783,13 +851,21 @@ def run_single_question(question: str, documents: List[Dict[str, str]], hf_token
     embedding_model, embeddings, bm25 = build_retrieval_index(chunks_df)
     retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
     contexts = [item["chunk_text"] for item in retrieved]
-    extractive_answer = extractive_answer_from_context(question, contexts)
-    if extractive_answer:
-        cleaned = extractive_answer
+
+    # Alakasız sorularda retriever yine top-1 döndürür; bu normaldir.
+    # Ama cevap üretmeden önce soru-context arasında asgari konu örtüşmesi arıyoruz.
+    if not context_has_minimum_relevance(question, contexts, min_overlap=1):
+        cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
+    elif asks_about_money(question) and not context_mentions_money(contexts):
+        cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
     else:
-        prompt = build_improved_legal_rag_prompt(question, contexts)
-        raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
-        cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
+        extractive_answer = extractive_answer_from_context(question, contexts)
+        if extractive_answer:
+            cleaned = extractive_answer
+        else:
+            prompt = build_improved_legal_rag_prompt(question, contexts)
+            raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
+            cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
     safe_sources = []
     for item in retrieved:
         safe_sources.append({
@@ -852,13 +928,18 @@ async def benchmark(
         question = sample["question"]
         retrieved = retrieve_best_pipeline(question, chunks_df, embedding_model, embeddings, bm25)
         contexts = [item["chunk_text"] for item in retrieved]
-        extractive_answer = extractive_answer_from_context(question, contexts)
-        if extractive_answer:
-            cleaned = extractive_answer
+        if not context_has_minimum_relevance(question, contexts, min_overlap=1):
+            cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
+        elif asks_about_money(question) and not context_mentions_money(contexts):
+            cleaned = "Verilen bağlamda bu sorunun cevabı bulunamamaktadır."
         else:
-            prompt = build_improved_legal_rag_prompt(question, contexts)
-            raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
-            cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
+            extractive_answer = extractive_answer_from_context(question, contexts)
+            if extractive_answer:
+                cleaned = extractive_answer
+            else:
+                prompt = build_improved_legal_rag_prompt(question, contexts)
+                raw_answer = generate_with_base_mistral(prompt, hf_token=hf_token)
+                cleaned = postprocess_answer_by_question_type(question, clean_generated_answer(raw_answer))
         top_source = retrieved[0] if retrieved else {}
         rows.append({
             "row_id": sample.get("row_id", ""),
