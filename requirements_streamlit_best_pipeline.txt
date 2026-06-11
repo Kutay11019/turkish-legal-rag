@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+rank-bm25
+sentence-transformers
+scikit-learn
+transformers
+accelerate
+torch
+bitsandbytes
+pymupdf
+python-docx
+huggingface_hub
+peft
