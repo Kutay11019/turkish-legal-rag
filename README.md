@@ -11,7 +11,7 @@ Full LLM generation with Mistral-7B requires significant GPU memory. You can run
 ### 1. Google Colab (Recommended)
 If you do not have sufficient local GPU resources, you can run the benchmark directly in Google Colab. The notebook will automatically clone the repository, install dependencies, and load the fine-tuned adapter.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Kutay11019/turkish-legal-rag/blob/main/notebooks/27_final_system_colab_runner.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_qViXMgkFK_2OW21GhjJMgOFlbWoGU0g#scrollTo=IGxNg8qv1Sik).
 
 **Important:** Before running, ensure your Colab runtime is set to **L4 GPU** (via `Runtime > Change runtime type > L4 GPU`).
 
