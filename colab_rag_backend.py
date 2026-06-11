@@ -52,6 +52,7 @@ MIN_FILTERED_ROWS = 1
 SUPPORTED_UPLOAD_TYPES = {".txt", ".pdf", ".docx", ".csv", ".json", ".jsonl"}
 
 app = FastAPI(title="Turkish Legal RAG GPU Backend")
+BACKEND_VERSION = "structured-csv-json-chunks-v2"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -357,10 +358,37 @@ def character_chunks(text: str, chunk_size: int, chunk_overlap: int) -> List[str
     return chunks
 
 
+def split_structured_record_blocks(text: str) -> List[str]:
+    """
+    CSV/JSON/JSONL yüklemelerinde her kayıt ayrı bir chunk olmalı.
+    Aksi halde küçük CSV dosyaları tek chunk'a düşüyor ve sayı/süre sorularında
+    model veya extractive guard aynı chunk içindeki yanlış satırı cevap seçebiliyor.
+    """
+    text = normalize_whitespace(text)
+    if not text:
+        return []
+    pattern = re.compile(r"(?im)(?=^\s*(?:CSV|JSON|JSONL)\s+Kayıt\s+\d+\b)")
+    parts = [part.strip() for part in pattern.split(text) if part.strip()]
+    if len(parts) <= 1:
+        return []
+    chunks: List[str] = []
+    for part in parts:
+        if len(part) <= CHUNK_SIZE * 1.5:
+            chunks.append(part)
+        else:
+            chunks.extend(character_chunks(part, CHUNK_SIZE, CHUNK_OVERLAP))
+    return chunks
+
+
 def split_article_blocks(text: str) -> List[str]:
     text = normalize_whitespace(text)
     if not text:
         return []
+
+    structured_blocks = split_structured_record_blocks(text)
+    if structured_blocks:
+        return structured_blocks
+
     pattern = re.compile(r"(?im)(?=^\s*(?:GEÇİCİ\s+MADDE|GECICI\s+MADDE|MADDE)\s+\d+\s*[–\-:]?)")
     parts = [p.strip() for p in pattern.split(text) if p.strip()]
     if len(parts) <= 1:
@@ -668,9 +696,14 @@ def extractive_answer_from_context(question: str, contexts: List[str]) -> Option
     best_sentence = None
     best_score = -1.0
     best_overlap = 0
-    duration_pattern = re.compile(r"\b\d+\s*(gün|gun|ay|yıl|yil|hafta|saat|günde|gunde|yılda|yilda)\b", re.IGNORECASE)
+    duration_pattern = re.compile(r"\b\d+\s*(gün\w*|gun\w*|ay\w*|yıl\w*|yil\w*|hafta\w*|saat\w*)\b", re.IGNORECASE)
 
     norm_question = normalize_for_overlap(question)
+
+    important_query_bigrams = []
+    q_token_list = meaningful_tokens(question)
+    for i in range(len(q_token_list) - 1):
+        important_query_bigrams.append(q_token_list[i] + " " + q_token_list[i + 1])
 
     for context_rank, ctx in enumerate(contexts):
         for sentence in split_context_into_answer_sentences(ctx):
@@ -686,6 +719,12 @@ def extractive_answer_from_context(question: str, contexts: List[str]) -> Option
                 score += 3.0
             if "basvuru" in norm_question and "basvuru" in norm_sent:
                 score += 1.0
+            # Soru başlık/konu ifadesini açık taşıyan satırı tercih et.
+            # Örn. "idari başvuru süresi" sorusunda "Belge Saklama" satırındaki
+            # "başvuruya ilişkin belgeler ... 5 yıl süreyle" cümlesi yanlışlıkla öne çıkmasın.
+            for bigram in important_query_bigrams:
+                if bigram in norm_sent:
+                    score += 2.0
             if score > best_score:
                 best_score = score
                 best_sentence = sentence
