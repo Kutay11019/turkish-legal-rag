@@ -1,80 +1,265 @@
-# CENG493 Turkish Legal RAG
+## How to Run and Use the Final System
 
-This repository contains a Turkish legal question answering system based on an optimized Retrieval-Augmented Generation (RAG) pipeline.
+This repository contains the final runnable Turkish Legal RAG system. The recommended way to test the system is through the **Streamlit demo interface**.
 
-The project includes retrieval improvements, reranking experiments, LLM fine-tuning with QLoRA, controlled evaluation, ablation studies, and a final runnable custom RAG benchmark system.
+The Streamlit interface allows the instructor to:
 
-## Running the RAG Benchmark
+* upload custom legal files,
+* ask a single legal question,
+* generate one final answer,
+* inspect retrieved legal sources,
+* optionally run a batch benchmark file.
 
-Full LLM generation with Mistral-7B requires significant GPU memory. You can run the benchmarks using either a local environment or Google Colab.
+Full answer generation uses **Mistral-7B-Instruct**, which requires GPU memory. Therefore, the recommended setup is:
 
-### 1. Google Colab (Recommended)
-If you do not have sufficient local GPU resources, you can run the benchmark directly in Google Colab. The notebook will automatically clone the repository, install dependencies, and load the fine-tuned adapter.
+```text
+Local computer:
+Streamlit user interface
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_qViXMgkFK_2OW21GhjJMgOFlbWoGU0g#scrollTo=IGxNg8qv1Sik).
+Google Colab:
+GPU backend for retrieval, reranking, and Mistral generation
+```
 
-**Important:** Before running, ensure your Colab runtime is set to **L4 GPU** (via `Runtime > Change runtime type > L4 GPU`).
+The instructor interacts only with the Streamlit interface. Google Colab is used only as the GPU backend.
 
-### 2. Local Environment
-If you have a local machine with sufficient VRAM, you can run the benchmark using the following commands:
+---
+
+# Streamlit Demo Interface
+
+## 1. Open the Repository Locally
+
+Clone this repository to your computer and open the project folder in VS Code.
+
+The local Streamlit interface should be run from the repository root.
+
+Important files for the demo:
+
+| File                              | Purpose                                     |
+| --------------------------------- | ------------------------------------------- |
+| `streamlit_demo.py`               | Local Streamlit user interface              |
+| `colab_rag_backend.py`            | Backend code used by the Colab GPU notebook |
+| `requirements_local_frontend.txt` | Local Streamlit interface dependencies      |
+| `requirements_colab_backend.txt`  | Colab backend dependencies                  |
+
+---
+
+## 2. Install Local Interface Dependencies
+
+Open the VS Code terminal in the repository root.
+
+Create a Python virtual environment:
 
 ```bash
-# Run base model evaluation
-python run_custom_rag_benchmark.py --mode base
-
-# Run fine-tuned model evaluation
-python run_custom_rag_benchmark.py --mode finetuned
-
-# Run both evaluations
-python run_custom_rag_benchmark.py --mode both
-
-## Project Overview
-
-The goal of this project is to build and evaluate a Turkish legal RAG system that can answer legal questions by retrieving relevant legal contexts and generating source-grounded answers.
-
-The project focuses on:
-
-* Turkish legal question answering
-* Retrieval-Augmented Generation (RAG)
-* Hybrid retrieval
-* Turkish BGE reranking
-* Source-aware and article-aware retrieval improvements
-* Prompt engineering for legal answer generation
-* LLM fine-tuning with QLoRA
-* Base vs fine-tuned LLM comparison
-* Custom document and benchmark evaluation support
-
-## Final Runnable System
-
-The final runnable system is located under:
-
-```text
-final_system/
+python -m venv .venv
 ```
 
-This folder provides a clean interface for running the RAG system on custom legal documents and custom benchmark question-answer sets.
+Activate it.
 
-The instructor can place custom legal documents under:
+On Windows:
 
-```text
-final_system/data/custom_documents/
+```bash
+.venv\Scripts\activate
 ```
 
-Supported document formats are:
+On macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install the local interface dependencies:
+
+```bash
+pip install -r requirements_local_frontend.txt
+```
+
+If needed, the minimum local dependencies can also be installed manually:
+
+```bash
+pip install streamlit requests pandas
+```
+
+The local interface does not load Mistral locally. It only displays the user interface and sends requests to the Colab GPU backend.
+
+---
+
+## 3. Start the Colab Backend
+
+The full model generation should be run on Google Colab because the LLM requires GPU memory.
+
+Open the Colab backend notebook:
+
+[Open Final System Colab Backend](https://colab.research.google.com/drive/1_qViXMgkFK_2OW21GhjJMgOFlbWoGU0g#scrollTo=IGxNg8qv1Sik)
+
+Before running the notebook, select a GPU runtime:
+
+```text
+Runtime > Change runtime type > Hardware accelerator > GPU
+```
+
+An L4 or A100 GPU is recommended when available.
+
+Then run the notebook cells from top to bottom.
+
+The notebook will:
+
+* access or clone the project files,
+* install the required backend libraries,
+* load the required retrieval, reranking, and generation components,
+* start the backend service,
+* expose the backend through a public URL.
+
+After the backend starts, copy the generated public backend URL from the Colab output.
+
+Example URL formats:
+
+```text
+https://xxxxx.trycloudflare.com
+```
+
+or:
+
+```text
+https://xxxxx.ngrok-free.app
+```
+
+The exact URL changes each time the Colab backend is restarted.
+
+Important notes:
+
+* Keep the Colab notebook running while using the Streamlit interface.
+* If the backend is restarted, a new public URL may be generated.
+* Copy only the main public URL.
+* Do not add `/health`, `/answer`, or any other endpoint suffix when pasting it into the Streamlit interface.
+
+---
+
+## 4. Start the Local Streamlit Interface
+
+In VS Code, run the Streamlit interface from the repository root:
+
+```bash
+streamlit run streamlit_demo.py
+```
+
+Streamlit will open a local browser page such as:
+
+```text
+http://localhost:8501
+```
+
+---
+
+## 5. Connect the Interface to the Colab Backend
+
+In the Streamlit interface:
+
+1. Find the **Colab GPU backend URL** field.
+2. Paste the public backend URL copied from Colab.
+3. Click **Check backend**.
+4. If the connection is successful, the interface will show backend and GPU status.
+
+After this step, the local interface is connected to the GPU backend.
+
+---
+
+# Using the Streamlit Interface
+
+## 1. Upload Legal Files
+
+The Streamlit interface supports legal source files in the following formats:
 
 ```text
 .txt
 .pdf
 .docx
+.csv
+.json
+.jsonl
 ```
 
-The instructor can place a custom benchmark file under:
+Multiple files can be uploaded at the same time. They can be the same file type or different file types.
+
+Examples:
 
 ```text
-final_system/data/custom_benchmark/
+constitution.pdf
+tck_articles.docx
+legal_articles.csv
+regulation.json
+custom_rules.jsonl
 ```
 
-The benchmark file can be provided in one of the following formats:
+The uploaded files are used as the retrieval corpus. The system reads the files, extracts text, creates chunks or structured records, retrieves relevant legal contexts, reranks them, and generates an answer based on the selected context.
+
+For structured files such as CSV, JSON, and JSONL, each row or record is treated as a separate retrievable unit when possible. This helps prevent unrelated records from being mixed into the same chunk.
+
+Example legal CSV file:
+
+```csv
+madde_no,baslik,metin
+1,Başvuru Süresi,"İdari başvuru süresi, kararın ilgili kişiye tebliğinden itibaren 30 gündür."
+2,İtiraz Süresi,"Başvurunun reddedilmesi halinde kişi, ret kararının tebliğinden itibaren 15 gün içinde ilgili kuruma yazılı itirazda bulunabilir."
+3,Belge Saklama,"Kurumlar, başvuruya ilişkin belgeleri en az 5 yıl süreyle saklamak zorundadır."
+```
+
+---
+
+## 2. Ask a Single Question
+
+After uploading legal files:
+
+1. Type a question in the question box.
+2. Click **Generate Answer**.
+3. The system returns one final generated answer.
+4. Open **Retrieved Legal Sources** if you want to inspect the retrieved evidence.
+
+Example question:
+
+```text
+Başvuru reddedilirse kaç gün içinde itiraz edilebilir?
+```
+
+Expected answer from the example CSV:
+
+```text
+Başvurunun reddedilmesi halinde kişi, ret kararının tebliğinden itibaren 15 gün içinde ilgili kuruma yazılı itirazda bulunabilir.
+```
+
+If the uploaded documents do not contain the answer, the system should respond that the answer cannot be found in the provided context.
+
+---
+
+## 3. Retrieved Legal Sources
+
+After generation, the interface can show the retrieved legal sources.
+
+This section helps verify:
+
+* which uploaded file was used,
+* which chunk or structured record was retrieved,
+* whether the retrieved context supports the generated answer,
+* whether the system answered from the provided legal source instead of unsupported model knowledge.
+
+This is important because the project is a legal RAG system. The generated answer should be grounded in retrieved legal text.
+
+---
+
+# Optional Batch Benchmark Test
+
+The Streamlit interface also supports an optional benchmark mode.
+
+A benchmark file is different from a legal source file.
+
+```text
+Legal file:
+The document or corpus used for retrieval and answering.
+
+Benchmark file:
+A list of questions used to test the system in batch mode.
+```
+
+Supported benchmark formats:
 
 ```text
 .csv
@@ -82,286 +267,180 @@ The benchmark file can be provided in one of the following formats:
 .jsonl
 ```
 
-Each benchmark sample must contain at least the following fields:
+Each benchmark sample should contain at least a question field. It may also contain an expected answer field.
+
+Supported field names include:
 
 ```text
 question
 expected_answer
 ```
 
-By default, the runner reads the benchmark folder defined in `final_system/config.yaml`:
+or Turkish equivalents such as:
 
-```yaml
-benchmark_path: "data/custom_benchmark"
+```text
+soru
+cevap
 ```
 
-If only the included `sample_benchmark.csv` file exists, it is used as a small smoke test. If a custom benchmark file is added to the same folder, the runner automatically prefers the custom benchmark file over the sample file.
+Example benchmark CSV:
 
-If multiple custom benchmark files are placed in the folder, the exact file path can be provided manually:
-
-```bash
-python run_custom_rag_benchmark.py --mode base --retrieval_only --benchmark_path data/custom_benchmark/my_benchmark.json
+```csv
+question,expected_answer
+"İdari başvuru süresi kaç gündür?","İdari başvuru süresi 30 gündür."
+"Başvuru reddedilirse kaç gün içinde itiraz edilebilir?","Ret kararının tebliğinden itibaren 15 gün içinde itiraz edilebilir."
+"Kurumlar belgeleri kaç yıl saklar?","Kurumlar belgeleri en az 5 yıl saklamak zorundadır."
 ```
 
-The runner supports three modes:
+To run a benchmark in the interface:
 
-- `base`: runs the RAG system with the base Mistral model.
-- `finetuned`: runs the RAG system with the same base Mistral model plus the fine-tuned QLoRA adapter.
-- `both`: runs both systems on the same benchmark and saves comparison outputs.
+1. Upload at least one legal source file in the main legal file upload section.
+2. Open **Optional: Batch Benchmark Test**.
+3. Upload a CSV, JSON, or JSONL benchmark file.
+4. Select the maximum number of questions to run.
+5. Click **Run Benchmark**.
+6. View the generated answers in the table.
+7. Download the results as a CSV file.
 
-A retrieval-only smoke test can be run without loading the LLM:
+Important:
+
+```text
+A benchmark file alone is not enough.
+The system also needs at least one legal source file to retrieve evidence from.
+```
+
+---
+
+# Models Used in the Streamlit Demo
+
+The current Streamlit demo uses the following main components:
+
+| Component       | Model / Method                                                |
+| --------------- | ------------------------------------------------------------- |
+| Generator       | `mistralai/Mistral-7B-Instruct-v0.2`                          |
+| Embedding model | `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` |
+| Reranker        | Turkish BGE reranker (`seroe/bge-reranker-v2-m3-turkish-triplet`)                    |
+| Retrieval       | Hybrid retrieval with source-aware and article-aware logic    |
+| Prompting       | Improved legal grounding prompt                               |
+
+The demo uses the **base Mistral generator** because the best original end-to-end RAG result was obtained with base Mistral combined with improved retrieval, Turkish BGE reranking, and improved legal prompting.
+
+The fine-tuned Starlar QLoRA adapter is not used as the default Streamlit demo generator because it improved controlled gold-context generation but did not improve the original end-to-end RAG benchmark when directly integrated.
+
+---
+
+# Optional Command Line Runner
+
+The original command line runner is still available under:
+
+```text
+final_system/
+```
+
+For a quick retrieval-only smoke test without loading the LLM:
 
 ```bash
 cd final_system
 python run_custom_rag_benchmark.py --mode base --retrieval_only
 ```
 
-For detailed usage instructions, see:
+This checks whether documents can be loaded, chunked, retrieved, and written to output files. This mode can run on CPU.
+
+For full base or fine-tuned generation from the command line, use a CUDA-enabled GPU environment or the provided Colab workflow.
+
+Detailed fine-tuned adapter setup is not required for the Streamlit demo. The fine-tuned adapter is stored outside GitHub due to file size and is used only for optional advanced experiments.
+
+---
+
+# Final Results and Metrics
+
+The project reports two final result groups:
+
+1. **Best End-to-End RAG Result**
+2. **Controlled LLM Fine-Tuning Result**
+
+These two results measure different evaluation settings and should not be interpreted as the same experiment.
+
+The end-to-end RAG result evaluates the complete pipeline:
 
 ```text
-final_system/README.md
-```
-```
-
-## Quick Smoke Test
-
-A retrieval-only test can be run without loading the LLM:
-
-```bash
-cd final_system
-python run_custom_rag_benchmark.py --mode base --retrieval_only
+question → retrieval → reranking → context selection → answer generation
 ```
 
-This checks whether:
-
-* custom documents can be loaded,
-* documents can be chunked,
-* benchmark questions can be read,
-* retrieval works,
-* output CSV files are generated.
-
-This mode can run on a normal CPU environment.
-
-
-## Fine-Tuned Adapter
-
-The fine-tuned QLoRA adapter is not committed to GitHub because it contains large model weight files.
-
-The clean adapter zip is linked inside:
+The controlled fine-tuning result evaluates generation separately when the correct legal context is already provided:
 
 ```text
-final_system/README.md
+question + correct context → answer generation
 ```
 
-After downloading the adapter, extract it under:
+Therefore, the fine-tuned LLM score is higher because the correct legal context was already supplied to the model.
 
-```text
-final_system/models/mistral_legal_qlora_starlar_v2_800steps/
-```
+---
 
-Then update `final_system/config.yaml`:
+## 1. Best End-to-End RAG Result
 
-```yaml
-local_finetuned_adapter: "models/mistral_legal_qlora_starlar_v2_800steps"
-```
+The best completed original benchmark pipeline used:
 
-Then run:
+* source-aware retrieval,
+* article-aware retrieval,
+* Turkish BGE reranker,
+* improved legal prompt,
+* base Mistral generator.
 
-```bash
-cd final_system
-python run_custom_rag_benchmark.py --mode both
-```
+| Evaluation Setting       | Manual Accuracy | Success Percentage |
+| ------------------------ | --------------: | -----------------: |
+| Original benchmark       |           0.421 |             42.10% |
+| Coverage-clean benchmark |         0.46875 |            46.875% |
 
-## Final Experimental Results
+The coverage-clean benchmark excludes known problematic samples where the correct answer was missing from the corpus or where the question/context match was inconsistent.
 
-The final experiment summary is available at:
+This result represents the best complete RAG pipeline performance on the original project benchmark.
 
-```text
-reports/final_experiment_summary.md
-```
+---
 
-### Best End-to-End RAG Result
+## 2. Controlled LLM Fine-Tuning Result
 
-The best completed end-to-end RAG pipeline on the original benchmark used:
+LLM fine-tuning was evaluated separately using the Starlar LLM SFT dataset.
 
-* Source-aware retrieval
-* Article-aware retrieval
-* Turkish BGE reranker
-* Improved legal prompt
-* Base Mistral generator
+In this setup, the correct context was already given to the model. Therefore, this experiment measures whether the model can generate a correct, source-grounded Turkish legal answer when the relevant legal context is available.
 
-| Setting                  | Manual Accuracy |
-| ------------------------ | --------------: |
-| Original benchmark       |           0.421 |
-| Coverage-clean benchmark |         0.46875 |
+| Model                            | Manual Accuracy | Success Percentage | Mean Token F1 | Mean Text Similarity | Source Citation Rate |
+| -------------------------------- | --------------: | -----------------: | ------------: | -------------------: | -------------------: |
+| Base Mistral                     |           0.400 |             40.00% |        0.1848 |               0.1554 |                 0.25 |
+| Starlar Fine-tuned Mistral QLoRA |           0.925 |             92.50% |        0.9657 |               0.9695 |                 0.85 |
 
-The coverage-clean score excludes known problematic samples caused by missing or mismatched corpus coverage.
+This shows that fine-tuning substantially improved source-grounded Turkish legal answer generation when the correct context was provided.
 
-### LLM Fine-Tuning Result
+However, the fine-tuned adapter did not improve the original end-to-end RAG benchmark when directly integrated into the older best RAG context pipeline. The likely reasons were dataset distribution differences and answer-format mismatch.
 
-LLM fine-tuning was evaluated separately under a controlled gold-context setting using the Starlar LLM SFT dataset.
+---
 
-In this setting, the correct context was already provided to the model, so the experiment focused on source-grounded answer generation.
+# Metric Explanations
 
-| Model                            | Manual Accuracy | Mean Token F1 | Mean Text Similarity | Source Citation Rate |
-| -------------------------------- | --------------: | ------------: | -------------------: | -------------------: |
-| Base Mistral                     |           0.400 |        0.1848 |               0.1554 |                 0.25 |
-| Starlar Fine-tuned Mistral QLoRA |           0.925 |        0.9657 |               0.9695 |                 0.85 |
+| Metric               | Meaning                                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------ |
+| Manual Accuracy      | Human evaluation score showing whether the generated answer is legally and semantically correct. |
+| Mean Token F1        | Token-level overlap between the generated answer and the expected answer.                        |
+| Mean Text Similarity | Semantic/textual similarity between the generated answer and the expected answer.                |
+| Source Citation Rate | How often the answer includes or correctly refers to the provided source/context.                |
 
-These results show that LLM fine-tuning substantially improved source-grounded Turkish legal answer generation when the correct context was provided.
+---
 
-### Integration and Ablation Notes
+# Final Interpretation
 
-The Starlar fine-tuned LLM was also tested on the fixed retrieved contexts from the previous best RAG pipeline. However, it did not improve the original RAG benchmark result because of dataset distribution differences, answer-format mismatch, and retrieval/context coverage limitations.
+The project has two main conclusions:
 
-A target-style alignment fine-tuning experiment was also attempted, but qualitative sanity checks showed generic or legally inaccurate outputs. Therefore, this adapter was not selected as the final RAG generator.
+1. The best end-to-end RAG pipeline achieved the strongest full-system performance using retrieval improvements, reranking, prompt engineering, and the base Mistral generator.
+2. Fine-tuning the LLM significantly improved answer generation quality in a controlled setting where the correct context was already supplied.
 
-The final project reports two complementary findings:
+The fine-tuned model was also tested inside the older best RAG pipeline, but it did not improve the final end-to-end benchmark result. The likely reasons were:
 
-1. Retrieval and prompt engineering produced the best end-to-end RAG result on the original benchmark.
-2. LLM fine-tuning clearly improved controlled source-grounded answer generation on the Starlar dataset.
+* dataset distribution differences,
+* answer-format mismatch,
+* retrieval/context coverage limitations,
+* some benchmark questions not being fully supported by the available corpus.
 
-## Repository Structure
+Therefore, the final project reports both results separately:
 
-The repository is organized as follows:
-
-```text
-.
-├── final_system/
-│   ├── README.md
-│   ├── requirements.txt
-│   ├── config.yaml
-│   ├── run_custom_rag_benchmark.py
-│   │
-│   ├── data/
-│   │   ├── custom_documents/
-│   │   │   ├── README.md
-│   │   │   └── sample_legal_document.txt
-│   │   │
-│   │   ├── custom_benchmark/
-│   │   │   └── sample_benchmark.csv
-│   │   │
-│   │   └── outputs/
-│   │       └── .gitkeep
-│   │
-│   ├── models/
-│   │   └── .gitkeep
-│   │
-│   └── src/
-│       ├── __init__.py
-│       ├── chunking.py
-│       ├── document_loader.py
-│       ├── generation.py
-│       ├── metrics.py
-│       ├── retrieval.py
-│       └── utils.py
-│
-├── notebooks/
-│   ├── 01_data_preparation.ipynb
-│   ├── 02_baseline_retrieval.ipynb
-│   ├── 03_rag_generation.ipynb
-│   ├── 04_flashrank_reranker_experiment.ipynb
-│   ├── 05_turkish_bge_reranker_experiment.ipynb
-│   ├── 06_error_analysis.ipynb
-│   ├── 07_prompt_context_improvement.ipynb
-│   ├── 08_article_aware_retrieval_improvement.ipynb
-│   ├── 09_data_coverage_analysis.ipynb
-│   ├── 10_multi_dataset_smoke_test.ipynb
-│   ├── 11_reranker_finetuning.ipynb
-│   ├── 12_llm_finetuning_data_preparation.ipynb
-│   ├── 13_llm_finetuning_qlora_friend_clean.ipynb
-│   ├── 14_evaluate_finetuned_llm_rag.ipynb
-│   ├── 18_starlar_llm_finetune_v2_inspection.ipynb
-│   ├── 19_llm_finetune_starlar_v2.ipynb
-│   ├── 20_evaluate_starlar_finetuned_llm.ipynb
-│   ├── 21_final_results_summary.ipynb
-│   ├── 22_evaluate_starlar_finetuned_llm_on_old_best_rag_contexts.ipynb
-│   ├── 23_prepare_target_style_sft_for_rag_alignment.ipynb
-│   ├── 24_finetune_starlar_adapter_target_style_alignment.ipynb
-│   └── 27_final_system_colab_runner.ipynb
-│
-├── outputs/
-│   └── metrics/
-│       └── selected final metric CSV files
-│
-├── reports/
-│   └── final_experiment_summary.md
-│
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
-
-## Important Files
-
-| Path                                                      | Purpose                                                                                                             |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `final_system/`                                           | Final runnable custom RAG benchmark system. This is the main folder to use for custom evaluation.                   |
-| `final_system/README.md`                                  | Detailed instructions for running the final system, using custom documents, and configuring the fine-tuned adapter. |
-| `final_system/run_custom_rag_benchmark.py`                | Main script for running `base`, `finetuned`, or `both` RAG modes.                                                   |
-| `final_system/config.yaml`                                | Configuration file for model names, adapter path, retrieval settings, generation settings, and input/output paths.  |
-| `final_system/data/custom_documents/`                     | Folder where custom `.txt`, `.pdf`, or `.docx` legal documents should be placed.                                    |
-| `final_system/data/custom_benchmark/sample_benchmark.csv` | Example benchmark format. A custom benchmark must include `question` and `expected_answer` columns.                 |
-| `final_system/src/`                                       | Source code for document loading, chunking, retrieval, generation, metrics, and utility functions.                  |
-| `notebooks/27_final_system_colab_runner.ipynb`            | Colab runner for GPU-based testing when local hardware is not sufficient for Mistral-7B generation.                 |
-| `reports/final_experiment_summary.md`                     | Final experiment summary, including best RAG result, LLM fine-tuning result, and ablation conclusions.              |
-| `outputs/metrics/`                                        | Selected final metric CSV files supporting the reported results.                                                    |
-| `notebooks/`                                              | Experimental notebooks documenting the research and development process.                                            |
-
-
-## Selected Metric Outputs
-
-Selected final metric outputs are stored under:
-
-```text
-outputs/metrics/
-```
-
-These files support the reported results, including:
-
-* best end-to-end RAG performance,
-* retrieval and reranking comparisons,
-* Starlar LLM fine-tuning results,
-* controlled base vs fine-tuned evaluation,
-* integration and target-alignment ablation results.
-
-Intermediate and large generated files are excluded from GitHub where appropriate.
-
-## Dataset Notes
-
-Large raw and processed datasets are not committed to GitHub because of size limitations.
-
-The project originally used Turkish legal QA and legal text resources, including external Turkish legal datasets and the Starlar LLM SFT dataset prepared during the experiments.
-
-For custom evaluation, users do not need the original training datasets. They can place their own legal documents and benchmark CSV files under `final_system/`.
-
-## Installation for Final System
-
-From the project root:
-
-```bash
-cd final_system
-pip install -r requirements.txt
-```
-
-Then run the retrieval-only smoke test:
-
-```bash
-python run_custom_rag_benchmark.py --mode base --retrieval_only
-```
-
-For full base/fine-tuned generation, use a CUDA-enabled GPU environment.
-
-## Notes About Sample Benchmark
-
-The included sample files under `final_system/data/` are only smoke-test examples.
-
-They are used to verify that the final runner can load documents, retrieve contexts, run modes, and save outputs.
-
-The scores produced on the two-question sample benchmark are not the final project performance scores.
-
-The final reported results are documented in:
-
-```text
-reports/final_experiment_summary.md
-```
+* **Best end-to-end RAG result:** complete pipeline performance.
+* **Fine-tuned LLM result:** controlled generation performance with gold context.
